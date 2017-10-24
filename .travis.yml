@@ -14,7 +14,7 @@ cache:
     - node_modules
 deploy:
   - provider: npm
-    email: waltshirey@gmail.com
+    email: daxko@daxko.com
     api_key: $NPM_AUTH_TOKEN
     skip_cleanup: true
     on:
