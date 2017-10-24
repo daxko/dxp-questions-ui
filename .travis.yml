@@ -30,7 +30,7 @@ deploy:
       tags: true
   - provider: releases
     api-key: $GITHUB_AUTH_TOKEN
-    file: /dist/dxp-questions-min.js
+    file: dist/dxp-questions-min.js
     skip_cleanup: true
     on:
       tags: true
