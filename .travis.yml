@@ -5,6 +5,10 @@ node_js:
 script:
 - npm run test
 - npm run prod
+branches:
+  only:
+  - master
+  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 cache:
   directories:
     - node_modules
