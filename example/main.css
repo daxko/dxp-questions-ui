@@ -1,0 +1,278 @@
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  color: #424242;
+  line-height: 1.5;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+#container,
+.container {
+  display: block;
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem 0;
+  margin: 0 auto;
+}
+
+label {
+	display: block;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=tel],
+input[type=url],
+input[type=date],
+input[type=search],
+input[type=datetime],
+input[type=time],
+input[type=date],
+select,
+textarea {
+  border: 1px solid #CCCCCC;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  height: 32px;
+  vertical-align: middle;
+  outline: 0;
+  position: relative;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+input[type=url]:focus,
+input[type=date]:focus,
+input[type=search]:focus,
+input[type=datetime]:focus,
+input[type=time]:focus,
+input[type=date]:focus,
+textarea:focus,
+select:focus {
+	border: 1px solid #2568D6;
+}
+
+textarea {
+  height: auto;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 25px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAUAQMAAACHy55vAAAABlBMVEUAAAAtLS3wB2rmAAAAAXRSTlMAQObYZgAAAC5JREFUCNdjYGZgYG9g4D/AIP+Awf4DQ/0Phv9/GDAAUBAoBVQAVAZUDNQC1AgAn5gN8xIbpEwAAAAASUVORK5CYII=);
+  background-size: 7px 11px;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-color: #fff;
+  // Hide IE selector in IE10+
+  &::-ms-expand {
+    display: none;
+    opacity: 0;
+  }
+}
+
+/* ----------------------------
+	 Questions
+-----------------------------*/
+
+.dxp-question-section-container {
+    border-bottom: 1px solid $gray-100;
+    padding: 0 0 10px;
+    margin: 15px 0 20px;
+}
+
+.dxp-question-section-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.dxp-question-section-description {
+    font-size: 14px;
+    text-transform: none;
+}
+
+.dxp-question-container {
+    margin-bottom: 30px;
+}
+
+.dxp-question-title {
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.dxp-required-indicator {
+    color: red;
+}
+
+div.dxp-field-error {
+    border: none;
+}
+
+.dxp-field-error {
+  display: table-cell;
+  border: 1px solid red !important;
+}
+
+.dxp-error-description,
+.dxp-question-required-indicator {
+    color: red;
+}
+
+.dxp-question-body > div {
+  display: table;
+}
+
+.dxp-question-body > div > [class*="dxp"] {
+    display: table-cell;
+    padding-right: 20px;
+}
+
+.dxp-question-body [class*="dxp"] div:last-child {
+  padding-right: 0;
+}
+
+.dxp-question-body [class*="dxp"] .dxp-address-country {
+  display: table-footer-group;
+}
+
+.dxp-address-country label {
+  padding-top: 10px;
+}
+
+[class*="dxp-address"] {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+[class*="dxp-address"] input {
+    width: 100%;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  margin: 3px 5px;
+  vertical-align: text-top;
+}
+
+.dxp-address-zip input {
+  width: 100px;
+}
+
+.dxp-question-body div div .dxp-phone-ext-label,
+.dxp-question-body div div .dxp-phone-ext {
+  display: inline-block;
+}
+
+.dxp-question-body div div .dxp-phone-ext input {
+  width: 60px;
+  padding-left: 10px;
+}
+
+.dxp-question-body textarea {
+  height: auto;
+  min-height: 75px;
+  min-width: 300px;
+}
+
+.dxp-phone-ext {
+    padding-left: 10px;
+}
+
+.datepicker-input {
+  display: inline-block;
+  max-width: 112px;
+  vertical-align: baseline;
+}
+
+.datepicker-input:disabled {
+    margin-top: 0;
+}
+
+.dxp-radio label,
+.dxp-checkbox label {
+    font-weight: normal;
+    display: block;
+}
+
+small.dxp-question-help-text {
+  color: gray;
+}
+
+.dxp-error-description {
+    color: red;
+}
+
+.dxp-question-readonly {
+  color: gray;
+}
+
+.dxp-question-body > .datepicker {
+  margin-top: 0;
+}
+
+.dxp-question-readonly input,
+.dxp-question-readonly select {
+    color: #ccc;
+}
+
+.btn {
+  position: relative;
+  overflow: visible;
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: .2em;
+  box-shadow: 0 -1px 0 rgba(0,0,0,0.2) inset;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  height: 32px;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  outline: none;
+  padding: 4px 10px 6px;
+  background-color: #0275D8;
+  transition: ease-in-out .1s background-color;
+}
+
+.btn-primary {
+  color: $btn-primary-text-color;
+  background-color: $btn-primary-color;
+  border-color: rgba(0,0,0,0.3);
+  text-shadow: 0 -1px rgba(0, 0, 0, .15);
+}
+
+@media only screen and (max-width : 640px) {
+
+  .dxp-question-body div {
+    display: block;
+  }
+
+  .dxp-phone-ext {
+      display: block;
+      padding: 0;
+  }
+
+  .dxp-error-description {
+      display: block;
+  }
+
+}

@@ -1,0 +1,20 @@
+var React = require('react');
+
+var FieldError = React.createClass({
+
+	propTypes: {
+		errors: React.PropTypes.object
+	},
+
+	render: function() {
+
+		if (this.props.errors == null || this.props.errors["_summary"] == null)
+			return null;
+
+		return (
+			<div className="dxp-error-description">{this.props.errors["_summary"]}</div>
+		);
+	}
+});
+
+module.exports = FieldError;
