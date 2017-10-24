@@ -17,7 +17,9 @@
     "example": "httpster",
     "test": "jest",
     "toc": "markdown-toc readme.md -i --bullets=\"*\"",
-    "js-docs": "documentation readme index.js --section=\"Javascript API\""
+    "js-docs": "documentation readme index.js --section=\"Javascript API\"",
+    "release": "standard-version",
+    "prerelease": "standard-version --prerelease prerelease"
   },
   "author": "Daxko",
   "license": "BSD-2-Clause",
