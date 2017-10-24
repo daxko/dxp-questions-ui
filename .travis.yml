@@ -5,6 +5,9 @@ node_js:
 script:
 - npm run test
 - npm run prod
+cache:
+  directories:
+    - node_modules
 deploy:
   - provider: npm
     email: waltshirey@gmail.com
