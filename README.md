@@ -1,4 +1,4 @@
-# Daxko Question UI Library
+# Daxko Questions UI Library [![Build Status](https://travis-ci.org/daxko/dxp-questions-ui.svg?branch=master)](https://travis-ci.org/daxko/dxp-questions-ui) [![npm](https://img.shields.io/npm/v/dxp-questions-ui.svg)](https://www.npmjs.com/package/dxp-questions-ui)
 
 > The `dxp-questions-ui` library renders questions and answers that are provided by the [Daxko Operations API](https://api.daxko.com/v3/docs/).
 
