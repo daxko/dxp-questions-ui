@@ -7,39 +7,33 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <DropDownField
     question={
       Object {
-        "default_value": null,
-        "description": "A t-shirt is not included in the program price.",
-        "empty_value": "",
-        "hide_empty_option": false,
+        "default_value": "U",
+        "description": "",
+        "empty_value": "U",
+        "hide_empty_option": true,
         "possible_answers": Array [
           Object {
-            "amount": 15,
-            "display_value": "Small - $15.00",
-            "id": "childcare_possible_answer-103469",
-            "value": "Small",
+            "amount": null,
+            "display_value": "Unspecified",
+            "id": "U",
+            "value": "Unspecified",
           },
           Object {
-            "amount": 15,
-            "display_value": "Medium - $15.00",
-            "id": "childcare_possible_answer-103470",
-            "value": "Medium",
+            "amount": null,
+            "display_value": "Male",
+            "id": "M",
+            "value": "Male",
           },
           Object {
-            "amount": 15,
-            "display_value": "Large - $15.00",
-            "id": "childcare_possible_answer-103471",
-            "value": "Large",
-          },
-          Object {
-            "amount": 15,
-            "display_value": "X-Large - $15.00",
-            "id": "childcare_possible_answer-103472",
-            "value": "X-Large",
+            "amount": null,
+            "display_value": "Female",
+            "id": "F",
+            "value": "Female",
           },
         ],
         "read_only": false,
         "required": true,
-        "title": "What is your t-shirt size?",
+        "title": "Gender",
         "type": "dropdown",
       }
     }
@@ -61,32 +55,22 @@ ShallowWrapper {
         disabled={false}
         onBlur={undefined}
         onChange={[Function]}
-        value={null}
+        value="U"
       >
         <option
-          value=""
+          value="U"
         >
-          -Select One-
+          Unspecified
         </option>
         <option
-          value="childcare_possible_answer-103469"
+          value="M"
         >
-          Small - $15.00
+          Male
         </option>
         <option
-          value="childcare_possible_answer-103470"
+          value="F"
         >
-          Medium - $15.00
-        </option>
-        <option
-          value="childcare_possible_answer-103471"
-        >
-          Large - $15.00
-        </option>
-        <option
-          value="childcare_possible_answer-103472"
-        >
-          X-Large - $15.00
+          Female
         </option>
       </select>,
       "className": "dxp-dropdown",
@@ -98,31 +82,22 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <option
-            value=""
-          >
-            -Select One-
-          </option>,
+          false,
           Array [
             <option
-              value="childcare_possible_answer-103469"
+              value="U"
             >
-              Small - $15.00
+              Unspecified
             </option>,
             <option
-              value="childcare_possible_answer-103470"
+              value="M"
             >
-              Medium - $15.00
+              Male
             </option>,
             <option
-              value="childcare_possible_answer-103471"
+              value="F"
             >
-              Large - $15.00
-            </option>,
-            <option
-              value="childcare_possible_answer-103472"
-            >
-              X-Large - $15.00
+              Female
             </option>,
           ],
         ],
@@ -130,68 +105,45 @@ ShallowWrapper {
         "disabled": false,
         "onBlur": undefined,
         "onChange": [Function],
-        "value": null,
+        "value": "U",
       },
       "ref": null,
       "rendered": Array [
+        false,
         Object {
           "instance": null,
-          "key": "default",
+          "key": "U",
           "nodeType": "host",
           "props": Object {
-            "children": "-Select One-",
-            "value": "",
+            "children": "Unspecified",
+            "value": "U",
           },
           "ref": null,
-          "rendered": "-Select One-",
+          "rendered": "Unspecified",
           "type": "option",
         },
         Object {
           "instance": null,
-          "key": "childcare_possible_answer-103469",
+          "key": "M",
           "nodeType": "host",
           "props": Object {
-            "children": "Small - $15.00",
-            "value": "childcare_possible_answer-103469",
+            "children": "Male",
+            "value": "M",
           },
           "ref": null,
-          "rendered": "Small - $15.00",
+          "rendered": "Male",
           "type": "option",
         },
         Object {
           "instance": null,
-          "key": "childcare_possible_answer-103470",
+          "key": "F",
           "nodeType": "host",
           "props": Object {
-            "children": "Medium - $15.00",
-            "value": "childcare_possible_answer-103470",
+            "children": "Female",
+            "value": "F",
           },
           "ref": null,
-          "rendered": "Medium - $15.00",
-          "type": "option",
-        },
-        Object {
-          "instance": null,
-          "key": "childcare_possible_answer-103471",
-          "nodeType": "host",
-          "props": Object {
-            "children": "Large - $15.00",
-            "value": "childcare_possible_answer-103471",
-          },
-          "ref": null,
-          "rendered": "Large - $15.00",
-          "type": "option",
-        },
-        Object {
-          "instance": null,
-          "key": "childcare_possible_answer-103472",
-          "nodeType": "host",
-          "props": Object {
-            "children": "X-Large - $15.00",
-            "value": "childcare_possible_answer-103472",
-          },
-          "ref": null,
-          "rendered": "X-Large - $15.00",
+          "rendered": "Female",
           "type": "option",
         },
       ],
@@ -210,32 +162,22 @@ ShallowWrapper {
           disabled={false}
           onBlur={undefined}
           onChange={[Function]}
-          value={null}
+          value="U"
         >
           <option
-            value=""
+            value="U"
           >
-            -Select One-
+            Unspecified
           </option>
           <option
-            value="childcare_possible_answer-103469"
+            value="M"
           >
-            Small - $15.00
+            Male
           </option>
           <option
-            value="childcare_possible_answer-103470"
+            value="F"
           >
-            Medium - $15.00
-          </option>
-          <option
-            value="childcare_possible_answer-103471"
-          >
-            Large - $15.00
-          </option>
-          <option
-            value="childcare_possible_answer-103472"
-          >
-            X-Large - $15.00
+            Female
           </option>
         </select>,
         "className": "dxp-dropdown",
@@ -247,31 +189,22 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <option
-              value=""
-            >
-              -Select One-
-            </option>,
+            false,
             Array [
               <option
-                value="childcare_possible_answer-103469"
+                value="U"
               >
-                Small - $15.00
+                Unspecified
               </option>,
               <option
-                value="childcare_possible_answer-103470"
+                value="M"
               >
-                Medium - $15.00
+                Male
               </option>,
               <option
-                value="childcare_possible_answer-103471"
+                value="F"
               >
-                Large - $15.00
-              </option>,
-              <option
-                value="childcare_possible_answer-103472"
-              >
-                X-Large - $15.00
+                Female
               </option>,
             ],
           ],
@@ -279,68 +212,45 @@ ShallowWrapper {
           "disabled": false,
           "onBlur": undefined,
           "onChange": [Function],
-          "value": null,
+          "value": "U",
         },
         "ref": null,
         "rendered": Array [
+          false,
           Object {
             "instance": null,
-            "key": "default",
+            "key": "U",
             "nodeType": "host",
             "props": Object {
-              "children": "-Select One-",
-              "value": "",
+              "children": "Unspecified",
+              "value": "U",
             },
             "ref": null,
-            "rendered": "-Select One-",
+            "rendered": "Unspecified",
             "type": "option",
           },
           Object {
             "instance": null,
-            "key": "childcare_possible_answer-103469",
+            "key": "M",
             "nodeType": "host",
             "props": Object {
-              "children": "Small - $15.00",
-              "value": "childcare_possible_answer-103469",
+              "children": "Male",
+              "value": "M",
             },
             "ref": null,
-            "rendered": "Small - $15.00",
+            "rendered": "Male",
             "type": "option",
           },
           Object {
             "instance": null,
-            "key": "childcare_possible_answer-103470",
+            "key": "F",
             "nodeType": "host",
             "props": Object {
-              "children": "Medium - $15.00",
-              "value": "childcare_possible_answer-103470",
+              "children": "Female",
+              "value": "F",
             },
             "ref": null,
-            "rendered": "Medium - $15.00",
-            "type": "option",
-          },
-          Object {
-            "instance": null,
-            "key": "childcare_possible_answer-103471",
-            "nodeType": "host",
-            "props": Object {
-              "children": "Large - $15.00",
-              "value": "childcare_possible_answer-103471",
-            },
-            "ref": null,
-            "rendered": "Large - $15.00",
-            "type": "option",
-          },
-          Object {
-            "instance": null,
-            "key": "childcare_possible_answer-103472",
-            "nodeType": "host",
-            "props": Object {
-              "children": "X-Large - $15.00",
-              "value": "childcare_possible_answer-103472",
-            },
-            "ref": null,
-            "rendered": "X-Large - $15.00",
+            "rendered": "Female",
             "type": "option",
           },
         ],

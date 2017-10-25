@@ -8,7 +8,7 @@ Feel free to use and submit issues and pull requests!
 <!-- !toc -->
 
 * [Daxko Questions UI Library](#daxko-questions-ui-library)
-  * [Requirements](#requirements)
+  * [Installation](#installation)
   * [Development](#development)
   * [Usage](#usage)
   * [Question rendering examples](#question-rendering-examples)
@@ -34,13 +34,15 @@ Feel free to use and submit issues and pull requests!
 
 <!-- toc! -->
 
-## Requirements
+## Installation
 
-Install `node`
+* `npm install dxp-questions-ui`
+* Download latest release from [Github](https://github.com/daxko/dxp-questions-ui/releases/latest)
 
 ## Development
 
-* `npm install -g webpack`  if you don't have webpack installed already
+* Install `node`
+* `npm install -g webpack` if you don't have webpack installed already
 * `npm install`
 * `npm start`
 
@@ -1460,7 +1462,8 @@ Required libraries that need to be included before including dxp-questions-min.j
             </label>
         </div>
     </div>
-</div>```
+</div>
+```
 <!-- /include -->
 
 ### Date Question
@@ -1514,38 +1517,32 @@ Required libraries that need to be included before including dxp-questions-min.j
 ```json
 {
   "type": "dropdown",
-  "title": "What is your t-shirt size?",
-  "description": "A t-shirt is not included in the program price.",
+  "title": "Gender",
+  "description": "",
   "required": true,
   "read_only": false,
-  "default_value": null,
+  "default_value": "U",
   "possible_answers": [{
-      "id": "childcare_possible_answer-103469",
-      "value": "Small",
-      "amount": 15.0000,
-      "display_value": "Small - $15.00"
+      "id": "U",
+      "value": "Unspecified",
+      "amount": null,
+      "display_value": "Unspecified"
     },
     {
-      "id": "childcare_possible_answer-103470",
-      "value": "Medium",
-      "amount": 15.0000,
-      "display_value": "Medium - $15.00"
+      "id": "M",
+      "value": "Male",
+      "amount": null,
+      "display_value": "Male"
     },
     {
-      "id": "childcare_possible_answer-103471",
-      "value": "Large",
-      "amount": 15.0000,
-      "display_value": "Large - $15.00"
-    },
-    {
-      "id": "childcare_possible_answer-103472",
-      "value": "X-Large",
-      "amount": 15.0000,
-      "display_value": "X-Large - $15.00"
+      "id": "F",
+      "value": "Female",
+      "amount": null,
+      "display_value": "Female"
     }
   ],
-  "hide_empty_option": false,
-  "empty_value": ""
+  "hide_empty_option": true,
+  "empty_value": "U"
 }
 ```
 <!-- /include -->
@@ -1554,6 +1551,22 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 <!-- include (snippets/html/dropdown_question.html lang=html) -->
 ```html
+<div class="dxp-question-container">
+  <label class="dxp-question-title">
+    Gender
+    <span class="dxp-required-indicator">*</span>
+  </label>
+  <small class="dxp-question-help-text"></small>
+  <div class="dxp-question-body">
+    <div class="dxp-dropdown">
+      <select class="">
+        <option value="U">Unspecified</option>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select>
+    </div>
+  </div>
+</div>
 ```
 <!-- /include -->
 
