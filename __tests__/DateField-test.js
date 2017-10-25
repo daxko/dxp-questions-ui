@@ -5,7 +5,6 @@ import DateField from '../src/fields/DateField'
 const json = require('../snippets/json/date_question.json')
 
 configure({adapter: new Adapter() })
-jest.mock('jquery')
 
 describe('DateField component', () => {
   it.skip('should render a question', () => {
