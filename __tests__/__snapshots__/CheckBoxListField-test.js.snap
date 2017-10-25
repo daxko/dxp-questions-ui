@@ -1,0 +1,516 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxListField component should render a question 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CheckBoxListField
+    question={
+      Object {
+        "default_value": null,
+        "description": "",
+        "empty_value": "",
+        "hide_empty_option": false,
+        "possible_answers": Array [
+          Object {
+            "amount": null,
+            "display_value": "Soccer",
+            "id": "childcare_possible_answer-103475",
+            "value": "Soccer",
+          },
+          Object {
+            "amount": null,
+            "display_value": "Basketball",
+            "id": "childcare_possible_answer-103476",
+            "value": "Basketball",
+          },
+          Object {
+            "amount": null,
+            "display_value": "Swimming",
+            "id": "childcare_possible_answer-103477",
+            "value": "Swimming",
+          },
+          Object {
+            "amount": null,
+            "display_value": "Football",
+            "id": "childcare_possible_answer-103478",
+            "value": "Football",
+          },
+        ],
+        "read_only": false,
+        "required": false,
+        "title": "What other sports have you participated in?",
+        "type": "checkboxes",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <label>
+          <input
+            checked={false}
+            disabled={false}
+            name={undefined}
+            onBlur={undefined}
+            onChange={[Function]}
+            type="checkbox"
+            value="childcare_possible_answer-103475"
+          />
+          Soccer
+        </label>,
+        <label>
+          <input
+            checked={false}
+            disabled={false}
+            name={undefined}
+            onBlur={undefined}
+            onChange={[Function]}
+            type="checkbox"
+            value="childcare_possible_answer-103476"
+          />
+          Basketball
+        </label>,
+        <label>
+          <input
+            checked={false}
+            disabled={false}
+            name={undefined}
+            onBlur={undefined}
+            onChange={[Function]}
+            type="checkbox"
+            value="childcare_possible_answer-103477"
+          />
+          Swimming
+        </label>,
+        <label>
+          <input
+            checked={false}
+            disabled={false}
+            name={undefined}
+            onBlur={undefined}
+            onChange={[Function]}
+            type="checkbox"
+            value="childcare_possible_answer-103478"
+          />
+          Football
+        </label>,
+      ],
+      "className": "dxp-checkbox",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "childcare_possible_answer-103475",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              checked={false}
+              disabled={false}
+              name={undefined}
+              onBlur={undefined}
+              onChange={[Function]}
+              type="checkbox"
+              value="childcare_possible_answer-103475"
+            />,
+            "Soccer",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "checked": false,
+              "disabled": false,
+              "name": undefined,
+              "onBlur": undefined,
+              "onChange": [Function],
+              "type": "checkbox",
+              "value": "childcare_possible_answer-103475",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          "Soccer",
+        ],
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": "childcare_possible_answer-103476",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              checked={false}
+              disabled={false}
+              name={undefined}
+              onBlur={undefined}
+              onChange={[Function]}
+              type="checkbox"
+              value="childcare_possible_answer-103476"
+            />,
+            "Basketball",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "checked": false,
+              "disabled": false,
+              "name": undefined,
+              "onBlur": undefined,
+              "onChange": [Function],
+              "type": "checkbox",
+              "value": "childcare_possible_answer-103476",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          "Basketball",
+        ],
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": "childcare_possible_answer-103477",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              checked={false}
+              disabled={false}
+              name={undefined}
+              onBlur={undefined}
+              onChange={[Function]}
+              type="checkbox"
+              value="childcare_possible_answer-103477"
+            />,
+            "Swimming",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "checked": false,
+              "disabled": false,
+              "name": undefined,
+              "onBlur": undefined,
+              "onChange": [Function],
+              "type": "checkbox",
+              "value": "childcare_possible_answer-103477",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          "Swimming",
+        ],
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": "childcare_possible_answer-103478",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              checked={false}
+              disabled={false}
+              name={undefined}
+              onBlur={undefined}
+              onChange={[Function]}
+              type="checkbox"
+              value="childcare_possible_answer-103478"
+            />,
+            "Football",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "checked": false,
+              "disabled": false,
+              "name": undefined,
+              "onBlur": undefined,
+              "onChange": [Function],
+              "type": "checkbox",
+              "value": "childcare_possible_answer-103478",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          "Football",
+        ],
+        "type": "label",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <label>
+            <input
+              checked={false}
+              disabled={false}
+              name={undefined}
+              onBlur={undefined}
+              onChange={[Function]}
+              type="checkbox"
+              value="childcare_possible_answer-103475"
+            />
+            Soccer
+          </label>,
+          <label>
+            <input
+              checked={false}
+              disabled={false}
+              name={undefined}
+              onBlur={undefined}
+              onChange={[Function]}
+              type="checkbox"
+              value="childcare_possible_answer-103476"
+            />
+            Basketball
+          </label>,
+          <label>
+            <input
+              checked={false}
+              disabled={false}
+              name={undefined}
+              onBlur={undefined}
+              onChange={[Function]}
+              type="checkbox"
+              value="childcare_possible_answer-103477"
+            />
+            Swimming
+          </label>,
+          <label>
+            <input
+              checked={false}
+              disabled={false}
+              name={undefined}
+              onBlur={undefined}
+              onChange={[Function]}
+              type="checkbox"
+              value="childcare_possible_answer-103478"
+            />
+            Football
+          </label>,
+        ],
+        "className": "dxp-checkbox",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "childcare_possible_answer-103475",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                checked={false}
+                disabled={false}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                type="checkbox"
+                value="childcare_possible_answer-103475"
+              />,
+              "Soccer",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "checked": false,
+                "disabled": false,
+                "name": undefined,
+                "onBlur": undefined,
+                "onChange": [Function],
+                "type": "checkbox",
+                "value": "childcare_possible_answer-103475",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            "Soccer",
+          ],
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": "childcare_possible_answer-103476",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                checked={false}
+                disabled={false}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                type="checkbox"
+                value="childcare_possible_answer-103476"
+              />,
+              "Basketball",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "checked": false,
+                "disabled": false,
+                "name": undefined,
+                "onBlur": undefined,
+                "onChange": [Function],
+                "type": "checkbox",
+                "value": "childcare_possible_answer-103476",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            "Basketball",
+          ],
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": "childcare_possible_answer-103477",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                checked={false}
+                disabled={false}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                type="checkbox"
+                value="childcare_possible_answer-103477"
+              />,
+              "Swimming",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "checked": false,
+                "disabled": false,
+                "name": undefined,
+                "onBlur": undefined,
+                "onChange": [Function],
+                "type": "checkbox",
+                "value": "childcare_possible_answer-103477",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            "Swimming",
+          ],
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": "childcare_possible_answer-103478",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                checked={false}
+                disabled={false}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                type="checkbox"
+                value="childcare_possible_answer-103478"
+              />,
+              "Football",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "checked": false,
+                "disabled": false,
+                "name": undefined,
+                "onBlur": undefined,
+                "onChange": [Function],
+                "type": "checkbox",
+                "value": "childcare_possible_answer-103478",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            "Football",
+          ],
+          "type": "label",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

@@ -33,25 +33,15 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 ## Question rendering examples
 
-### Text Question
+### Address
 
 #### JSON
 
-!include (snippets/json/text_question.json lang=json)
+!include (snippets/json/address_question.json lang=json)
 
 #### HTML
 
-!include (snippets/html/text_question.html lang=html)
-
-### Name Question
-
-#### JSON
-
-!include (snippets/json/name_question.json lang=json)
-
-#### HTML
-
-!include (snippets/html/name_question.html lang=html)
+!include (snippets/html/address_question.html lang=html)
 
 ### Checkbox Question
 
@@ -62,6 +52,46 @@ Required libraries that need to be included before including dxp-questions-min.j
 #### HTML
 
 !include (snippets/html/checkbox_question.html lang=html)
+
+### Date Question
+
+#### JSON
+
+!include (snippets/json/date_question.json lang=json)
+
+#### HTML
+
+!include (snippets/html/date_question.html lang=html)
+
+### Dropdown Question
+
+#### JSON
+
+!include (snippets/json/dropdown_question.json lang=json)
+
+#### HTML
+
+!include (snippets/html/dropdown_question.html lang=html)
+
+### Email Question
+
+#### JSON
+
+!include (snippets/json/email_question.json lang=json)
+
+#### HTML
+
+!include (snippets/html/email_question.html lang=html)
+
+### Name Question
+
+#### JSON
+
+!include (snippets/json/name_question.json lang=json)
+
+#### HTML
+
+!include (snippets/html/name_question.html lang=html)
 
 ### Phone Question
 
@@ -83,25 +113,15 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 !include (snippets/html/radio_question.html lang=html)
 
-### Date Question
+### Text Question
 
 #### JSON
 
-!include (snippets/json/date_question.json lang=json)
+!include (snippets/json/text_question.json lang=json)
 
 #### HTML
 
-!include (snippets/html/date_question.html lang=html)
-
-### Address
-
-#### JSON
-
-!include (snippets/json/address_question.json lang=json)
-
-#### HTML
-
-!include (snippets/html/address_question.html lang=html)
+!include (snippets/html/text_question.html lang=html)
 
 # Javascript API
 

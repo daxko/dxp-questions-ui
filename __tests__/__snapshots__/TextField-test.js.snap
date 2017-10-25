@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField component should render a question 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TextField
+    possible_answers={undefined}
+    question={
+      Object {
+        "description": "For example, peanuts, dairy, eggs, gluten, wheat, etc.",
+        "max_length": 50,
+        "read_only": false,
+        "required": false,
+        "title": "Please specify any food allergies",
+        "type": "text",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "className": undefined,
+      "maxLength": 50,
+      "onBlur": undefined,
+      "onChange": undefined,
+      "onKeyPress": [Function],
+      "readOnly": false,
+      "type": "text",
+      "value": "",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": "input",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "className": undefined,
+        "maxLength": 50,
+        "onBlur": undefined,
+        "onChange": undefined,
+        "onKeyPress": [Function],
+        "readOnly": false,
+        "type": "text",
+        "value": "",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "input",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

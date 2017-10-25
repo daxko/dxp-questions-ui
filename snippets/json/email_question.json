@@ -1,0 +1,9 @@
+{
+  "type": "email",
+  "title": "E-mail address",
+  "description": "We will not send unsolicited emails.",
+  "required": true,
+  "read_only": false,
+  "max_length": 100,
+  "pattern": "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"
+}

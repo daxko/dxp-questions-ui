@@ -1,0 +1,360 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropDownField component should render a question 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <DropDownField
+    question={
+      Object {
+        "default_value": null,
+        "description": "A t-shirt is not included in the program price.",
+        "empty_value": "",
+        "hide_empty_option": false,
+        "possible_answers": Array [
+          Object {
+            "amount": 15,
+            "display_value": "Small - $15.00",
+            "id": "childcare_possible_answer-103469",
+            "value": "Small",
+          },
+          Object {
+            "amount": 15,
+            "display_value": "Medium - $15.00",
+            "id": "childcare_possible_answer-103470",
+            "value": "Medium",
+          },
+          Object {
+            "amount": 15,
+            "display_value": "Large - $15.00",
+            "id": "childcare_possible_answer-103471",
+            "value": "Large",
+          },
+          Object {
+            "amount": 15,
+            "display_value": "X-Large - $15.00",
+            "id": "childcare_possible_answer-103472",
+            "value": "X-Large",
+          },
+        ],
+        "read_only": false,
+        "required": true,
+        "title": "What is your t-shirt size?",
+        "type": "dropdown",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": <select
+        className={undefined}
+        disabled={false}
+        onBlur={undefined}
+        onChange={[Function]}
+        value={null}
+      >
+        <option
+          value=""
+        >
+          -Select One-
+        </option>
+        <option
+          value="childcare_possible_answer-103469"
+        >
+          Small - $15.00
+        </option>
+        <option
+          value="childcare_possible_answer-103470"
+        >
+          Medium - $15.00
+        </option>
+        <option
+          value="childcare_possible_answer-103471"
+        >
+          Large - $15.00
+        </option>
+        <option
+          value="childcare_possible_answer-103472"
+        >
+          X-Large - $15.00
+        </option>
+      </select>,
+      "className": "dxp-dropdown",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <option
+            value=""
+          >
+            -Select One-
+          </option>,
+          Array [
+            <option
+              value="childcare_possible_answer-103469"
+            >
+              Small - $15.00
+            </option>,
+            <option
+              value="childcare_possible_answer-103470"
+            >
+              Medium - $15.00
+            </option>,
+            <option
+              value="childcare_possible_answer-103471"
+            >
+              Large - $15.00
+            </option>,
+            <option
+              value="childcare_possible_answer-103472"
+            >
+              X-Large - $15.00
+            </option>,
+          ],
+        ],
+        "className": undefined,
+        "disabled": false,
+        "onBlur": undefined,
+        "onChange": [Function],
+        "value": null,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "default",
+          "nodeType": "host",
+          "props": Object {
+            "children": "-Select One-",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": "-Select One-",
+          "type": "option",
+        },
+        Object {
+          "instance": null,
+          "key": "childcare_possible_answer-103469",
+          "nodeType": "host",
+          "props": Object {
+            "children": "Small - $15.00",
+            "value": "childcare_possible_answer-103469",
+          },
+          "ref": null,
+          "rendered": "Small - $15.00",
+          "type": "option",
+        },
+        Object {
+          "instance": null,
+          "key": "childcare_possible_answer-103470",
+          "nodeType": "host",
+          "props": Object {
+            "children": "Medium - $15.00",
+            "value": "childcare_possible_answer-103470",
+          },
+          "ref": null,
+          "rendered": "Medium - $15.00",
+          "type": "option",
+        },
+        Object {
+          "instance": null,
+          "key": "childcare_possible_answer-103471",
+          "nodeType": "host",
+          "props": Object {
+            "children": "Large - $15.00",
+            "value": "childcare_possible_answer-103471",
+          },
+          "ref": null,
+          "rendered": "Large - $15.00",
+          "type": "option",
+        },
+        Object {
+          "instance": null,
+          "key": "childcare_possible_answer-103472",
+          "nodeType": "host",
+          "props": Object {
+            "children": "X-Large - $15.00",
+            "value": "childcare_possible_answer-103472",
+          },
+          "ref": null,
+          "rendered": "X-Large - $15.00",
+          "type": "option",
+        },
+      ],
+      "type": "select",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": <select
+          className={undefined}
+          disabled={false}
+          onBlur={undefined}
+          onChange={[Function]}
+          value={null}
+        >
+          <option
+            value=""
+          >
+            -Select One-
+          </option>
+          <option
+            value="childcare_possible_answer-103469"
+          >
+            Small - $15.00
+          </option>
+          <option
+            value="childcare_possible_answer-103470"
+          >
+            Medium - $15.00
+          </option>
+          <option
+            value="childcare_possible_answer-103471"
+          >
+            Large - $15.00
+          </option>
+          <option
+            value="childcare_possible_answer-103472"
+          >
+            X-Large - $15.00
+          </option>
+        </select>,
+        "className": "dxp-dropdown",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <option
+              value=""
+            >
+              -Select One-
+            </option>,
+            Array [
+              <option
+                value="childcare_possible_answer-103469"
+              >
+                Small - $15.00
+              </option>,
+              <option
+                value="childcare_possible_answer-103470"
+              >
+                Medium - $15.00
+              </option>,
+              <option
+                value="childcare_possible_answer-103471"
+              >
+                Large - $15.00
+              </option>,
+              <option
+                value="childcare_possible_answer-103472"
+              >
+                X-Large - $15.00
+              </option>,
+            ],
+          ],
+          "className": undefined,
+          "disabled": false,
+          "onBlur": undefined,
+          "onChange": [Function],
+          "value": null,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "default",
+            "nodeType": "host",
+            "props": Object {
+              "children": "-Select One-",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": "-Select One-",
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "childcare_possible_answer-103469",
+            "nodeType": "host",
+            "props": Object {
+              "children": "Small - $15.00",
+              "value": "childcare_possible_answer-103469",
+            },
+            "ref": null,
+            "rendered": "Small - $15.00",
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "childcare_possible_answer-103470",
+            "nodeType": "host",
+            "props": Object {
+              "children": "Medium - $15.00",
+              "value": "childcare_possible_answer-103470",
+            },
+            "ref": null,
+            "rendered": "Medium - $15.00",
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "childcare_possible_answer-103471",
+            "nodeType": "host",
+            "props": Object {
+              "children": "Large - $15.00",
+              "value": "childcare_possible_answer-103471",
+            },
+            "ref": null,
+            "rendered": "Large - $15.00",
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "childcare_possible_answer-103472",
+            "nodeType": "host",
+            "props": Object {
+              "children": "X-Large - $15.00",
+              "value": "childcare_possible_answer-103472",
+            },
+            "ref": null,
+            "rendered": "X-Large - $15.00",
+            "type": "option",
+          },
+        ],
+        "type": "select",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

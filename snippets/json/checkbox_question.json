@@ -1,31 +1,35 @@
 {
-  "type": "checkboxes",
-  "title": "A Multivalue with fees due at first instance",
-  "description": null,
-  "required": true,
-  "read_only": false,
-  "default_value": null,
-  "possible_answers": [
-      {
-          "id": "childcare_945945",
-          "value": "1",
-          "amount": 100.0000,
-          "metadata": {},
-          "display_value": "1 - $100.00"
-      },
-      {
-          "id": "childcare_945946",
-          "value": "2",
-          "amount": 200.0000,
-          "metadata": {},
-          "display_value": "2 - $200.00"
-      },
-      {
-          "id": "childcare_945947",
-          "value": "3",
-          "amount": 300.0000,
-          "metadata": {},
-          "display_value": "3 - $300.00"
-      }
-  ]
+    "type": "checkboxes",
+    "title": "What other sports have you participated in?",
+    "description": "",
+    "required": false,
+    "read_only": false,
+    "default_value": null,
+    "possible_answers": [{
+            "id": "childcare_possible_answer-103475",
+            "value": "Soccer",
+            "amount": null,
+            "display_value": "Soccer"
+        },
+        {
+            "id": "childcare_possible_answer-103476",
+            "value": "Basketball",
+            "amount": null,
+            "display_value": "Basketball"
+        },
+        {
+            "id": "childcare_possible_answer-103477",
+            "value": "Swimming",
+            "amount": null,
+            "display_value": "Swimming"
+        },
+        {
+            "id": "childcare_possible_answer-103478",
+            "value": "Football",
+            "amount": null,
+            "display_value": "Football"
+        }
+    ],
+    "hide_empty_option": false,
+    "empty_value": ""
 }

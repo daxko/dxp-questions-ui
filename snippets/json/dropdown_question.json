@@ -1,1 +1,35 @@
-
+{
+  "type": "dropdown",
+  "title": "What is your t-shirt size?",
+  "description": "A t-shirt is not included in the program price.",
+  "required": true,
+  "read_only": false,
+  "default_value": null,
+  "possible_answers": [{
+      "id": "childcare_possible_answer-103469",
+      "value": "Small",
+      "amount": 15.0000,
+      "display_value": "Small - $15.00"
+    },
+    {
+      "id": "childcare_possible_answer-103470",
+      "value": "Medium",
+      "amount": 15.0000,
+      "display_value": "Medium - $15.00"
+    },
+    {
+      "id": "childcare_possible_answer-103471",
+      "value": "Large",
+      "amount": 15.0000,
+      "display_value": "Large - $15.00"
+    },
+    {
+      "id": "childcare_possible_answer-103472",
+      "value": "X-Large",
+      "amount": 15.0000,
+      "display_value": "X-Large - $15.00"
+    }
+  ],
+  "hide_empty_option": false,
+  "empty_value": ""
+}
