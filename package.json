@@ -1,6 +1,6 @@
 {
   "name": "dxp-questions-ui",
-  "version": "0.1.0-prerelease.3",
+  "version": "0.1.0",
   "description": "The `dxp-questions-ui` library renders questions and answers that are provided by the Daxko Operations API.",
   "homepage": "http://www.daxko.com",
   "repository": "daxko/dxp-questions-ui",
