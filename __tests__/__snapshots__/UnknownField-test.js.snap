@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnknownField component should render a question 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <UnknownField
+    question={
+      Object {
+        "description": "",
+        "max_length": 50,
+        "read_only": false,
+        "required": false,
+        "title": "This question will not be rendered.",
+        "type": "nonexistent",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        "UNKNOWN field type of ",
+        "nonexistent",
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      "UNKNOWN field type of ",
+      "nonexistent",
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          "UNKNOWN field type of ",
+          "nonexistent",
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        "UNKNOWN field type of ",
+        "nonexistent",
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

@@ -12,13 +12,15 @@ Feel free to use and submit issues and pull requests!
   * [Development](#development)
   * [Usage](#usage)
   * [Question rendering examples](#question-rendering-examples)
-    * [Text Question](#text-question)
-    * [Name Question](#name-question)
+    * [Address](#address)
     * [Checkbox Question](#checkbox-question)
+    * [Date Question](#date-question)
+    * [Dropdown Question](#dropdown-question)
+    * [Email Question](#email-question)
+    * [Name Question](#name-question)
     * [Phone Question](#phone-question)
     * [Radio Question](#radio-question)
-    * [Date Question](#date-question)
-    * [Address](#address)
+    * [Text Question](#text-question)
 * [Javascript API](#javascript-api)
   * [Classes](#classes)
   * [Typedefs](#typedefs)
@@ -72,364 +74,6 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 ## Question rendering examples
 
-### Text Question
-
-#### JSON
-
-<!-- include (snippets/json/text_question.json lang=json) -->
-```json
-{
-  "type": "text",
-  "title": "Sample text question",
-  "description": "Please answer this question honestly",
-  "required": true,
-  "read_only": false,
-  "max_length": 255
-}
-```
-<!-- /include -->
-
-#### HTML
-
-<!-- include (snippets/html/text_question.html lang=html) -->
-```html
-<div class="dxp-question-container">
-    <label class="dxp-question-title">Sample text question
-        <span class="dxp-required-indicator">*</span>
-    </label>
-    <small class="dxp-question-help-text">Please answer this question honestly</small>
-    <div class="dxp-question-body">
-        <input type="text" maxlength="255" value="" class="">
-    </div>
-</div>
-```
-<!-- /include -->
-
-### Name Question
-
-#### JSON
-
-<!-- include (snippets/json/name_question.json lang=json) -->
-```json
-{
-  "type": "name",
-  "title": "What is your mom's name?",
-  "description": null,
-  "required": true,
-  "read_only": false,
-  "show_first": true,
-  "show_middle": true,
-  "show_last": true,
-  "show_prefix": true,
-  "show_suffix": true,
-  "prefixes": [
-      {
-          "id": "Mr.",
-          "value": "Mr."
-      },
-      {
-          "id": "Ms.",
-          "value": "Ms."
-      },
-      ...
-  ],
-  "suffixes": [
-      {
-          "id": "Jr.",
-          "value": "Jr."
-      },
-      {
-          "id": "Sr.",
-          "value": "Sr."
-      },
-      ...
-  ]
-}
-```
-<!-- /include -->
-
-#### HTML
-
-<!-- include (snippets/html/name_question.html lang=html) -->
-```html
-
-<div class="dxp-question-container">
-  <label class="dxp-question-title">
-      What is your mom's name?
-      <span class="dxp-required-indicator">*</span>
-  </label>
-  <small class="dxp-question-help-text"></small>
-  <div class="dxp-question-body">
-      <div class="dxp-name-question">
-          <div class="dxp-name-prefix">
-              <label class="dxp-name-prefix-label">Prefix</label>
-              <select class="dxp-name-prefix-select">
-                  <option></option>
-                  <option value="Mr.">Mr.</option>
-                  <option value="Ms.">Ms.</option>
-                  ...
-              </select>
-          </div>
-          <div class="dxp-name-first">
-              <label class="dxp-name-first-label">First</label>
-              <input type="text" maxlength="50" class="" value="">
-          </div>
-          <div class="dxp-name-middle">
-              <label class="dxp-name-middle-label">Middle</label>
-              <input type="text" maxlength="50" class="" value="">
-          </div>
-          <div class="dxp-name-last">
-              <label class="dxp-name-last-label">Last</label>
-              <input type="text" maxlength="50" class="" value="">
-          </div>
-          <div class="dxp-name-suffix">
-              <label class="dxp-name-suffix-label">Suffix</label>
-              <select class="dxp-name-suffix-select">
-                  <option></option>
-                  <option value="Jr.">Jr.</option>
-                  <option value="Sr.">Sr.</option>
-                  ...
-              </select>
-          </div>
-      </div>
-  </div>
-</div>
-```
-<!-- /include -->
-
-### Checkbox Question
-
-#### JSON
-
-<!-- include (snippets/json/checkbox_question.json lang=json) -->
-```json
-{
-  "type": "checkboxes",
-  "title": "A Multivalue with fees due at first instance",
-  "description": null,
-  "required": true,
-  "read_only": false,
-  "default_value": null,
-  "possible_answers": [
-      {
-          "id": "childcare_945945",
-          "value": "1",
-          "amount": 100.0000,
-          "metadata": {},
-          "display_value": "1 - $100.00"
-      },
-      {
-          "id": "childcare_945946",
-          "value": "2",
-          "amount": 200.0000,
-          "metadata": {},
-          "display_value": "2 - $200.00"
-      },
-      {
-          "id": "childcare_945947",
-          "value": "3",
-          "amount": 300.0000,
-          "metadata": {},
-          "display_value": "3 - $300.00"
-      }
-  ]
-}
-```
-<!-- /include -->
-
-#### HTML
-
-<!-- include (snippets/html/checkbox_question.html lang=html) -->
-```html
-<div class="dxp-question-container">
-  <label class="dxp-question-title">
-      A Multivalue with fees due at first instance
-      <span class="dxp-required-indicator">*</span>
-  </label>
-  <small class="dxp-question-help-text"></small>
-  <div class="dxp-question-body">
-      <div class="dxp-checkbox">
-          <label>
-              <input type="checkbox" name="childcare_checkboxes-944944" value="childcare_945945">
-              1 - $100.00
-          </label>
-          <label>
-              <input type="checkbox" name="childcare_checkboxes-944944" value="childcare_945946">
-              2 - $200.00
-          </label>
-          <label>
-              <input type="checkbox" name="childcare_checkboxes-944944" value="childcare_945947">
-              3 - $300.00
-          </label>
-      </div>
-  </div>
-</div>
-```
-<!-- /include -->
-
-### Phone Question
-
-#### JSON
-
-<!-- include (snippets/json/phone_question.json lang=json) -->
-```json
-{
-  "type": "phone",
-  "title": "Phone",
-  "description": "Phone number",
-  "required": true,
-  "read_only": false,
-  "max_length": null,
-  "show_extension": true,
-  "intl": true
-}
-```
-<!-- /include -->
-
-#### HTML
-
-<!-- include (snippets/html/phone_question.html lang=html) -->
-```html
-<div class="dxp-question-container">
-    <label class="dxp-question-title">
-        A Multivalue with fees due at first instance
-        <span class="dxp-required-indicator">*</span>
-    </label>
-    <small class="dxp-question-help-text"></small>
-    <div class="dxp-question-body">
-        <div class="dxp-checkbox">
-            <label>
-                <input type="checkbox"
-                    name="childcare_checkboxes-944944"
-                    value="childcare_945945">
-                1 - $100.00
-            </label>
-            <label>
-                <input type="checkbox"
-                    name="childcare_checkboxes-944944"
-                    value="childcare_945946">
-                2 - $200.00
-            </label>
-            <label>
-                <input type="checkbox"
-                    name="childcare_checkboxes-944944"
-                    value="childcare_945947">
-                3 - $300.00
-            </label>
-        </div>
-    </div>
-</div>
-```
-<!-- /include -->
-
-### Radio Question
-
-#### JSON
-
-<!-- include (snippets/json/radio_question.json lang=json) -->
-```json
-{
-  "type": "radio",
-  "title": "What is your gender?",
-  "description": "Please answer honestly",
-  "required": true,
-  "read_only": false,
-  "default_value": null,
-  "possible_answers": [
-      {
-          "id": "childcare_867867",
-          "value": "Male",
-          "amount": null,
-          "metadata": {},
-          "display_value": "Male"
-      },
-      {
-          "id": "childcare_867868",
-          "value": "Female",
-          "amount": null,
-          "metadata": {},
-          "display_value": "Female"
-      }
-  ]
-}
-```
-<!-- /include -->
-
-#### HTML
-
-<!-- include (snippets/html/radio_question.html lang=html) -->
-```html
-<div class="dxp-question-container">
-  <label class="dxp-question-title">
-      What is your gender?
-      <span class="dxp-required-indicator">*</span>
-  </label>
-  <small class="dxp-question-help-text">Please answer honestly</small>
-  <div class="dxp-question-body">
-      <div class="dxp-radio">
-          <label>
-              <input type="radio"
-                  name="childcare_radio-866867"
-                  value="childcare_867867"
-                  class="">
-              Male
-          </label>
-          <label>
-              <input type="radio"
-                  name="childcare_radio-866867"
-                  value="childcare_867868"
-                  class="">
-              Female
-          </label>
-      </div>
-  </div>
-</div>
-```
-<!-- /include -->
-
-### Date Question
-
-#### JSON
-
-<!-- include (snippets/json/date_question.json lang=json) -->
-```json
-{
-  "type": "date",
-  "title": "When is your dog's birth date?",
-  "description": "If you don't have a dog, lie.",
-  "required": true,
-  "read_only": false,
-  "max_length": null
-}
-```
-<!-- /include -->
-
-#### HTML
-
-<!-- include (snippets/html/date_question.html lang=html) -->
-```html
-<div class="dxp-question-container">
-  <label class="dxp-question-title">
-      When is your dog's birth date?
-      <span class="dxp-required-indicator">*</span>
-  </label>
-  <small class="dxp-question-help-text">If you don't have a dog, lie.</small>
-  <div class="dxp-question-body">
-      <div>
-          <input type="text" class="datepicker-input" placeholder="MM/DD/YYYY" maxlength="10" value="" id="P1494944068" aria-haspopup="true"
-              aria-expanded="false" aria-readonly="false" aria-owns="P1494944068_root">
-          <div class="datepicker-wrap" id="P1494944068_root" aria-hidden="true">
-              <!-- date-picker internals -->
-          </div>
-          <a class="datepicker-icon">
-              <!-- date-picker internals -->
-          </a>
-      </div>
-  </div>
-</div>
-```
-<!-- /include -->
-
 ### Address
 
 #### JSON
@@ -439,11 +83,10 @@ Required libraries that need to be included before including dxp-questions-min.j
 {
   "type": "address",
   "title": "Home Address",
-  "description": "Please provide your current home address",
+  "description": "This is where your t-shirt will be shipped to.",
   "required": true,
   "read_only": false,
-  "ca_provinces": [
-    {
+  "ca_provinces": [{
       "id": "AB",
       "name": "Alberta"
     },
@@ -496,8 +139,7 @@ Required libraries that need to be included before including dxp-questions-min.j
       "name": "Yukon"
     }
   ],
-  "countries": [
-    {
+  "countries": [{
       "id": "AF",
       "name": "Afghanistan"
     },
@@ -1464,53 +1106,771 @@ Required libraries that need to be included before including dxp-questions-min.j
 <!-- include (snippets/html/address_question.html lang=html) -->
 ```html
 <div class="dxp-question-container">
+    <label class="dxp-question-title">
+        Home Address
+        <span class="dxp-required-indicator">*</span>
+    </label>
+    <small class="dxp-question-help-text">This is where your t-shirt will be shipped to.</small>
+    <div class="dxp-question-body">
+        <div class="dxp-name-question">
+            <div class="dxp-address-line1" title="is required.">
+                <label>Address Line 1</label>
+                <input type="text" maxlength="50" class="dxp-field-error" value="">
+                <div class="dxp-error-description">is required.</div>
+            </div>
+            <div class="dxp-address-line2">
+                <label>Address Line 2</label>
+                <input type="text" maxlength="50" class="" value="">
+            </div>
+            <div class="dxp-address-city" title="is required.">
+                <label>City</label>
+                <input type="text" maxlength="50" class="dxp-field-error" value="">
+                <div class="dxp-error-description">is required.</div>
+            </div>
+            <div class="dxp-address-state">
+                <label>Province/Region</label>
+                <input type="text" maxlength="50" class="" value="AL">
+            </div>
+            <div class="dxp-address-zip" title="is required.">
+                <label>Postal Code</label>
+                <input type="text" placeholder="" maxlength="15" class="dxp-field-error" value="">
+                <div class="dxp-error-description">is required.</div>
+            </div>
+            <div class="dxp-address-country">
+                <label>Country</label>
+                <select class="">
+                    <option></option>
+                    <option value="AF">Afghanistan</option>
+                    <option value="AL">Albania</option>
+                    <option value="DZ">Algeria</option>
+                    <option value="AS">American Samoa</option>
+                    <option value="AD">Andorra</option>
+                    <option value="AO">Angola</option>
+                    <option value="AI">Anguilla</option>
+                    <option value="AQ">Antarctica</option>
+                    <option value="AG">Antigua And Barbuda</option>
+                    <option value="AR">Argentina</option>
+                    <option value="AM">Armenia</option>
+                    <option value="AW">Aruba</option>
+                    <option value="AU">Australia</option>
+                    <option value="AT">Austria</option>
+                    <option value="AZ">Azerbaijan</option>
+                    <option value="BS">Bahamas</option>
+                    <option value="BH">Bahrain</option>
+                    <option value="BD">Bangladesh</option>
+                    <option value="BB">Barbados</option>
+                    <option value="BY">Belarus</option>
+                    <option value="BE">Belgium</option>
+                    <option value="BZ">Belize</option>
+                    <option value="BJ">Benin</option>
+                    <option value="BM">Bermuda</option>
+                    <option value="BT">Bhutan</option>
+                    <option value="BO">Bolivia</option>
+                    <option value="BA">Bosnia And Herzegowina</option>
+                    <option value="BW">Botswana</option>
+                    <option value="BV">Bouvet Island</option>
+                    <option value="BR">Brazil</option>
+                    <option value="IO">British Indian Ocean Territory</option>
+                    <option value="BN">Brunei Darussalam</option>
+                    <option value="BG">Bulgaria</option>
+                    <option value="BF">Burkina Faso</option>
+                    <option value="BI">Burundi</option>
+                    <option value="KH">Cambodia</option>
+                    <option value="CM">Cameroon</option>
+                    <option value="CA">Canada</option>
+                    <option value="CV">Cape Verde</option>
+                    <option value="KY">Cayman Islands</option>
+                    <option value="CF">Central African Republic</option>
+                    <option value="TD">Chad</option>
+                    <option value="CL">Chile</option>
+                    <option value="CN">China</option>
+                    <option value="CX">Christmas Island</option>
+                    <option value="CC">Cocos (Keeling) Islands</option>
+                    <option value="CO">Colombia</option>
+                    <option value="KM">Comoros</option>
+                    <option value="CG">Congo</option>
+                    <option value="CD">Congo, The Democratic Republic Of The</option>
+                    <option value="CK">Cook Islands</option>
+                    <option value="CR">Costa Rica</option>
+                    <option value="CI">Cote D'ivoire</option>
+                    <option value="HR">Croatia (Local Name: Hrvatska)</option>
+                    <option value="CU">Cuba</option>
+                    <option value="CY">Cyprus</option>
+                    <option value="CZ">Czech Republic</option>
+                    <option value="DK">Denmark</option>
+                    <option value="DJ">Djibouti</option>
+                    <option value="DM">Dominica</option>
+                    <option value="DO">Dominican Republic</option>
+                    <option value="TP">East Timor</option>
+                    <option value="EC">Ecuador</option>
+                    <option value="EG">Egypt</option>
+                    <option value="SV">El Salvador</option>
+                    <option value="GQ">Equatorial Guinea</option>
+                    <option value="ER">Eritrea</option>
+                    <option value="EE">Estonia</option>
+                    <option value="ET">Ethiopia</option>
+                    <option value="FK">Falkland Islands (Malvinas)</option>
+                    <option value="FO">Faroe Islands</option>
+                    <option value="FJ">Fiji</option>
+                    <option value="FI">Finland</option>
+                    <option value="FR">France</option>
+                    <option value="FX">France, Metropolitan</option>
+                    <option value="GF">French Guiana</option>
+                    <option value="PF">French Polynesia</option>
+                    <option value="TF">French Southern Territories</option>
+                    <option value="GA">Gabon</option>
+                    <option value="GM">Gambia</option>
+                    <option value="GE">Georgia</option>
+                    <option value="DE">Germany</option>
+                    <option value="GH">Ghana</option>
+                    <option value="GI">Gibraltar</option>
+                    <option value="GR">Greece</option>
+                    <option value="GL">Greenland</option>
+                    <option value="GD">Grenada</option>
+                    <option value="GP">Guadeloupe</option>
+                    <option value="GU">Guam</option>
+                    <option value="GT">Guatemala</option>
+                    <option value="GN">Guinea</option>
+                    <option value="GW">Guinea-bissau</option>
+                    <option value="GY">Guyana</option>
+                    <option value="HT">Haiti</option>
+                    <option value="HM">Heard And McDonald Islands</option>
+                    <option value="VA">Holy See (Vatican City State)</option>
+                    <option value="HN">Honduras</option>
+                    <option value="HK">Hong Kong</option>
+                    <option value="HU">Hungary</option>
+                    <option value="IS">Iceland</option>
+                    <option value="IN">India</option>
+                    <option value="ID">Indonesia</option>
+                    <option value="IR">Iran (Islamic Republic Of)</option>
+                    <option value="IQ">Iraq</option>
+                    <option value="IE">Ireland</option>
+                    <option value="IL">Israel</option>
+                    <option value="IT">Italy</option>
+                    <option value="JM">Jamaica</option>
+                    <option value="JP">Japan</option>
+                    <option value="JO">Jordan</option>
+                    <option value="KZ">Kazakhstan</option>
+                    <option value="KE">Kenya</option>
+                    <option value="KI">Kiribati</option>
+                    <option value="KP">Korea, Democratic People's Republic Of</option>
+                    <option value="KR">Korea, Republic Of</option>
+                    <option value="KW">Kuwait</option>
+                    <option value="KG">Kyrgyzstan</option>
+                    <option value="LA">Lao People's Democratic Republic</option>
+                    <option value="LV">Latvia</option>
+                    <option value="LB">Lebanon</option>
+                    <option value="LS">Lesotho</option>
+                    <option value="LR">Liberia</option>
+                    <option value="LY">Libyan Arab Jamahiriya</option>
+                    <option value="LI">Liechtenstein</option>
+                    <option value="LT">Lithuania</option>
+                    <option value="LU">Luxembourg</option>
+                    <option value="MO">Macau</option>
+                    <option value="MK">Macedonia, Former Yugoslav Republic Of</option>
+                    <option value="MG">Madagascar</option>
+                    <option value="MW">Malawi</option>
+                    <option value="MY">Malaysia</option>
+                    <option value="MV">Maldives</option>
+                    <option value="ML">Mali</option>
+                    <option value="MT">Malta</option>
+                    <option value="MH">Marshall Islands</option>
+                    <option value="MQ">Martinique</option>
+                    <option value="MR">Mauritania</option>
+                    <option value="MU">Mauritius</option>
+                    <option value="YT">Mayotte</option>
+                    <option value="MX">Mexico</option>
+                    <option value="FM">Micronesia, Federated States Of</option>
+                    <option value="MD">Moldova, Republic Of</option>
+                    <option value="MC">Monaco</option>
+                    <option value="MN">Mongolia</option>
+                    <option value="MS">Montserrat</option>
+                    <option value="MA">Morocco</option>
+                    <option value="MZ">Mozambique</option>
+                    <option value="MM">Myanmar</option>
+                    <option value="NA">Namibia</option>
+                    <option value="NR">Nauru</option>
+                    <option value="NP">Nepal</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="AN">Netherlands Antilles</option>
+                    <option value="NC">New Caledonia</option>
+                    <option value="NZ">New Zealand</option>
+                    <option value="NI">Nicaragua</option>
+                    <option value="NE">Niger</option>
+                    <option value="NG">Nigeria</option>
+                    <option value="NU">Niue</option>
+                    <option value="NF">Norfolk Island</option>
+                    <option value="MP">Northern Mariana Islands</option>
+                    <option value="NO">Norway</option>
+                    <option value="OM">Oman</option>
+                    <option value="PK">Pakistan</option>
+                    <option value="PW">Palau</option>
+                    <option value="PA">Panama</option>
+                    <option value="PG">Papua New Guinea</option>
+                    <option value="PY">Paraguay</option>
+                    <option value="PE">Peru</option>
+                    <option value="PH">Philippines</option>
+                    <option value="PN">Pitcairn</option>
+                    <option value="PL">Poland</option>
+                    <option value="PT">Portugal</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="QA">Qatar</option>
+                    <option value="RE">Reunion</option>
+                    <option value="RO">Romania</option>
+                    <option value="RU">Russian Federation</option>
+                    <option value="RW">Rwanda</option>
+                    <option value="KN">Saint Kitts And Nevis</option>
+                    <option value="LC">Saint Lucia</option>
+                    <option value="VC">Saint Vincent And The Grenadines</option>
+                    <option value="WS">Samoa</option>
+                    <option value="SM">San Marino</option>
+                    <option value="ST">Sao Tome And Principe</option>
+                    <option value="SA">Saudi Arabia</option>
+                    <option value="SN">Senegal</option>
+                    <option value="SC">Seychelles</option>
+                    <option value="SL">Sierra Leone</option>
+                    <option value="SG">Singapore</option>
+                    <option value="SK">Slovakia (Slovak Republic)</option>
+                    <option value="SI">Slovenia</option>
+                    <option value="SB">Solomon Islands</option>
+                    <option value="SO">Somalia</option>
+                    <option value="ZA">South Africa</option>
+                    <option value="GS">South Georgia/South Sandwich Islands</option>
+                    <option value="ES">Spain</option>
+                    <option value="LK">Sri Lanka</option>
+                    <option value="SH">St. Helena</option>
+                    <option value="PM">St. Pierre And Miquelon</option>
+                    <option value="SD">Sudan</option>
+                    <option value="SR">Suriname</option>
+                    <option value="SJ">Svalbard And Jan Mayen Islands</option>
+                    <option value="SZ">Swaziland</option>
+                    <option value="SE">Sweden</option>
+                    <option value="CH">Switzerland</option>
+                    <option value="SY">Syrian Arab Republic</option>
+                    <option value="TW">Taiwan, Province Of China</option>
+                    <option value="TJ">Tajikistan</option>
+                    <option value="TZ">Tanzania, United Republic Of</option>
+                    <option value="TH">Thailand</option>
+                    <option value="TG">Togo</option>
+                    <option value="TK">Tokelau</option>
+                    <option value="TO">Tonga</option>
+                    <option value="TT">Trinidad And Tobago</option>
+                    <option value="TN">Tunisia</option>
+                    <option value="TR">Turkey</option>
+                    <option value="TM">Turkmenistan</option>
+                    <option value="TC">Turks And Caicos Islands</option>
+                    <option value="TV">Tuvalu</option>
+                    <option value="UG">Uganda</option>
+                    <option value="UA">Ukraine</option>
+                    <option value="AE">United Arab Emirates</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="UM">United States Minor Outlying Islands</option>
+                    <option value="US">United States</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="UZ">Uzbekistan</option>
+                    <option value="VU">Vanuatu</option>
+                    <option value="VE">Venezuela</option>
+                    <option value="VN">Vietnam</option>
+                    <option value="VG">Virgin Islands (British)</option>
+                    <option value="VI">Virgin Islands (U.S.)</option>
+                    <option value="WF">Wallis And Futuna Islands</option>
+                    <option value="EH">Western Sahara</option>
+                    <option value="YE">Yemen</option>
+                    <option value="YU">Yugoslavia</option>
+                    <option value="ZM">Zambia</option>
+                    <option value="ZW">Zimbabwe</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+```
+<!-- /include -->
+
+### Checkbox Question
+
+#### JSON
+
+<!-- include (snippets/json/checkbox_question.json lang=json) -->
+```json
+{
+    "type": "checkboxes",
+    "title": "What other sports have you participated in?",
+    "description": "",
+    "required": false,
+    "read_only": false,
+    "default_value": null,
+    "possible_answers": [{
+            "id": "childcare_possible_answer-103475",
+            "value": "Soccer",
+            "amount": null,
+            "display_value": "Soccer"
+        },
+        {
+            "id": "childcare_possible_answer-103476",
+            "value": "Basketball",
+            "amount": null,
+            "display_value": "Basketball"
+        },
+        {
+            "id": "childcare_possible_answer-103477",
+            "value": "Swimming",
+            "amount": null,
+            "display_value": "Swimming"
+        },
+        {
+            "id": "childcare_possible_answer-103478",
+            "value": "Football",
+            "amount": null,
+            "display_value": "Football"
+        }
+    ],
+    "hide_empty_option": false,
+    "empty_value": ""
+}
+```
+<!-- /include -->
+
+#### HTML
+
+<!-- include (snippets/html/checkbox_question.html lang=html) -->
+```html
+<div class="dxp-question-container">
+    <label class="dxp-question-title">
+        What other sports have you participated in?
+    </label>
+    <small class="dxp-question-help-text"></small>
+    <div class="dxp-question-body">
+        <div class="dxp-checkbox">
+            <label>
+                <input type="checkbox" name="childcare_answerlist-211432" value="childcare_possible_answer-103475">
+                Soccer
+            </label>
+            <label>
+                <input type="checkbox" name="childcare_answerlist-211432" value="childcare_possible_answer-103476">
+                Basketball
+            </label>
+            <label>
+                <input type="checkbox" name="childcare_answerlist-211432" value="childcare_possible_answer-103477">
+                Swimming
+            </label>
+            <label>
+                <input type="checkbox" name="childcare_answerlist-211432" value="childcare_possible_answer-103478">
+                Football
+            </label>
+        </div>
+    </div>
+</div>```
+<!-- /include -->
+
+### Date Question
+
+#### JSON
+
+<!-- include (snippets/json/date_question.json lang=json) -->
+```json
+{
+  "type": "date",
+  "title": "What is your birthdate?",
+  "description": "This is required to determine eligibility.",
+  "required": true,
+  "read_only": false,
+  "max_length": null
+}
+```
+<!-- /include -->
+
+#### HTML
+
+<!-- include (snippets/html/date_question.html lang=html) -->
+```html
+<div class="dxp-question-container">
+    <label class="dxp-question-title">
+        Birthdate
+        <span class="dxp-required-indicator">*</span>
+    </label>
+    <small class="dxp-question-help-text"></small>
+    <div class="dxp-question-body">
+        <div>
+            <input type="text" class="datepicker-input" placeholder="MM/DD/YYYY" maxlength="10" value="" id="P1267363601" aria-haspopup="true"
+                aria-expanded="false" aria-readonly="false" aria-owns="P1267363601_root">
+            <div class="datepicker-wrap" id="P1267363601_root" aria-hidden="true">
+                <!-- datepicker.js internals -->
+            </div>
+            <a class="datepicker-icon">
+                <!-- datepicker.js internals -->
+            </a>
+        </div>
+    </div>
+</div>
+```
+<!-- /include -->
+
+### Dropdown Question
+
+#### JSON
+
+<!-- include (snippets/json/dropdown_question.json lang=json) -->
+```json
+{
+  "type": "dropdown",
+  "title": "What is your t-shirt size?",
+  "description": "A t-shirt is not included in the program price.",
+  "required": true,
+  "read_only": false,
+  "default_value": null,
+  "possible_answers": [{
+      "id": "childcare_possible_answer-103469",
+      "value": "Small",
+      "amount": 15.0000,
+      "display_value": "Small - $15.00"
+    },
+    {
+      "id": "childcare_possible_answer-103470",
+      "value": "Medium",
+      "amount": 15.0000,
+      "display_value": "Medium - $15.00"
+    },
+    {
+      "id": "childcare_possible_answer-103471",
+      "value": "Large",
+      "amount": 15.0000,
+      "display_value": "Large - $15.00"
+    },
+    {
+      "id": "childcare_possible_answer-103472",
+      "value": "X-Large",
+      "amount": 15.0000,
+      "display_value": "X-Large - $15.00"
+    }
+  ],
+  "hide_empty_option": false,
+  "empty_value": ""
+}
+```
+<!-- /include -->
+
+#### HTML
+
+<!-- include (snippets/html/dropdown_question.html lang=html) -->
+```html
+```
+<!-- /include -->
+
+### Email Question
+
+#### JSON
+
+<!-- include (snippets/json/email_question.json lang=json) -->
+```json
+{
+  "type": "email",
+  "title": "E-mail address",
+  "description": "We will not send unsolicited emails.",
+  "required": true,
+  "read_only": false,
+  "max_length": 100,
+  "pattern": "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"
+}
+```
+<!-- /include -->
+
+#### HTML
+
+<!-- include (snippets/html/email_question.html lang=html) -->
+```html
+<div class="dxp-question-container">
   <label class="dxp-question-title">
-      Home Address
-      <span class="dxp-required-indicator">*</span>
+    E-mail address
+    <span class="dxp-required-indicator">*</span>
   </label>
-  <small class="dxp-question-help-text"></small>
+  <small class="dxp-question-help-text">We will not send you any unsolicited email.</small>
   <div class="dxp-question-body">
-      <div class="dxp-name-question">
-          <div class="dxp-address-line1">
-              <label>Address Line 1</label>
-              <input type="text" maxlength="50" class="" value="">
-          </div>
-          <div class="dxp-address-line2">
-              <label>Address Line 2</label>
-              <input type="text" maxlength="50" class="" value="">
-          </div>
-          <div class="dxp-address-city">
-              <label>City</label>
-              <input type="text" maxlength="50" class="" value="">
-          </div>
-          <div class="dxp-address-state">
-              <label>State</label>
-              <select class="">
-                  <option value="">-Select One-</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AK">Alaska</option>
-                  <option value="AS">American Samoa</option>
-                  ...
-              </select>
-          </div>
-          <div class="dxp-address-zip">
-              <label>Zip Code</label>
-              <input type="tel" placeholder="" maxlength="10" class="" value="">
-          </div>
-          <div class="dxp-address-country">
-              <label>Country</label>
-              <select class="">
-                  <option></option>
-                  <option value="AF">Afghanistan</option>
-                  <option value="AL">Albania</option>
-                  <option value="DZ">Algeria</option>
-                  ...
-                  <option value="US">United States</option>
-                  ...
-              </select>
-          </div>
-      </div>
+    <input type="text" maxlength="100" value="" class="">
   </div>
+</div>
+```
+<!-- /include -->
+
+### Name Question
+
+#### JSON
+
+<!-- include (snippets/json/name_question.json lang=json) -->
+```json
+{
+    "type": "name",
+    "title": "Participant Name",
+    "description": "Please provide the name given on your birth certificate",
+    "required": true,
+    "read_only": false,
+    "show_first": true,
+    "show_middle": true,
+    "show_last": true,
+    "show_prefix": true,
+    "show_suffix": true,
+    "required_first": true,
+    "required_middle": false,
+    "required_last": true,
+    "prefixes": [{
+            "id": "Mr.",
+            "value": "Mr."
+        },
+        {
+            "id": "Ms.",
+            "value": "Ms."
+        },
+        {
+            "id": "Mrs.",
+            "value": "Mrs."
+        },
+        {
+            "id": "Miss",
+            "value": "Miss"
+        },
+        {
+            "id": "Dr.",
+            "value": "Dr."
+        },
+        {
+            "id": "Rev.",
+            "value": "Rev."
+        },
+        {
+            "id": "Rab.",
+            "value": "Rab."
+        },
+        {
+            "id": "Can.",
+            "value": "Can."
+        },
+        {
+            "id": "Hon.",
+            "value": "Hon."
+        }
+    ],
+    "suffixes": [{
+            "id": "Jr.",
+            "value": "Jr."
+        },
+        {
+            "id": "Sr.",
+            "value": "Sr."
+        },
+        {
+            "id": "I",
+            "value": "I"
+        },
+        {
+            "id": "II",
+            "value": "II"
+        },
+        {
+            "id": "III",
+            "value": "III"
+        },
+        {
+            "id": "IV",
+            "value": "IV"
+        },
+        {
+            "id": "V",
+            "value": "V"
+        }
+    ]
+}
+```
+<!-- /include -->
+
+#### HTML
+
+<!-- include (snippets/html/name_question.html lang=html) -->
+```html
+<div class="dxp-question-container">
+    <label class="dxp-question-title">
+        Participant Name
+        <span class="dxp-required-indicator">*</span>
+    </label>
+    <small class="dxp-question-help-text">Please provide the name given on your birth certificate.</small>
+    <div class="dxp-question-body">
+        <div class="dxp-name-question">
+            <div class="dxp-name-prefix">
+                <label class="dxp-name-prefix-label">Prefix</label>
+                <select class="dxp-name-prefix-select">
+                    <option></option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Miss">Miss</option>
+                    <option value="Dr.">Dr.</option>
+                    <option value="Rev.">Rev.</option>
+                    <option value="Rab.">Rab.</option>
+                    <option value="Can.">Can.</option>
+                    <option value="Hon.">Hon.</option>
+                </select>
+            </div>
+            <div class="dxp-name-first">
+                <label class="dxp-name-first-label">First</label>
+                <input type="text" maxlength="50" class="" value="">
+            </div>
+            <div class="dxp-name-middle">
+                <label class="dxp-name-middle-label">Middle</label>
+                <input type="text" maxlength="50" class="" value="">
+            </div>
+            <div class="dxp-name-last">
+                <label class="dxp-name-last-label">Last</label>
+                <input type="text" maxlength="50" class="" value="">
+            </div>
+            <div class="dxp-name-suffix">
+                <label class="dxp-name-suffix-label">Suffix</label>
+                <select class="dxp-name-suffix-select">
+                    <option></option>
+                    <option value="Jr.">Jr.</option>
+                    <option value="Sr.">Sr.</option>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+```
+<!-- /include -->
+
+### Phone Question
+
+#### JSON
+
+<!-- include (snippets/json/phone_question.json lang=json) -->
+```json
+{
+  "type": "phone",
+  "title": "Home Phone",
+  "description": "This will be used in case of any emergencies.",
+  "required": true,
+  "read_only": false,
+  "max_length": null,
+  "show_extension": true,
+  "intl": false
+}
+```
+<!-- /include -->
+
+#### HTML
+
+<!-- include (snippets/html/phone_question.html lang=html) -->
+```html
+<div class="dxp-question-container">
+    <label class="dxp-question-title">
+        Home Phone
+        <span class="dxp-required-indicator">*</span>
+    </label>
+    <small class="dxp-question-help-text">This will be used in case of any emergencies.</small>
+    <div class="dxp-question-body">
+        <div class="dxp-phone-question">
+            <div class="dxp-phone-number">
+                <input type="tel" class="" maxlength="14" value="">
+            </div>
+            <div class="dxp-phone-ext-container">
+                <label class="dxp-phone-ext-label">Ext.</label>
+                <div class="dxp-phone-ext">
+                    <input type="text" maxlength="5" class="" value="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+```
+<!-- /include -->
+
+### Radio Question
+
+#### JSON
+
+<!-- include (snippets/json/radio_question.json lang=json) -->
+```json
+{
+    "type": "radio",
+    "title": "Have you participated in this program before?",
+    "description": "",
+    "required": false,
+    "read_only": false,
+    "default_value": null,
+    "possible_answers": [{
+            "id": "childcare_possible_answer-103473",
+            "value": "Yes",
+            "amount": null,
+            "display_value": "Yes"
+        },
+        {
+            "id": "childcare_possible_answer-103474",
+            "value": "No",
+            "amount": null,
+            "display_value": "No"
+        }
+    ],
+    "hide_empty_option": false,
+    "empty_value": ""
+}
+```
+<!-- /include -->
+
+#### HTML
+
+<!-- include (snippets/html/radio_question.html lang=html) -->
+```html
+<div class="dxp-question-container">
+    <label class="dxp-question-title">
+        Have you participated in this program before?
+    </label>
+    <small class="dxp-question-help-text"></small>
+    <div class="dxp-question-body">
+        <div class="dxp-radio">
+            <label>
+                <input type="radio" name="childcare_answerlist-211427" value="childcare_possible_answer-103473" class="">
+                Yes
+            </label>
+            <label>
+                <input type="radio" name="childcare_answerlist-211427" value="childcare_possible_answer-103474" class="">
+                No
+            </label>
+        </div>
+    </div>
+</div>
+```
+<!-- /include -->
+
+### Text Question
+
+#### JSON
+
+<!-- include (snippets/json/text_question.json lang=json) -->
+```json
+{
+  "type": "text",
+  "title": "Please specify any food allergies",
+  "description": "For example, peanuts, dairy, eggs, gluten, wheat, etc.",
+  "required": false,
+  "read_only": false,
+  "max_length": 50
+}```
+<!-- /include -->
+
+#### HTML
+
+<!-- include (snippets/html/text_question.html lang=html) -->
+```html
+<div class="dxp-question-container">
+    <label class="dxp-question-title">
+        Please specify any food allergies?
+    </label>
+    <small class="dxp-question-help-text">For example, peanuts, dairy, eggs, gluten, wheat, etc.</small>
+    <div class="dxp-question-body">
+        <input type="text" maxlength="50" value="" class="">
+    </div>
 </div>
 ```
 <!-- /include -->

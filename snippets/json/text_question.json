@@ -1,8 +1,8 @@
 {
   "type": "text",
-  "title": "Sample text question",
-  "description": "Please answer this question honestly",
-  "required": true,
+  "title": "Please specify any food allergies",
+  "description": "For example, peanuts, dairy, eggs, gluten, wheat, etc.",
+  "required": false,
   "read_only": false,
-  "max_length": 255
+  "max_length": 50
 }

@@ -1,35 +1,15 @@
-var answers = {
-    "childcare_text-3358861": "",
-    "childcare_dropdown-648648": " ",
-    "childcare_phone-3358355": { "phone": "2052091279", "ext": ""}
-};
+var answers = {};
 
 var questions = {
-  "sect_childcare_0": {
+  "sect_childcare_58736": {
     "type": "section",
-    "title": "Section Title",
-    "description": "Section Header"
+    "title": "Section 1",
+    "description": "Complete section 1 questions"
   },
-  "childcare_text-3358860": {
-    "type": "text",
-    "title": "Sample text question",
-    "description": "Please answer this question honestly",
-    "required": true,
-    "read_only": false,
-    "max_length": 255
-  },
-  "childcare_text-3358861": {
-    "type": "text",
-    "title": "Another text question",
-    "description": "Please answer this question in detail",
-    "required": true,
-    "read_only": false,
-    "max_length": 500
-  },
-  "childcare_name-886886": {
+  "childcare_name-211422": {
     "type": "name",
-    "title": "What is your mom's name?",
-    "description": null,
+    "title": "Participant Name",
+    "description": "Please provide the name given on your birth certificate.",
     "required": true,
     "read_only": false,
     "show_first": true,
@@ -37,8 +17,10 @@ var questions = {
     "show_last": true,
     "show_prefix": true,
     "show_suffix": true,
-    "prefixes": [
-      {
+    "required_first": true,
+    "required_middle": false,
+    "required_last": true,
+    "prefixes": [{
         "id": "Mr.",
         "value": "Mr."
       },
@@ -75,8 +57,7 @@ var questions = {
         "value": "Hon."
       }
     ],
-    "suffixes": [
-      {
+    "suffixes": [{
         "id": "Jr.",
         "value": "Jr."
       },
@@ -106,156 +87,23 @@ var questions = {
       }
     ]
   },
-  "childcare_checkboxes-944944": {
-    "type": "checkboxes",
-    "title": "A Multivalue with fees due at first instance",
-    "description": null,
-    "required": true,
-    "read_only": false,
-    "default_value": null,
-    "possible_answers": [
-      {
-        "id": "childcare_945945",
-        "value": "1",
-        "amount": 100.0000,
-        "metadata": {},
-        "display_value": "1 - $100.00"
-      },
-      {
-        "id": "childcare_945946",
-        "value": "2",
-        "amount": 200.0000,
-        "metadata": {},
-        "display_value": "2 - $200.00"
-      },
-      {
-        "id": "childcare_945947",
-        "value": "3",
-        "amount": 300.0000,
-        "metadata": {},
-        "display_value": "3 - $300.00"
-      }
-    ]
-  },
-  "childcare_phone-3358355": {
+  "childcare_phone-211423": {
     "type": "phone",
-    "title": "Phone",
-    "description": "Phone number",
+    "title": "Home Phone",
+    "description": "This will be used in case of any emergencies.",
     "required": true,
     "read_only": false,
     "max_length": null,
     "show_extension": true,
-    "intl": true
+    "intl": false
   },
-  "childcare_radio-866867": {
-    "type": "radio",
-    "title": "What is your gender?",
-    "description": "Please answer honestly",
-    "required": true,
-    "read_only": false,
-    "default_value": null,
-    "possible_answers": [
-      {
-        "id": "childcare_867867",
-        "value": "Male",
-        "amount": null,
-        "metadata": {},
-        "display_value": "Male"
-      },
-      {
-        "id": "childcare_867868",
-        "value": "Female",
-        "amount": null,
-        "metadata": {},
-        "display_value": "Female"
-      }
-    ]
-  },
-  "childcare_dropdown-648648": {
-    "type": "radio",
-    "title": "What is your t-shirt size?",
-    "description": "These run a bit small, so take that into account.",
-    "required": true,
-    "read_only": false,
-    "default_value": "childcare_649651",
-    "possible_answers": [
-      {
-        "id": "childcare_649649",
-        "value": "S",
-        "amount": 10.0000,
-        "metadata": {},
-        "display_value": "S - $10.00"
-      },
-      {
-        "id": "childcare_649650",
-        "value": "M",
-        "amount": 11.0000,
-        "metadata": {},
-        "display_value": "M - $11.00"
-      },
-      {
-        "id": "childcare_649651",
-        "value": "L",
-        "amount": 12.0000,
-        "metadata": {},
-        "display_value": "L - $12.00"
-      }
-    ]
-  },
-  "childcare_checkboxes-871871": {
-    "type": "checkboxes",
-    "title": "What are your most favoritist colors in the whole wide world?",
-    "description": "Don't answer, it's a trap!",
-    "required": true,
-    "read_only": false,
-    "default_value": null,
-    "possible_answers": [
-      {
-        "id": "childcare_872872",
-        "value": "Red",
-        "amount": 10.0000,
-        "metadata": {},
-        "display_value": "Red - $10.00"
-      },
-      {
-        "id": "childcare_872873",
-        "value": "Green",
-        "amount": 20.0000,
-        "metadata": {},
-        "display_value": "Green - $20.00"
-      },
-      {
-        "id": "childcare_872874",
-        "value": "Blue",
-        "amount": 30.0000,
-        "metadata": {},
-        "display_value": "Blue - $30.00"
-      },
-      {
-        "id": "childcare_872875",
-        "value": "Woodrow Wilson's Blush",
-        "amount": 40.0000,
-        "metadata": {},
-        "display_value": "Woodrow Wilson's Blush - $40.00"
-      }
-    ]
-  },
-  "childcare_datetime-886887": {
-    "type": "date",
-    "title": "When is your dog's birth date?",
-    "description": "If you don't have a dog, lie.",
-    "required": true,
-    "read_only": false,
-    "max_length": null
-  },
-  "program_address-212431": {
+  "childcare_address-211430": {
     "type": "address",
     "title": "Home Address",
-    "description": "",
+    "description": "This is where your t-shirt will be shipped to.",
     "required": true,
     "read_only": false,
-    "ca_provinces": [
-      {
+    "ca_provinces": [{
         "id": "AB",
         "name": "Alberta"
       },
@@ -308,8 +156,7 @@ var questions = {
         "name": "Yukon"
       }
     ],
-    "countries": [
-      {
+    "countries": [{
         "id": "AF",
         "name": "Afghanistan"
       },
@@ -1267,5 +1114,152 @@ var questions = {
       }
     ],
     "intl": true
+  },
+  "childcare_email-211428": {
+    "type": "email",
+    "title": "E-mail address",
+    "description": "We will not send you any unsolicited email.",
+    "required": true,
+    "read_only": false,
+    "max_length": 100,
+    "pattern": "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"
+  },
+  "childcare_datetime-211429": {
+    "type": "date",
+    "title": "Birthdate",
+    "description": "",
+    "required": true,
+    "read_only": false,
+    "max_length": null
+  },
+  "childcare_gender-211424": {
+    "type": "dropdown",
+    "title": "Gender",
+    "description": "",
+    "required": true,
+    "read_only": false,
+    "default_value": "U",
+    "possible_answers": [{
+        "id": "U",
+        "value": "Unspecified",
+        "amount": null,
+        "display_value": "Unspecified"
+      },
+      {
+        "id": "M",
+        "value": "Male",
+        "amount": null,
+        "display_value": "Male"
+      },
+      {
+        "id": "F",
+        "value": "Female",
+        "amount": null,
+        "display_value": "Female"
+      }
+    ],
+    "hide_empty_option": true,
+    "empty_value": "U"
+  },
+  "childcare_answerlist-211426": {
+    "type": "checkboxes",
+    "title": "What is your t-shirt size?",
+    "description": null,
+    "required": true,
+    "read_only": false,
+    "default_value": null,
+    "possible_answers": [{
+        "id": "childcare_possible_answer-103469",
+        "value": "Small",
+        "amount": 15.0000,
+        "display_value": "Small - $15.00"
+      },
+      {
+        "id": "childcare_possible_answer-103470",
+        "value": "Medium",
+        "amount": 15.0000,
+        "display_value": "Medium - $15.00"
+      },
+      {
+        "id": "childcare_possible_answer-103471",
+        "value": "Large",
+        "amount": 15.0000,
+        "display_value": "Large - $15.00"
+      },
+      {
+        "id": "childcare_possible_answer-103472",
+        "value": "X-Large",
+        "amount": 15.0000,
+        "display_value": "X-Large - $15.00"
+      }
+    ],
+    "hide_empty_option": false,
+    "empty_value": ""
+  },
+  "childcare_mediumtext-211425": {
+    "type": "text",
+    "title": "Please specify any food allergies",
+    "description": "For example, peanuts, dairy, eggs, gluten, wheat, etc.",
+    "required": false,
+    "read_only": false,
+    "max_length": 50
+  },
+  "childcare_answerlist-211427": {
+    "type": "radio",
+    "title": "Have you participated in this program before?",
+    "description": "",
+    "required": false,
+    "read_only": false,
+    "default_value": null,
+    "possible_answers": [{
+        "id": "childcare_possible_answer-103473",
+        "value": "Yes",
+        "amount": null,
+        "display_value": "Yes"
+      },
+      {
+        "id": "childcare_possible_answer-103474",
+        "value": "No",
+        "amount": null,
+        "display_value": "No"
+      }
+    ],
+    "hide_empty_option": false,
+    "empty_value": ""
+  },
+  "childcare_answerlist-211432": {
+    "type": "checkboxes",
+    "title": "What other sports have you participated in?",
+    "description": "",
+    "required": false,
+    "read_only": false,
+    "default_value": null,
+    "possible_answers": [{
+        "id": "childcare_possible_answer-103475",
+        "value": "Soccer",
+        "amount": null,
+        "display_value": "Soccer"
+      },
+      {
+        "id": "childcare_possible_answer-103476",
+        "value": "Basketball",
+        "amount": null,
+        "display_value": "Basketball"
+      },
+      {
+        "id": "childcare_possible_answer-103477",
+        "value": "Swimming",
+        "amount": null,
+        "display_value": "Swimming"
+      },
+      {
+        "id": "childcare_possible_answer-103478",
+        "value": "Football",
+        "amount": null,
+        "display_value": "Football"
+      }
+    ],
+    "hide_empty_option": false,
+    "empty_value": ""
   }
-}
+};

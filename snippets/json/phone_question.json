@@ -1,10 +1,10 @@
 {
   "type": "phone",
-  "title": "Phone",
-  "description": "Phone number",
+  "title": "Home Phone",
+  "description": "This will be used in case of any emergencies.",
   "required": true,
   "read_only": false,
   "max_length": null,
   "show_extension": true,
-  "intl": true
+  "intl": false
 }

@@ -1,14 +1,14 @@
 import React from 'react'
 import {configure, shallow} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-15'
-import AddressField from '../src/fields/AddressField'
-const json = require('../snippets/json/address_question.json')
+import UnknownField from '../src/fields/UnknownField'
+const json = require('../snippets/json/unknown_question.json')
 
 configure({adapter: new Adapter() })
 
-describe('AddressField component', () => {
+describe('UnknownField component', () => {
   it('should render a question', () => {
-    const wrapper = shallow(<AddressField question={json} />)
+    const wrapper = shallow(<UnknownField question={json}/>)
     expect(wrapper).toMatchSnapshot()
   })
 })

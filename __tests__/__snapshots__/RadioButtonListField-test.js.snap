@@ -1,0 +1,304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButtonListField component should render a question 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RadioButtonListField
+    question={
+      Object {
+        "default_value": null,
+        "description": "",
+        "empty_value": "",
+        "hide_empty_option": false,
+        "possible_answers": Array [
+          Object {
+            "amount": null,
+            "display_value": "Yes",
+            "id": "childcare_possible_answer-103473",
+            "value": "Yes",
+          },
+          Object {
+            "amount": null,
+            "display_value": "No",
+            "id": "childcare_possible_answer-103474",
+            "value": "No",
+          },
+        ],
+        "read_only": false,
+        "required": false,
+        "title": "Have you participated in this program before?",
+        "type": "radio",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <label>
+          <input
+            checked={false}
+            className={undefined}
+            disabled={false}
+            name={undefined}
+            onBlur={undefined}
+            onChange={[Function]}
+            type="radio"
+            value="childcare_possible_answer-103473"
+          />
+          Yes
+        </label>,
+        <label>
+          <input
+            checked={false}
+            className={undefined}
+            disabled={false}
+            name={undefined}
+            onBlur={undefined}
+            onChange={[Function]}
+            type="radio"
+            value="childcare_possible_answer-103474"
+          />
+          No
+        </label>,
+      ],
+      "className": "dxp-radio",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "childcare_possible_answer-103473",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              checked={false}
+              className={undefined}
+              disabled={false}
+              name={undefined}
+              onBlur={undefined}
+              onChange={[Function]}
+              type="radio"
+              value="childcare_possible_answer-103473"
+            />,
+            "Yes",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "checked": false,
+              "className": undefined,
+              "disabled": false,
+              "name": undefined,
+              "onBlur": undefined,
+              "onChange": [Function],
+              "type": "radio",
+              "value": "childcare_possible_answer-103473",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          "Yes",
+        ],
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": "childcare_possible_answer-103474",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              checked={false}
+              className={undefined}
+              disabled={false}
+              name={undefined}
+              onBlur={undefined}
+              onChange={[Function]}
+              type="radio"
+              value="childcare_possible_answer-103474"
+            />,
+            "No",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "checked": false,
+              "className": undefined,
+              "disabled": false,
+              "name": undefined,
+              "onBlur": undefined,
+              "onChange": [Function],
+              "type": "radio",
+              "value": "childcare_possible_answer-103474",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          "No",
+        ],
+        "type": "label",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <label>
+            <input
+              checked={false}
+              className={undefined}
+              disabled={false}
+              name={undefined}
+              onBlur={undefined}
+              onChange={[Function]}
+              type="radio"
+              value="childcare_possible_answer-103473"
+            />
+            Yes
+          </label>,
+          <label>
+            <input
+              checked={false}
+              className={undefined}
+              disabled={false}
+              name={undefined}
+              onBlur={undefined}
+              onChange={[Function]}
+              type="radio"
+              value="childcare_possible_answer-103474"
+            />
+            No
+          </label>,
+        ],
+        "className": "dxp-radio",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "childcare_possible_answer-103473",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                checked={false}
+                className={undefined}
+                disabled={false}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                type="radio"
+                value="childcare_possible_answer-103473"
+              />,
+              "Yes",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "checked": false,
+                "className": undefined,
+                "disabled": false,
+                "name": undefined,
+                "onBlur": undefined,
+                "onChange": [Function],
+                "type": "radio",
+                "value": "childcare_possible_answer-103473",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            "Yes",
+          ],
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": "childcare_possible_answer-103474",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                checked={false}
+                className={undefined}
+                disabled={false}
+                name={undefined}
+                onBlur={undefined}
+                onChange={[Function]}
+                type="radio"
+                value="childcare_possible_answer-103474"
+              />,
+              "No",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "checked": false,
+                "className": undefined,
+                "disabled": false,
+                "name": undefined,
+                "onBlur": undefined,
+                "onChange": [Function],
+                "type": "radio",
+                "value": "childcare_possible_answer-103474",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            "No",
+          ],
+          "type": "label",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

@@ -1,11 +1,10 @@
 {
   "type": "address",
   "title": "Home Address",
-  "description": "Please provide your current home address",
+  "description": "This is where your t-shirt will be shipped to.",
   "required": true,
   "read_only": false,
-  "ca_provinces": [
-    {
+  "ca_provinces": [{
       "id": "AB",
       "name": "Alberta"
     },
@@ -58,8 +57,7 @@
       "name": "Yukon"
     }
   ],
-  "countries": [
-    {
+  "countries": [{
       "id": "AF",
       "name": "Afghanistan"
     },

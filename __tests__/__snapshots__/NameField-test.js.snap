@@ -1,0 +1,1859 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NameField component should render a question 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NameField
+    question={
+      Object {
+        "description": "Please provide the name given on your birth certificate",
+        "prefixes": Array [
+          Object {
+            "id": "Mr.",
+            "value": "Mr.",
+          },
+          Object {
+            "id": "Ms.",
+            "value": "Ms.",
+          },
+          Object {
+            "id": "Mrs.",
+            "value": "Mrs.",
+          },
+          Object {
+            "id": "Miss",
+            "value": "Miss",
+          },
+          Object {
+            "id": "Dr.",
+            "value": "Dr.",
+          },
+          Object {
+            "id": "Rev.",
+            "value": "Rev.",
+          },
+          Object {
+            "id": "Rab.",
+            "value": "Rab.",
+          },
+          Object {
+            "id": "Can.",
+            "value": "Can.",
+          },
+          Object {
+            "id": "Hon.",
+            "value": "Hon.",
+          },
+        ],
+        "read_only": false,
+        "required": true,
+        "required_first": true,
+        "required_last": true,
+        "required_middle": false,
+        "show_first": true,
+        "show_last": true,
+        "show_middle": true,
+        "show_prefix": true,
+        "show_suffix": true,
+        "suffixes": Array [
+          Object {
+            "id": "Jr.",
+            "value": "Jr.",
+          },
+          Object {
+            "id": "Sr.",
+            "value": "Sr.",
+          },
+          Object {
+            "id": "I",
+            "value": "I",
+          },
+          Object {
+            "id": "II",
+            "value": "II",
+          },
+          Object {
+            "id": "III",
+            "value": "III",
+          },
+          Object {
+            "id": "IV",
+            "value": "IV",
+          },
+          Object {
+            "id": "V",
+            "value": "V",
+          },
+        ],
+        "title": "Participant Name",
+        "type": "name",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="dxp-name-prefix"
+          title={null}
+        >
+          <label
+            className="dxp-name-prefix-label"
+          >
+            Prefix
+          </label>
+          <select
+            className="dxp-name-prefix-select"
+            disabled={false}
+            onBlur={undefined}
+            onChange={[Function]}
+            value=""
+          >
+            <option />
+            <option
+              value="Mr."
+            >
+              Mr.
+            </option>
+            <option
+              value="Ms."
+            >
+              Ms.
+            </option>
+            <option
+              value="Mrs."
+            >
+              Mrs.
+            </option>
+            <option
+              value="Miss"
+            >
+              Miss
+            </option>
+            <option
+              value="Dr."
+            >
+              Dr.
+            </option>
+            <option
+              value="Rev."
+            >
+              Rev.
+            </option>
+            <option
+              value="Rab."
+            >
+              Rab.
+            </option>
+            <option
+              value="Can."
+            >
+              Can.
+            </option>
+            <option
+              value="Hon."
+            >
+              Hon.
+            </option>
+          </select>
+        </div>,
+        <div
+          className="dxp-name-first"
+          title={null}
+        >
+          <label
+            className="dxp-name-first-label"
+          >
+            First
+          </label>
+          <input
+            className=""
+            maxLength={50}
+            onBlur={undefined}
+            onChange={[Function]}
+            onKeyPress={[Function]}
+            readOnly={false}
+            type="text"
+            value=""
+          />
+        </div>,
+        <div
+          className="dxp-name-middle"
+          title={null}
+        >
+          <label
+            className="dxp-name-middle-label"
+          >
+            Middle
+          </label>
+          <input
+            className=""
+            maxLength={50}
+            onBlur={undefined}
+            onChange={[Function]}
+            onKeyPress={[Function]}
+            readOnly={false}
+            type="text"
+            value=""
+          />
+        </div>,
+        <div
+          className="dxp-name-last"
+          title={null}
+        >
+          <label
+            className="dxp-name-last-label"
+          >
+            Last
+          </label>
+          <input
+            className=""
+            maxLength={50}
+            onBlur={undefined}
+            onChange={[Function]}
+            onKeyPress={[Function]}
+            readOnly={false}
+            type="text"
+            value=""
+          />
+        </div>,
+        <div
+          className="dxp-name-suffix"
+          title={null}
+        >
+          <label
+            className="dxp-name-suffix-label"
+          >
+            Suffix
+          </label>
+          <select
+            className="dxp-name-suffix-select"
+            disabled={false}
+            onBlur={undefined}
+            onChange={[Function]}
+            value=""
+          >
+            <option />
+            <option
+              value="Jr."
+            >
+              Jr.
+            </option>
+            <option
+              value="Sr."
+            >
+              Sr.
+            </option>
+            <option
+              value="I"
+            >
+              I
+            </option>
+            <option
+              value="II"
+            >
+              II
+            </option>
+            <option
+              value="III"
+            >
+              III
+            </option>
+            <option
+              value="IV"
+            >
+              IV
+            </option>
+            <option
+              value="V"
+            >
+              V
+            </option>
+          </select>
+        </div>,
+      ],
+      "className": "dxp-name-question",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              className="dxp-name-prefix-label"
+            >
+              Prefix
+            </label>,
+            <select
+              className="dxp-name-prefix-select"
+              disabled={false}
+              onBlur={undefined}
+              onChange={[Function]}
+              value=""
+            >
+              <option />
+              <option
+                value="Mr."
+              >
+                Mr.
+              </option>
+              <option
+                value="Ms."
+              >
+                Ms.
+              </option>
+              <option
+                value="Mrs."
+              >
+                Mrs.
+              </option>
+              <option
+                value="Miss"
+              >
+                Miss
+              </option>
+              <option
+                value="Dr."
+              >
+                Dr.
+              </option>
+              <option
+                value="Rev."
+              >
+                Rev.
+              </option>
+              <option
+                value="Rab."
+              >
+                Rab.
+              </option>
+              <option
+                value="Can."
+              >
+                Can.
+              </option>
+              <option
+                value="Hon."
+              >
+                Hon.
+              </option>
+            </select>,
+            null,
+          ],
+          "className": "dxp-name-prefix",
+          "title": null,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Prefix",
+              "className": "dxp-name-prefix-label",
+            },
+            "ref": null,
+            "rendered": "Prefix",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <option />,
+                Array [
+                  <option
+                    value="Mr."
+                  >
+                    Mr.
+                  </option>,
+                  <option
+                    value="Ms."
+                  >
+                    Ms.
+                  </option>,
+                  <option
+                    value="Mrs."
+                  >
+                    Mrs.
+                  </option>,
+                  <option
+                    value="Miss"
+                  >
+                    Miss
+                  </option>,
+                  <option
+                    value="Dr."
+                  >
+                    Dr.
+                  </option>,
+                  <option
+                    value="Rev."
+                  >
+                    Rev.
+                  </option>,
+                  <option
+                    value="Rab."
+                  >
+                    Rab.
+                  </option>,
+                  <option
+                    value="Can."
+                  >
+                    Can.
+                  </option>,
+                  <option
+                    value="Hon."
+                  >
+                    Hon.
+                  </option>,
+                ],
+              ],
+              "className": "dxp-name-prefix-select",
+              "disabled": false,
+              "onBlur": undefined,
+              "onChange": [Function],
+              "value": "",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "Mr.",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Mr.",
+                  "value": "Mr.",
+                },
+                "ref": null,
+                "rendered": "Mr.",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "Ms.",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Ms.",
+                  "value": "Ms.",
+                },
+                "ref": null,
+                "rendered": "Ms.",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "Mrs.",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Mrs.",
+                  "value": "Mrs.",
+                },
+                "ref": null,
+                "rendered": "Mrs.",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "Miss",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Miss",
+                  "value": "Miss",
+                },
+                "ref": null,
+                "rendered": "Miss",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "Dr.",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Dr.",
+                  "value": "Dr.",
+                },
+                "ref": null,
+                "rendered": "Dr.",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "Rev.",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Rev.",
+                  "value": "Rev.",
+                },
+                "ref": null,
+                "rendered": "Rev.",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "Rab.",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Rab.",
+                  "value": "Rab.",
+                },
+                "ref": null,
+                "rendered": "Rab.",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "Can.",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Can.",
+                  "value": "Can.",
+                },
+                "ref": null,
+                "rendered": "Can.",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "Hon.",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Hon.",
+                  "value": "Hon.",
+                },
+                "ref": null,
+                "rendered": "Hon.",
+                "type": "option",
+              },
+            ],
+            "type": "select",
+          },
+          null,
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              className="dxp-name-first-label"
+            >
+              First
+            </label>,
+            <input
+              className=""
+              maxLength={50}
+              onBlur={undefined}
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              readOnly={false}
+              type="text"
+              value=""
+            />,
+            null,
+          ],
+          "className": "dxp-name-first",
+          "title": null,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "First",
+              "className": "dxp-name-first-label",
+            },
+            "ref": null,
+            "rendered": "First",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "className": "",
+              "maxLength": 50,
+              "onBlur": undefined,
+              "onChange": [Function],
+              "onKeyPress": [Function],
+              "readOnly": false,
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          null,
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              className="dxp-name-middle-label"
+            >
+              Middle
+            </label>,
+            <input
+              className=""
+              maxLength={50}
+              onBlur={undefined}
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              readOnly={false}
+              type="text"
+              value=""
+            />,
+            null,
+          ],
+          "className": "dxp-name-middle",
+          "title": null,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Middle",
+              "className": "dxp-name-middle-label",
+            },
+            "ref": null,
+            "rendered": "Middle",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "className": "",
+              "maxLength": 50,
+              "onBlur": undefined,
+              "onChange": [Function],
+              "onKeyPress": [Function],
+              "readOnly": false,
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          null,
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              className="dxp-name-last-label"
+            >
+              Last
+            </label>,
+            <input
+              className=""
+              maxLength={50}
+              onBlur={undefined}
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              readOnly={false}
+              type="text"
+              value=""
+            />,
+            null,
+          ],
+          "className": "dxp-name-last",
+          "title": null,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Last",
+              "className": "dxp-name-last-label",
+            },
+            "ref": null,
+            "rendered": "Last",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "className": "",
+              "maxLength": 50,
+              "onBlur": undefined,
+              "onChange": [Function],
+              "onKeyPress": [Function],
+              "readOnly": false,
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          null,
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              className="dxp-name-suffix-label"
+            >
+              Suffix
+            </label>,
+            <select
+              className="dxp-name-suffix-select"
+              disabled={false}
+              onBlur={undefined}
+              onChange={[Function]}
+              value=""
+            >
+              <option />
+              <option
+                value="Jr."
+              >
+                Jr.
+              </option>
+              <option
+                value="Sr."
+              >
+                Sr.
+              </option>
+              <option
+                value="I"
+              >
+                I
+              </option>
+              <option
+                value="II"
+              >
+                II
+              </option>
+              <option
+                value="III"
+              >
+                III
+              </option>
+              <option
+                value="IV"
+              >
+                IV
+              </option>
+              <option
+                value="V"
+              >
+                V
+              </option>
+            </select>,
+          ],
+          "className": "dxp-name-suffix",
+          "title": null,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Suffix",
+              "className": "dxp-name-suffix-label",
+            },
+            "ref": null,
+            "rendered": "Suffix",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <option />,
+                Array [
+                  <option
+                    value="Jr."
+                  >
+                    Jr.
+                  </option>,
+                  <option
+                    value="Sr."
+                  >
+                    Sr.
+                  </option>,
+                  <option
+                    value="I"
+                  >
+                    I
+                  </option>,
+                  <option
+                    value="II"
+                  >
+                    II
+                  </option>,
+                  <option
+                    value="III"
+                  >
+                    III
+                  </option>,
+                  <option
+                    value="IV"
+                  >
+                    IV
+                  </option>,
+                  <option
+                    value="V"
+                  >
+                    V
+                  </option>,
+                ],
+              ],
+              "className": "dxp-name-suffix-select",
+              "disabled": false,
+              "onBlur": undefined,
+              "onChange": [Function],
+              "value": "",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "Jr.",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Jr.",
+                  "value": "Jr.",
+                },
+                "ref": null,
+                "rendered": "Jr.",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "Sr.",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Sr.",
+                  "value": "Sr.",
+                },
+                "ref": null,
+                "rendered": "Sr.",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "I",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "I",
+                  "value": "I",
+                },
+                "ref": null,
+                "rendered": "I",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "II",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "II",
+                  "value": "II",
+                },
+                "ref": null,
+                "rendered": "II",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "III",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "III",
+                  "value": "III",
+                },
+                "ref": null,
+                "rendered": "III",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "IV",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "IV",
+                  "value": "IV",
+                },
+                "ref": null,
+                "rendered": "IV",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": "V",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "V",
+                  "value": "V",
+                },
+                "ref": null,
+                "rendered": "V",
+                "type": "option",
+              },
+            ],
+            "type": "select",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="dxp-name-prefix"
+            title={null}
+          >
+            <label
+              className="dxp-name-prefix-label"
+            >
+              Prefix
+            </label>
+            <select
+              className="dxp-name-prefix-select"
+              disabled={false}
+              onBlur={undefined}
+              onChange={[Function]}
+              value=""
+            >
+              <option />
+              <option
+                value="Mr."
+              >
+                Mr.
+              </option>
+              <option
+                value="Ms."
+              >
+                Ms.
+              </option>
+              <option
+                value="Mrs."
+              >
+                Mrs.
+              </option>
+              <option
+                value="Miss"
+              >
+                Miss
+              </option>
+              <option
+                value="Dr."
+              >
+                Dr.
+              </option>
+              <option
+                value="Rev."
+              >
+                Rev.
+              </option>
+              <option
+                value="Rab."
+              >
+                Rab.
+              </option>
+              <option
+                value="Can."
+              >
+                Can.
+              </option>
+              <option
+                value="Hon."
+              >
+                Hon.
+              </option>
+            </select>
+          </div>,
+          <div
+            className="dxp-name-first"
+            title={null}
+          >
+            <label
+              className="dxp-name-first-label"
+            >
+              First
+            </label>
+            <input
+              className=""
+              maxLength={50}
+              onBlur={undefined}
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              readOnly={false}
+              type="text"
+              value=""
+            />
+          </div>,
+          <div
+            className="dxp-name-middle"
+            title={null}
+          >
+            <label
+              className="dxp-name-middle-label"
+            >
+              Middle
+            </label>
+            <input
+              className=""
+              maxLength={50}
+              onBlur={undefined}
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              readOnly={false}
+              type="text"
+              value=""
+            />
+          </div>,
+          <div
+            className="dxp-name-last"
+            title={null}
+          >
+            <label
+              className="dxp-name-last-label"
+            >
+              Last
+            </label>
+            <input
+              className=""
+              maxLength={50}
+              onBlur={undefined}
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              readOnly={false}
+              type="text"
+              value=""
+            />
+          </div>,
+          <div
+            className="dxp-name-suffix"
+            title={null}
+          >
+            <label
+              className="dxp-name-suffix-label"
+            >
+              Suffix
+            </label>
+            <select
+              className="dxp-name-suffix-select"
+              disabled={false}
+              onBlur={undefined}
+              onChange={[Function]}
+              value=""
+            >
+              <option />
+              <option
+                value="Jr."
+              >
+                Jr.
+              </option>
+              <option
+                value="Sr."
+              >
+                Sr.
+              </option>
+              <option
+                value="I"
+              >
+                I
+              </option>
+              <option
+                value="II"
+              >
+                II
+              </option>
+              <option
+                value="III"
+              >
+                III
+              </option>
+              <option
+                value="IV"
+              >
+                IV
+              </option>
+              <option
+                value="V"
+              >
+                V
+              </option>
+            </select>
+          </div>,
+        ],
+        "className": "dxp-name-question",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label
+                className="dxp-name-prefix-label"
+              >
+                Prefix
+              </label>,
+              <select
+                className="dxp-name-prefix-select"
+                disabled={false}
+                onBlur={undefined}
+                onChange={[Function]}
+                value=""
+              >
+                <option />
+                <option
+                  value="Mr."
+                >
+                  Mr.
+                </option>
+                <option
+                  value="Ms."
+                >
+                  Ms.
+                </option>
+                <option
+                  value="Mrs."
+                >
+                  Mrs.
+                </option>
+                <option
+                  value="Miss"
+                >
+                  Miss
+                </option>
+                <option
+                  value="Dr."
+                >
+                  Dr.
+                </option>
+                <option
+                  value="Rev."
+                >
+                  Rev.
+                </option>
+                <option
+                  value="Rab."
+                >
+                  Rab.
+                </option>
+                <option
+                  value="Can."
+                >
+                  Can.
+                </option>
+                <option
+                  value="Hon."
+                >
+                  Hon.
+                </option>
+              </select>,
+              null,
+            ],
+            "className": "dxp-name-prefix",
+            "title": null,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Prefix",
+                "className": "dxp-name-prefix-label",
+              },
+              "ref": null,
+              "rendered": "Prefix",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <option />,
+                  Array [
+                    <option
+                      value="Mr."
+                    >
+                      Mr.
+                    </option>,
+                    <option
+                      value="Ms."
+                    >
+                      Ms.
+                    </option>,
+                    <option
+                      value="Mrs."
+                    >
+                      Mrs.
+                    </option>,
+                    <option
+                      value="Miss"
+                    >
+                      Miss
+                    </option>,
+                    <option
+                      value="Dr."
+                    >
+                      Dr.
+                    </option>,
+                    <option
+                      value="Rev."
+                    >
+                      Rev.
+                    </option>,
+                    <option
+                      value="Rab."
+                    >
+                      Rab.
+                    </option>,
+                    <option
+                      value="Can."
+                    >
+                      Can.
+                    </option>,
+                    <option
+                      value="Hon."
+                    >
+                      Hon.
+                    </option>,
+                  ],
+                ],
+                "className": "dxp-name-prefix-select",
+                "disabled": false,
+                "onBlur": undefined,
+                "onChange": [Function],
+                "value": "",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Mr.",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Mr.",
+                    "value": "Mr.",
+                  },
+                  "ref": null,
+                  "rendered": "Mr.",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Ms.",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Ms.",
+                    "value": "Ms.",
+                  },
+                  "ref": null,
+                  "rendered": "Ms.",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Mrs.",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Mrs.",
+                    "value": "Mrs.",
+                  },
+                  "ref": null,
+                  "rendered": "Mrs.",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Miss",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Miss",
+                    "value": "Miss",
+                  },
+                  "ref": null,
+                  "rendered": "Miss",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Dr.",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Dr.",
+                    "value": "Dr.",
+                  },
+                  "ref": null,
+                  "rendered": "Dr.",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Rev.",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Rev.",
+                    "value": "Rev.",
+                  },
+                  "ref": null,
+                  "rendered": "Rev.",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Rab.",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Rab.",
+                    "value": "Rab.",
+                  },
+                  "ref": null,
+                  "rendered": "Rab.",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Can.",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Can.",
+                    "value": "Can.",
+                  },
+                  "ref": null,
+                  "rendered": "Can.",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Hon.",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Hon.",
+                    "value": "Hon.",
+                  },
+                  "ref": null,
+                  "rendered": "Hon.",
+                  "type": "option",
+                },
+              ],
+              "type": "select",
+            },
+            null,
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label
+                className="dxp-name-first-label"
+              >
+                First
+              </label>,
+              <input
+                className=""
+                maxLength={50}
+                onBlur={undefined}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                readOnly={false}
+                type="text"
+                value=""
+              />,
+              null,
+            ],
+            "className": "dxp-name-first",
+            "title": null,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "First",
+                "className": "dxp-name-first-label",
+              },
+              "ref": null,
+              "rendered": "First",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "className": "",
+                "maxLength": 50,
+                "onBlur": undefined,
+                "onChange": [Function],
+                "onKeyPress": [Function],
+                "readOnly": false,
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            null,
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label
+                className="dxp-name-middle-label"
+              >
+                Middle
+              </label>,
+              <input
+                className=""
+                maxLength={50}
+                onBlur={undefined}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                readOnly={false}
+                type="text"
+                value=""
+              />,
+              null,
+            ],
+            "className": "dxp-name-middle",
+            "title": null,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Middle",
+                "className": "dxp-name-middle-label",
+              },
+              "ref": null,
+              "rendered": "Middle",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "className": "",
+                "maxLength": 50,
+                "onBlur": undefined,
+                "onChange": [Function],
+                "onKeyPress": [Function],
+                "readOnly": false,
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            null,
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label
+                className="dxp-name-last-label"
+              >
+                Last
+              </label>,
+              <input
+                className=""
+                maxLength={50}
+                onBlur={undefined}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                readOnly={false}
+                type="text"
+                value=""
+              />,
+              null,
+            ],
+            "className": "dxp-name-last",
+            "title": null,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Last",
+                "className": "dxp-name-last-label",
+              },
+              "ref": null,
+              "rendered": "Last",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "className": "",
+                "maxLength": 50,
+                "onBlur": undefined,
+                "onChange": [Function],
+                "onKeyPress": [Function],
+                "readOnly": false,
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            null,
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label
+                className="dxp-name-suffix-label"
+              >
+                Suffix
+              </label>,
+              <select
+                className="dxp-name-suffix-select"
+                disabled={false}
+                onBlur={undefined}
+                onChange={[Function]}
+                value=""
+              >
+                <option />
+                <option
+                  value="Jr."
+                >
+                  Jr.
+                </option>
+                <option
+                  value="Sr."
+                >
+                  Sr.
+                </option>
+                <option
+                  value="I"
+                >
+                  I
+                </option>
+                <option
+                  value="II"
+                >
+                  II
+                </option>
+                <option
+                  value="III"
+                >
+                  III
+                </option>
+                <option
+                  value="IV"
+                >
+                  IV
+                </option>
+                <option
+                  value="V"
+                >
+                  V
+                </option>
+              </select>,
+            ],
+            "className": "dxp-name-suffix",
+            "title": null,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Suffix",
+                "className": "dxp-name-suffix-label",
+              },
+              "ref": null,
+              "rendered": "Suffix",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <option />,
+                  Array [
+                    <option
+                      value="Jr."
+                    >
+                      Jr.
+                    </option>,
+                    <option
+                      value="Sr."
+                    >
+                      Sr.
+                    </option>,
+                    <option
+                      value="I"
+                    >
+                      I
+                    </option>,
+                    <option
+                      value="II"
+                    >
+                      II
+                    </option>,
+                    <option
+                      value="III"
+                    >
+                      III
+                    </option>,
+                    <option
+                      value="IV"
+                    >
+                      IV
+                    </option>,
+                    <option
+                      value="V"
+                    >
+                      V
+                    </option>,
+                  ],
+                ],
+                "className": "dxp-name-suffix-select",
+                "disabled": false,
+                "onBlur": undefined,
+                "onChange": [Function],
+                "value": "",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Jr.",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Jr.",
+                    "value": "Jr.",
+                  },
+                  "ref": null,
+                  "rendered": "Jr.",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Sr.",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Sr.",
+                    "value": "Sr.",
+                  },
+                  "ref": null,
+                  "rendered": "Sr.",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "I",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "I",
+                    "value": "I",
+                  },
+                  "ref": null,
+                  "rendered": "I",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "II",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "II",
+                    "value": "II",
+                  },
+                  "ref": null,
+                  "rendered": "II",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "III",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "III",
+                    "value": "III",
+                  },
+                  "ref": null,
+                  "rendered": "III",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "IV",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "IV",
+                    "value": "IV",
+                  },
+                  "ref": null,
+                  "rendered": "IV",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": "V",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "V",
+                    "value": "V",
+                  },
+                  "ref": null,
+                  "rendered": "V",
+                  "type": "option",
+                },
+              ],
+              "type": "select",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

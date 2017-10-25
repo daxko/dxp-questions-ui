@@ -1,34 +1,81 @@
 {
-  "type": "name",
-  "title": "What is your mom's name?",
-  "description": null,
-  "required": true,
-  "read_only": false,
-  "show_first": true,
-  "show_middle": true,
-  "show_last": true,
-  "show_prefix": true,
-  "show_suffix": true,
-  "prefixes": [
-      {
-          "id": "Mr.",
-          "value": "Mr."
-      },
-      {
-          "id": "Ms.",
-          "value": "Ms."
-      },
-      ...
-  ],
-  "suffixes": [
-      {
-          "id": "Jr.",
-          "value": "Jr."
-      },
-      {
-          "id": "Sr.",
-          "value": "Sr."
-      },
-      ...
-  ]
+    "type": "name",
+    "title": "Participant Name",
+    "description": "Please provide the name given on your birth certificate",
+    "required": true,
+    "read_only": false,
+    "show_first": true,
+    "show_middle": true,
+    "show_last": true,
+    "show_prefix": true,
+    "show_suffix": true,
+    "required_first": true,
+    "required_middle": false,
+    "required_last": true,
+    "prefixes": [{
+            "id": "Mr.",
+            "value": "Mr."
+        },
+        {
+            "id": "Ms.",
+            "value": "Ms."
+        },
+        {
+            "id": "Mrs.",
+            "value": "Mrs."
+        },
+        {
+            "id": "Miss",
+            "value": "Miss"
+        },
+        {
+            "id": "Dr.",
+            "value": "Dr."
+        },
+        {
+            "id": "Rev.",
+            "value": "Rev."
+        },
+        {
+            "id": "Rab.",
+            "value": "Rab."
+        },
+        {
+            "id": "Can.",
+            "value": "Can."
+        },
+        {
+            "id": "Hon.",
+            "value": "Hon."
+        }
+    ],
+    "suffixes": [{
+            "id": "Jr.",
+            "value": "Jr."
+        },
+        {
+            "id": "Sr.",
+            "value": "Sr."
+        },
+        {
+            "id": "I",
+            "value": "I"
+        },
+        {
+            "id": "II",
+            "value": "II"
+        },
+        {
+            "id": "III",
+            "value": "III"
+        },
+        {
+            "id": "IV",
+            "value": "IV"
+        },
+        {
+            "id": "V",
+            "value": "V"
+        }
+    ]
 }
