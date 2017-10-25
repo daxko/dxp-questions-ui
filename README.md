@@ -19,7 +19,7 @@ Feel free to use and submit issues and pull requests!
     * [Radio Question](#radio-question)
     * [Date Question](#date-question)
     * [Address](#address)
-  * [Javascript API](#javascript-api)
+* [Javascript API](#javascript-api)
   * [Classes](#classes)
   * [Typedefs](#typedefs)
   * [DxpQuestions](#dxpquestions)
@@ -1515,7 +1515,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 ```
 <!-- /include -->
 
-## Javascript API
+# Javascript API
 
 <!-- include (snippets/md/javascript_api.md) -->
 ## Classes

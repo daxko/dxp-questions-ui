@@ -16,7 +16,7 @@
     "prod": "NODE_ENV=production webpack -p && cp ./dist/dxp-questions.js ./dist/dxp-questions-min.js",
     "example": "httpster",
     "test": "jest",
-    "docs": "node_modules/jsdoc-to-markdown/bin/cli.js src/index.js > snippets/md/javascript_api.md && node_modules/markedpp/bin/markedpp.js readme.mdpp > README.md",
+    "docs": "jsdoc2md src/index.js > snippets/md/javascript_api.md && markedpp readme.mdpp > README.md",
     "release": "standard-version",
     "prerelease": "standard-version --prerelease prerelease"
   },

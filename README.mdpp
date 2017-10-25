@@ -103,6 +103,6 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 !include (snippets/html/address_question.html lang=html)
 
-## Javascript API
+# Javascript API
 
 !include (snippets/md/javascript_api.md)
