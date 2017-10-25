@@ -8,7 +8,7 @@ Feel free to use and submit issues and pull requests!
 <!-- !toc -->
 
 * [Daxko Questions UI Library](#daxko-questions-ui-library)
-  * [Requirements](#requirements)
+  * [Installation](#installation)
   * [Development](#development)
   * [Usage](#usage)
   * [Question rendering examples](#question-rendering-examples)
@@ -34,13 +34,15 @@ Feel free to use and submit issues and pull requests!
 
 <!-- toc! -->
 
-## Requirements
+## Installation
 
-Install `node`
+* `npm install dxp-questions-ui`
+* Download latest release from [Github](https://github.com/daxko/dxp-questions-ui/releases/latest)
 
 ## Development
 
-* `npm install -g webpack`  if you don't have webpack installed already
+* Install `node`
+* `npm install -g webpack` if you don't have webpack installed already
 * `npm install`
 * `npm start`
 
