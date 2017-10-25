@@ -1,0 +1,10 @@
+{
+  "type": "phone",
+  "title": "Phone",
+  "description": "Phone number",
+  "required": true,
+  "read_only": false,
+  "max_length": null,
+  "show_extension": true,
+  "intl": true
+}

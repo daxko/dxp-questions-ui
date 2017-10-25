@@ -1,0 +1,8 @@
+{
+  "type": "date",
+  "title": "When is your dog's birth date?",
+  "description": "If you don't have a dog, lie.",
+  "required": true,
+  "read_only": false,
+  "max_length": null
+}

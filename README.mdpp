@@ -1,0 +1,108 @@
+# Daxko Questions UI Library
+[![Build Status](https://travis-ci.org/daxko/dxp-questions-ui.svg?branch=master)](https://travis-ci.org/daxko/dxp-questions-ui) [![npm](https://img.shields.io/npm/v/dxp-questions-ui.svg)](https://www.npmjs.com/package/dxp-questions-ui)
+
+> The `dxp-questions-ui` library renders questions and answers that are provided by the [Daxko Operations API](https://api.daxko.com/v3/docs/).
+
+Feel free to use and submit issues and pull requests!
+
+!toc
+
+## Requirements
+
+Install `node`
+
+## Development
+
+* `npm install -g webpack`  if you don't have webpack installed already
+* `npm install`
+* `npm start`
+
+This will rebuild the dist/dxp-questions.js file whenever changes are made.
+
+To test the changes:
+
+* `npm install -g httpster` if you don't have httpster installed
+* `npm run example` in new console in this dir
+* Go to <http://localhost:3333/example>
+
+## Usage
+
+Required libraries that need to be included before including dxp-questions-min.js. See `example/index.html` for example of how to use.
+
+!include (snippets/html/usage.html lang=html)
+
+## Question rendering examples
+
+### Text Question
+
+#### JSON
+
+!include (snippets/json/text_question.json lang=json)
+
+#### HTML
+
+!include (snippets/html/text_question.html lang=html)
+
+### Name Question
+
+#### JSON
+
+!include (snippets/json/name_question.json lang=json)
+
+#### HTML
+
+!include (snippets/html/name_question.html lang=html)
+
+### Checkbox Question
+
+#### JSON
+
+!include (snippets/json/checkbox_question.json lang=json)
+
+#### HTML
+
+!include (snippets/html/checkbox_question.html lang=html)
+
+### Phone Question
+
+#### JSON
+
+!include (snippets/json/phone_question.json lang=json)
+
+#### HTML
+
+!include (snippets/html/phone_question.html lang=html)
+
+### Radio Question
+
+#### JSON
+
+!include (snippets/json/radio_question.json lang=json)
+
+#### HTML
+
+!include (snippets/html/radio_question.html lang=html)
+
+### Date Question
+
+#### JSON
+
+!include (snippets/json/date_question.json lang=json)
+
+#### HTML
+
+!include (snippets/html/date_question.html lang=html)
+
+### Address
+
+#### JSON
+
+!include (snippets/json/address_question.json lang=json)
+
+#### HTML
+
+!include (snippets/html/address_question.html lang=html)
+
+## Javascript API
+
+!include (snippets/md/javascript_api.md)

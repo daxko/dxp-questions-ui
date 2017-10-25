@@ -1,0 +1,8 @@
+{
+  "type": "text",
+  "title": "Sample text question",
+  "description": "Please answer this question honestly",
+  "required": true,
+  "read_only": false,
+  "max_length": 255
+}

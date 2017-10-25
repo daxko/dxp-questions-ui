@@ -1,0 +1,34 @@
+{
+  "type": "name",
+  "title": "What is your mom's name?",
+  "description": null,
+  "required": true,
+  "read_only": false,
+  "show_first": true,
+  "show_middle": true,
+  "show_last": true,
+  "show_prefix": true,
+  "show_suffix": true,
+  "prefixes": [
+      {
+          "id": "Mr.",
+          "value": "Mr."
+      },
+      {
+          "id": "Ms.",
+          "value": "Ms."
+      },
+      ...
+  ],
+  "suffixes": [
+      {
+          "id": "Jr.",
+          "value": "Jr."
+      },
+      {
+          "id": "Sr.",
+          "value": "Sr."
+      },
+      ...
+  ]
+}

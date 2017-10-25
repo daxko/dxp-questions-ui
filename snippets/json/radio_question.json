@@ -1,0 +1,24 @@
+{
+  "type": "radio",
+  "title": "What is your gender?",
+  "description": "Please answer honestly",
+  "required": true,
+  "read_only": false,
+  "default_value": null,
+  "possible_answers": [
+      {
+          "id": "childcare_867867",
+          "value": "Male",
+          "amount": null,
+          "metadata": {},
+          "display_value": "Male"
+      },
+      {
+          "id": "childcare_867868",
+          "value": "Female",
+          "amount": null,
+          "metadata": {},
+          "display_value": "Female"
+      }
+  ]
+}
