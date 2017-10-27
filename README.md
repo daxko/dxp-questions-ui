@@ -61,16 +61,19 @@ Required libraries that need to be included before including dxp-questions-min.j
 <!-- include (snippets/html/usage.html lang=html) -->
 ```html
 <!-- css for pickadate -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/themes/default.date.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/themes/default.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/themes/default.date.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/themes/default.css">
 
 <!-- jquery -->
-<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- pickadate calendar -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/picker.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/picker.date.js"></script>
 <!-- masked input plugin -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.min.js"></script>
+
+<!-- dxp-questions ui library -->
+<script src="https://cdn.rawgit.com/daxko/dxp-questions-ui/master/dist/dxp-questions-min.js"></script>
 ```
 <!-- /include -->
 
@@ -1401,29 +1404,24 @@ Required libraries that need to be included before including dxp-questions-min.j
     "description": "",
     "required": false,
     "read_only": false,
-    "default_value": null,
     "possible_answers": [{
             "id": "childcare_possible_answer-103475",
             "value": "Soccer",
-            "amount": null,
             "display_value": "Soccer"
         },
         {
             "id": "childcare_possible_answer-103476",
             "value": "Basketball",
-            "amount": null,
             "display_value": "Basketball"
         },
         {
             "id": "childcare_possible_answer-103477",
             "value": "Swimming",
-            "amount": null,
             "display_value": "Swimming"
         },
         {
             "id": "childcare_possible_answer-103478",
             "value": "Football",
-            "amount": null,
             "display_value": "Football"
         }
     ],
@@ -1477,8 +1475,7 @@ Required libraries that need to be included before including dxp-questions-min.j
   "title": "What is your birthdate?",
   "description": "This is required to determine eligibility.",
   "required": true,
-  "read_only": false,
-  "max_length": null
+  "read_only": false
 }
 ```
 <!-- /include -->
@@ -1525,19 +1522,16 @@ Required libraries that need to be included before including dxp-questions-min.j
   "possible_answers": [{
       "id": "U",
       "value": "Unspecified",
-      "amount": null,
       "display_value": "Unspecified"
     },
     {
       "id": "M",
       "value": "Male",
-      "amount": null,
       "display_value": "Male"
     },
     {
       "id": "F",
       "value": "Female",
-      "amount": null,
       "display_value": "Female"
     }
   ],
@@ -1765,7 +1759,6 @@ Required libraries that need to be included before including dxp-questions-min.j
   "description": "This will be used in case of any emergencies.",
   "required": true,
   "read_only": false,
-  "max_length": null,
   "show_extension": true,
   "intl": false
 }
@@ -1815,13 +1808,11 @@ Required libraries that need to be included before including dxp-questions-min.j
     "possible_answers": [{
             "id": "childcare_possible_answer-103473",
             "value": "Yes",
-            "amount": null,
             "display_value": "Yes"
         },
         {
             "id": "childcare_possible_answer-103474",
             "value": "No",
-            "amount": null,
             "display_value": "No"
         }
     ],
@@ -1869,7 +1860,8 @@ Required libraries that need to be included before including dxp-questions-min.j
   "required": false,
   "read_only": false,
   "max_length": 50
-}```
+}
+```
 <!-- /include -->
 
 #### HTML
