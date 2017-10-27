@@ -2,7 +2,8 @@
 [![Build Status](https://travis-ci.org/daxko/dxp-questions-ui.svg?branch=master)](https://travis-ci.org/daxko/dxp-questions-ui) [![npm](https://img.shields.io/npm/v/dxp-questions-ui.svg)](https://www.npmjs.com/package/dxp-questions-ui)
 
 > The `dxp-questions-ui` library renders questions and answers that are provided by the [Daxko Operations API](https://api.daxko.com/v3/docs/).
-> [Live Demo](https://daxko.github.io/dxp-questions-ui/index.html)
+
+[Live Demo](https://daxko.github.io/dxp-questions-ui/index.html)
 
 Feel free to use and submit issues and pull requests!
 
