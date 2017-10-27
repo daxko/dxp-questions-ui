@@ -3,6 +3,5 @@
   "title": "What is your birthdate?",
   "description": "This is required to determine eligibility.",
   "required": true,
-  "read_only": false,
-  "max_length": null
+  "read_only": false
 }

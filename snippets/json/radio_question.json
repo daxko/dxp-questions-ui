@@ -8,13 +8,11 @@
     "possible_answers": [{
             "id": "childcare_possible_answer-103473",
             "value": "Yes",
-            "amount": null,
             "display_value": "Yes"
         },
         {
             "id": "childcare_possible_answer-103474",
             "value": "No",
-            "amount": null,
             "display_value": "No"
         }
     ],

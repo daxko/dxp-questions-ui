@@ -13,32 +13,20 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/picker.date.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.min.js"></script>
 
-    <script src="../dist/dxp-questions.js"></script>
+    <!-- dxp-questions ui library -->
+    <script src="https://github.com/daxko/dxp-questions-ui/releases/download/v0.1.0/dxp-questions-min.js"></script>
 
-    <script>var answers; var questions;</script>
-
+    <!-- test data: this will come from the api -->
     <script src="test_data.js"></script>
-
 
     <script>
 
-    /*
-    if (response !== undefined) {
-        questions = response.questions;
-        answers = response.data;
-    }
-    */
-
     $(function() {
-
-        if(!document.addEventListener) {
-            $('#old-browser-error').show();
-        }
 
         var form = DxpQuestions.init({
             questions: questions,
             answers: answers,
-            container: document.getElementById('container'),
+            container: document.getElementById('questions-container'),
             onValidate: function(result) {
                 if (result.valid) {
                     $('#validation-error').hide();
@@ -64,13 +52,10 @@
   </head>
   <body>
 
-    <div id="container"></div>
+    <div id="questions-container"></div>
     <div class="container">
       <button id="next-button" class="btn btn-primary">Submit</button>
       <div class="alert alert-error" id="validation-error" style="display:none;">Please correct the above.</div>
-      <div class="alert alert-error" id="old-browser-error" style="display:none;">
-        Your browser is not supported.  Please visit <a href="http://outdatedbrowser.com/">this site</a> for options on upgrading your browser.
-      </div>
     </div>
 
   </body>

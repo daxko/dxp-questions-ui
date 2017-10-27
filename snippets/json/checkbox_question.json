@@ -4,29 +4,24 @@
     "description": "",
     "required": false,
     "read_only": false,
-    "default_value": null,
     "possible_answers": [{
             "id": "childcare_possible_answer-103475",
             "value": "Soccer",
-            "amount": null,
             "display_value": "Soccer"
         },
         {
             "id": "childcare_possible_answer-103476",
             "value": "Basketball",
-            "amount": null,
             "display_value": "Basketball"
         },
         {
             "id": "childcare_possible_answer-103477",
             "value": "Swimming",
-            "amount": null,
             "display_value": "Swimming"
         },
         {
             "id": "childcare_possible_answer-103478",
             "value": "Football",
-            "amount": null,
             "display_value": "Football"
         }
     ],

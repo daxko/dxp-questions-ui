@@ -8,19 +8,16 @@
   "possible_answers": [{
       "id": "U",
       "value": "Unspecified",
-      "amount": null,
       "display_value": "Unspecified"
     },
     {
       "id": "M",
       "value": "Male",
-      "amount": null,
       "display_value": "Male"
     },
     {
       "id": "F",
       "value": "Female",
-      "amount": null,
       "display_value": "Female"
     }
   ],
