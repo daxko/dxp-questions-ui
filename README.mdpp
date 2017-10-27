@@ -3,7 +3,7 @@
 
 > The `dxp-questions-ui` library renders questions and answers that are provided by the [Daxko Operations API](https://api.daxko.com/v3/docs/).
 
-[Live Demo](https://daxko.github.io/dxp-questions-ui/index.html) (See (docs)[https://github.com/daxko/dxp-questions-ui/tree/master/docs] directory)
+[Live Demo](https://daxko.github.io/dxp-questions-ui/index.html) (See [docs](https://github.com/daxko/dxp-questions-ui/tree/master/docs) directory)
 
 Feel free to use and submit issues and pull requests!
 
