@@ -7,31 +7,26 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <CheckBoxListField
     question={
       Object {
-        "default_value": null,
         "description": "",
         "empty_value": "",
         "hide_empty_option": false,
         "possible_answers": Array [
           Object {
-            "amount": null,
             "display_value": "Soccer",
             "id": "childcare_possible_answer-103475",
             "value": "Soccer",
           },
           Object {
-            "amount": null,
             "display_value": "Basketball",
             "id": "childcare_possible_answer-103476",
             "value": "Basketball",
           },
           Object {
-            "amount": null,
             "display_value": "Swimming",
             "id": "childcare_possible_answer-103477",
             "value": "Swimming",
           },
           Object {
-            "amount": null,
             "display_value": "Football",
             "id": "childcare_possible_answer-103478",
             "value": "Football",

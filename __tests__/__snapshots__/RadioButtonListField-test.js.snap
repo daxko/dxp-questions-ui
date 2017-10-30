@@ -13,13 +13,11 @@ ShallowWrapper {
         "hide_empty_option": false,
         "possible_answers": Array [
           Object {
-            "amount": null,
             "display_value": "Yes",
             "id": "childcare_possible_answer-103473",
             "value": "Yes",
           },
           Object {
-            "amount": null,
             "display_value": "No",
             "id": "childcare_possible_answer-103474",
             "value": "No",

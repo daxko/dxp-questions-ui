@@ -43,6 +43,7 @@
     "markedpp": "^0.3.10",
     "node-sass": "^3.8.0",
     "react-addons-test-utils": "^15.5.4",
+    "react-test-renderer": "^15.6.2",
     "sass-loader": "^4.0.0",
     "standard-version": "^4.2.0",
     "webpack": "^1.13.2"

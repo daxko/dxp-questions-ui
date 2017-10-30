@@ -13,19 +13,16 @@ ShallowWrapper {
         "hide_empty_option": true,
         "possible_answers": Array [
           Object {
-            "amount": null,
             "display_value": "Unspecified",
             "id": "U",
             "value": "Unspecified",
           },
           Object {
-            "amount": null,
             "display_value": "Male",
             "id": "M",
             "value": "Male",
           },
           Object {
-            "amount": null,
             "display_value": "Female",
             "id": "F",
             "value": "Female",
