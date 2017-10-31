@@ -40,6 +40,7 @@ Feel free to use and submit issues and pull requests!
 
 * `npm install dxp-questions-ui`
 * Download latest release from [Github](https://github.com/daxko/dxp-questions-ui/releases/latest)
+* `<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.0/dxp-questions-min.js"></script>`
 
 ## Development
 
@@ -75,7 +76,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.min.js"></script>
 
 <!-- dxp-questions ui library -->
-<script src="https://cdn.rawgit.com/daxko/dxp-questions-ui/master/dist/dxp-questions-min.js"></script>
+<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.0/dxp-questions-min.js"></script>
 ```
 <!-- /include -->
 
