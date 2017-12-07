@@ -30,6 +30,7 @@ Feel free to use and submit issues and pull requests!
     * [new DxpQuestions()](#new-dxpquestions-)
     * [dxpQuestions.render()](#dxpquestions-render-)
     * [dxpQuestions.requestSubmit()](#dxpquestions-requestsubmit-)
+    * [dxpQuestions.setAnswers()](#dxpquestions-setanswers-)
     * [DxpQuestions.init(params) ⇒ <code>Object</code>](#dxpquestions-init-params-code-object-code-)
   * [onValidate : <code>function</code>](#onvalidate-code-function-code-)
   * [onSubmit : <code>function</code>](#onsubmit-code-function-code-)
@@ -40,7 +41,7 @@ Feel free to use and submit issues and pull requests!
 
 * `npm install dxp-questions-ui`
 * Download latest release from [Github](https://github.com/daxko/dxp-questions-ui/releases/latest)
-* `<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.0/dxp-questions-min.js"></script>`
+* `<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.2.0/dxp-questions-min.js"></script>`
 
 ## Development
 
@@ -1912,6 +1913,7 @@ Required libraries that need to be included before including dxp-questions-min.j
   * _instance_
     * [.render()](#DxpQuestions+render)
     * [.requestSubmit()](#DxpQuestions+requestSubmit)
+    * [.setAnswers()](#DxpQuestions+setAnswers)
   * _static_
     * [.init(params)](#DxpQuestions.init) ⇒ <code>Object</code>
 
@@ -1942,6 +1944,25 @@ When called, calls the function that submits the form
 var form = DxpQuestions.init(// params);
 form.requestSubmit();
 ```
+<a name="DxpQuestions+setAnswers"></a>
+
+### dxpQuestions.setAnswers()
+Sets answers in the form.
+
+**Kind**: instance method of [<code>DxpQuestions</code>](#dxpquestions)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| params.answers | <code>Object</code> | The answer key/value pairs to set |
+| param.replaceAll | <code>bool</code> | Set to true to replace all answer values, false to only replace values that have a key in params.answers.  Defaults to false. |
+
+**Example**  
+```js
+var form = DxpQuestions.init(// params);
+var values = {};
+values['my_field_1234'] = 'Some value';
+form.setAnswers({ answers: values, replaceAll: false });
+```
 <a name="DxpQuestions.init"></a>
 
 ### DxpQuestions.init(params) ⇒ <code>Object</code>
@@ -1956,6 +1977,7 @@ Initialize a new form that will render questions and answers
 | params.questions | <code>Array</code> | A list of questions to render |
 | params.answers | <code>Array</code> | A list of answers to render |
 | params.container | <code>Object</code> | The HTML element that will contain the rendered form |
+| params.customValidators | <code>Object</code> | Mapping of question type to custom validation function |
 | params.onValidate | [<code>onValidate</code>](#onValidate) | A callback function that is called everytime an answer is validated |
 | params.onSubmit | [<code>onSubmit</code>](#onSubmit) | A callback function that is called when the `submitRequest()` method is called on the form |
 
@@ -1965,6 +1987,15 @@ var form = DxpQuestions.init({
   questions: // questions object here,
   answers: // answers object here,
   container: document.getElementById('container'),
+  customValidators: {
+        email: function(context) {
+            var errors = {};
+            if (context.answer.indexOf('@gmail.com') < 0) {
+                errors['_summary'] = 'must be a gmail adress';
+            }
+            context.setErrors({ errors: errors })
+        }
+  }
   onValidate: function (result) {
     // show error if resul.valid === false
   },

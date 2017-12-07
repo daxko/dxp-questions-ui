@@ -1,6 +1,7 @@
 var mapping = {
 	"text": require('./TextField'),
 	"name": require('./NameField'),
+	"password": require('./PasswordField'),
 	"dropdown": require('./DropDownField'),
 	"radio": require('./RadioButtonListField'),
 	"checkboxes": require('./CheckBoxListField'),

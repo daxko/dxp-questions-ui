@@ -1,5 +1,6 @@
 var mapping = {
 	"text": require('./TextFieldValidator'),
+	"password": require('./PasswordFieldValidator'),
 	"name": require('./NameFieldValidator'),
 	"dropdown": require('./SelectOneFieldValidator'),
 	"radio": require('./SelectOneFieldValidator'),

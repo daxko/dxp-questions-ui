@@ -32,6 +32,7 @@ var DxpQuestions = function(params) {
  * @param {Array} params.questions A list of questions to render
  * @param {Array} params.answers A list of answers to render
  * @param {Object} params.container The HTML element that will contain the rendered form
+ * @param {Object} params.customValidators Mapping of question type to custom validation function
  * @param {onValidate} params.onValidate A callback function that is called everytime an answer is validated
  * @param {onSubmit} params.onSubmit A callback function that is called when the `submitRequest()` method is called on the form
  * @returns {Object} An instance of the form
@@ -40,6 +41,15 @@ var DxpQuestions = function(params) {
  *   questions: // questions object here,
  *   answers: // answers object here,
  *   container: document.getElementById('container'),
+ *   customValidators: {
+ * 		email: function(context) {
+ *			var errors = {};
+ *			if (context.answer.indexOf('@gmail.com') < 0) {
+ *				errors['_summary'] = 'must be a gmail adress';
+ *			}
+ *			context.setErrors({ errors: errors })
+ *		}
+ *   }
  *   onValidate: function (result) {
  *     // show error if resul.valid === false
  *   },
@@ -60,7 +70,7 @@ DxpQuestions.init = function(params) {
  * form.render();
  */
 DxpQuestions.prototype.render = function() {
-	this.form = ReactDOM.render(<Form questions={this.params.questions} answers={this.params.answers} onValidate={this.params.onValidate} onSubmit={this.params.onSubmit} />, this.params.container);
+	this.form = ReactDOM.render(<Form questions={this.params.questions} answers={this.params.answers} onValidate={this.params.onValidate} onSubmit={this.params.onSubmit} customValidators={this.params.customValidators} />, this.params.container);
 };
 
 /**
@@ -72,6 +82,21 @@ DxpQuestions.prototype.render = function() {
  */
 DxpQuestions.prototype.requestSubmit = function() {
 	return this.form.requestSubmit();
+};
+
+/**
+ * Sets answers in the form.
+ * @memberof DxpQuestions
+ * @param {Object} params.answers The answer key/value pairs to set
+ * @param {bool} param.replaceAll Set to true to replace all answer values, false to only replace values that have a key in params.answers.  Defaults to false.
+ * @example
+ * var form = DxpQuestions.init(// params);
+ * var values = {};
+ * values['my_field_1234'] = 'Some value';
+ * form.setAnswers({ answers: values, replaceAll: false });
+ */
+DxpQuestions.prototype.setAnswers = function(params) {
+	return this.form.setAnswers(params);
 };
 
 module.exports = DxpQuestions;
