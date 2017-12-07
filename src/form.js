@@ -11,7 +11,8 @@ var Form = React.createClass({
 		questions: React.PropTypes.object.isRequired,
 		answers: React.PropTypes.object.isRequired,
 		onValidate: React.PropTypes.func.isRequired,
-		onSubmit: React.PropTypes.func.isRequired
+		onSubmit: React.PropTypes.func.isRequired,
+		customValidators: React.PropTypes.object
 	},
 
 	getInitialState: function() {
@@ -44,15 +45,53 @@ var Form = React.createClass({
 		this.props.onValidate({ valid: valid });
 	},
 
+	// External interface allows consumers to define custom validation per question type and return errors
+	executeCustomValidator: function(key, question, answer, errors) {
+		if (this.props.customValidators !== null) {
+			var customValidator = this.props.customValidators[question.type];
+			if (customValidator !== undefined) {
+				if (typeof(customValidator) !== 'function') {
+					throw 'Expected customValidators[' + question.type + '] to be a function';
+				}
+				var self = this;
+
+				var context = {
+					question_id: key,
+					question: question,
+					answer: answer,
+					allAnswers: self.state.answers,
+					// A callback is provided to return any errors so that async validation can occur via ajax, timer, etc
+					setErrors: function(callbackData) {
+						var new_errors = self.state.errors;
+						
+						if (Object.keys(callbackData.errors).length == 0) {
+							delete new_errors[key]
+						} else {
+							new_errors[key] = callbackData.errors;
+						}
+	
+						self.setState({ errors: new_errors }, function() {
+							self.fireOnValidate();	
+						});					
+					}
+				};
+
+				customValidator(context);
+			}
+		}
+	},
+
 	// Every time an answer is changed, it will be validated (even if error not shown)
 	validateOne: function(key, question, answer) {
 		var validator = validator_factory(question.type);
 		if (validator == null) return;
-		//var new_errors = Object.assign({}, this.state.errors);
 		var new_errors = this.state.errors;
 		var errors = validator(question, answer);
+
 		if (Object.keys(errors).length == 0) {
 			delete new_errors[key]
+			// Only fire custom validation when there are no standard errors
+			this.executeCustomValidator(key, question, answer, errors)
 		} else {
 			new_errors[key] = errors;
 		}
@@ -73,6 +112,8 @@ var Form = React.createClass({
 				var errors = validator(question, answer);
 				if (Object.keys(errors).length == 0) {
 					delete new_errors[key]
+					// Only fire custom validation when there are no standard errors
+					this.executeCustomValidator(key, question, answer, errors)
 				} else {
 					new_errors[key] = errors;
 				}
@@ -108,7 +149,7 @@ var Form = React.createClass({
 		var show_validation = (this.state.tried_to_submit || changed) && errors["_summary"];  // show validation if user has tried to submit or the value has changed.  The 'value' property will contain the question level error (see name question)
 
 		return (
-			<div className={classes({ 'dxp-question-container': true, 'dxp-question-error': show_validation, 'dxp-question-readonly': question.read_only })} key={key}>
+			<div className={classes({ 'dxp-question-container': true, 'dxp-question-error': show_validation, 'dxp-question-readonly': question.read_only, ['dxp-key-' + key]: true })} key={key}>
 				<label className="dxp-question-title">{question.title} {question.required && <span className="dxp-required-indicator">*</span>}</label>
 				<small className="dxp-question-help-text">{question.description}</small>
 				<div className="dxp-question-body">
@@ -152,6 +193,22 @@ var Form = React.createClass({
 			this.props.onSubmit({ valid: Object.keys(this.state.errors).length == 0, answers: this.state.answers, errors: this.state.errors });
 		}.bind(this));
 		this.fireOnValidate();
+	},
+
+	setAnswers: function(params) {
+		var new_answers = null;
+		if (params.replaceAll) {
+			new_answers = params.answers;
+		} else {
+			new_answers = this.state.answers;
+			Object.keys(params.answers).forEach(function(key) {
+				new_answers[key] = params.answers[key]
+			});
+		}
+
+		this.setState({ answers: new_answers }, function() {
+			this.validateAll();
+		})
 	}
 
 });

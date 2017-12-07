@@ -6,6 +6,14 @@ var API_RESPONSE = {
       "title": "Section 1",
       "description": "Complete section 1 questions"
     },
+    "childcare_password-211425": {
+      "type": "password",
+      "title": "Choose Password",
+      "description": "",
+      "required": true,
+      "read_only": false,
+      "max_length": 50
+    },
     "childcare_name-211422": {
       "type": "name",
       "title": "Participant Name",

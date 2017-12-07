@@ -12,7 +12,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.min.js"></script>
 
     <!-- dxp-questions ui library -->
-    <script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.0/dxp-questions-min.js"></script>
+    <!--<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.2.0/dxp-questions-min.js"></script>-->
+    <script src="../dist/dxp-questions.js"></script>
 
     <!-- test data: this file creates a global variable called API_RESPONSE to mimick data from API -->
     <script src="test_data.js"></script>
@@ -25,7 +26,36 @@
             questions: API_RESPONSE.questions,
             answers: API_RESPONSE.answers,
             container: document.getElementById('questions-container'),
+            customValidators: {
+                email: function(context) {
+                    var errors = {};
+                    if (context.answer.indexOf('@gmail.com') < 0) {
+                        errors['_summary'] = 'must be a gmail adress';
+                    }
+
+                    // Simulate ajax call
+                    setTimeout(function() {
+                        context.setErrors({ 
+                            errors: errors
+                        })
+                    }, 500);
+                },
+                password: function(context) {
+                    var errors = {};
+                    if (!/[0-9]/.test(context.answer.password)) {
+                        errors['password'] = 'must contain a number';
+                    }
+
+                    // Simulate ajax call
+                    setTimeout(function() {
+                        context.setErrors({ 
+                            errors: errors
+                        })
+                    }, 500);
+                }
+            },
             onValidate: function(result) {
+                // result.valid will be true if the entire form is valid and false if one or more fields is invalid
                 if (result.valid) {
                     $('#validation-error').hide();
                     $('#next-button').attr('disabled', false);
@@ -38,8 +68,21 @@
                 alert(JSON.stringify(result.answers));
             }
         });
+
+        // Render form in the container element deifined in init(...)
         form.render();
 
+        // Example of explicitly setting some of the answers after the form has been rendered
+        // but leaving the already filled ones out alone
+        $('#set-defaults-button').on('click', function() {
+            var answers = {};
+            answers['childcare_email-211428'] = 'me@me.com';
+            answers['childcare_datetime-211429'] = '1/1/2008';
+            answers['childcare_name-211422'] = { first: 'John', last: 'Doe' };
+            form.setAnswers({ answers: answers, replaceAll: false });
+        });
+
+        // Trigger a submit, which will fire the onSubmit handler with the actual answers
         $('#next-button').on('click', function() {
             form.requestSubmit();
         });
@@ -50,8 +93,10 @@
   </head>
   <body>
 
+    
     <div id="questions-container"></div>
     <div class="container">
+      <button id="set-defaults-button" class="btn">Set some defaults</button>
       <button id="next-button" class="btn btn-primary">Submit</button>
       <div class="alert alert-error" id="validation-error" style="display:none;">Please correct the above.</div>
     </div>
