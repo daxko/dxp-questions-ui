@@ -41,7 +41,7 @@ Feel free to use and submit issues and pull requests!
 
 * `npm install dxp-questions-ui`
 * Download latest release from [Github](https://github.com/daxko/dxp-questions-ui/releases/latest)
-* `<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.2.0/dxp-questions-min.js"></script>`
+* `<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.1/dxp-questions-min.js"></script>`
 
 ## Development
 
@@ -56,7 +56,7 @@ To test the changes:
 
 * `npm install -g httpster` if you don't have httpster installed
 * `npm run example` in new console in this dir
-* Go to <http://localhost:3333/example>
+* Go to <http://localhost:3333/docs>
 
 ## Usage
 
