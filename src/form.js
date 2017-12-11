@@ -156,7 +156,6 @@ var Form = React.createClass({
 
 	onBlur: function(key) {
 		//var changed = Object.assign({}, this.state.changed);
-		console.log('onblur ' + key)
 		var changed = this.state.changed;
 		changed[key] = this.state.answers[key] || true;
 		this.setState({ changed: changed }, function() {
