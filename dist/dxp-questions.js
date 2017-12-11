@@ -28217,15 +28217,15 @@ var DxpQuestions =
 			errors: React.PropTypes.object
 		},
 
+		createHtml: function createHtml() {
+			return { __html: this.props.errors["_summary"] };
+		},
+
 		render: function render() {
 
 			if (this.props.errors == null || this.props.errors["_summary"] == null) return null;
 
-			return React.createElement(
-				"div",
-				{ className: "dxp-error-description" },
-				this.props.errors["_summary"]
-			);
+			return React.createElement("div", { className: "dxp-error-description", dangerouslySetInnerHTML: this.createHtml() });
 		}
 	});
 
