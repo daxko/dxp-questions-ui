@@ -330,7 +330,6 @@ var DxpQuestions =
 
 		onBlur: function onBlur(key) {
 			//var changed = Object.assign({}, this.state.changed);
-			console.log('onblur ' + key);
 			var changed = this.state.changed;
 			changed[key] = this.state.answers[key] || true;
 			this.setState({ changed: changed }, function () {
@@ -379,11 +378,7 @@ var DxpQuestions =
 						question_id: key,
 						className: show_validation ? 'dxp-field-error' : ''
 					}),
-					show_extra_html && React.createElement(
-						'span',
-						{ className: 'dxp-extra-html' },
-						this.state.extraHtml[key]
-					),
+					show_extra_html && React.createElement('span', { className: 'dxp-extra-html', dangerouslySetInnerHTML: { __html: this.state.extraHtml[key] } }),
 					show_validation && React.createElement(FieldError, { errors: errors })
 				)
 			);

@@ -187,7 +187,7 @@ var Form = React.createClass({
 						question_id={key} 
 						className={show_validation ? 'dxp-field-error' : ''}
 					/>
-					{ show_extra_html && <span className="dxp-extra-html">{this.state.extraHtml[key]}</span> }
+					{ show_extra_html && <span className="dxp-extra-html" dangerouslySetInnerHTML={{__html: this.state.extraHtml[key] }}></span> }
 					{ show_validation && <FieldError errors={errors} /> }
 				</div>
 			</div>
