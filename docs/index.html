@@ -25,8 +25,8 @@
             questions: API_RESPONSE.questions,
             answers: API_RESPONSE.answers,
             container: document.getElementById('questions-container'),
-            customValidators: {
-                email: function(context) {
+            onFieldValidate: {
+                'childcare_email-211428': function(context) {
                     var errors = {};
                     if (context.answer.indexOf('@gmail.com') < 0) {
                         errors['_summary'] = 'must be a gmail adress.  See rules <a href="http://www.google.com/">here</a>';
@@ -39,7 +39,7 @@
                         })
                     }, 500);
                 },
-                password: function(context) {
+                'childcare_password-211425': function(context) {
                     var errors = {};
                     if (!/[0-9]/.test(context.answer.password)) {
                         errors['password'] = 'must contain a number';
@@ -52,6 +52,11 @@
                         })
                     }, 500);
                 }
+            },
+            onFieldChange: {
+               'childcare_datetime-211429': function(context) {
+                    context.setExtraHtml('This is a calculated value of ' + context.answer);
+               } 
             },
             onValidate: function(result) {
                 // result.valid will be true if the entire form is valid and false if one or more fields is invalid

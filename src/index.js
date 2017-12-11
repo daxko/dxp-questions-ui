@@ -32,7 +32,8 @@ var DxpQuestions = function(params) {
  * @param {Array} params.questions A list of questions to render
  * @param {Array} params.answers A list of answers to render
  * @param {Object} params.container The HTML element that will contain the rendered form
- * @param {Object} params.customValidators Mapping of question type to custom validation function
+ * @param {Object} params.onFieldValidate Mapping of question id to custom validation function
+ * @param {Object} params.onFieldChange Mapping of question id to custom on change function
  * @param {onValidate} params.onValidate A callback function that is called everytime an answer is validated
  * @param {onSubmit} params.onSubmit A callback function that is called when the `submitRequest()` method is called on the form
  * @returns {Object} An instance of the form
@@ -41,17 +42,22 @@ var DxpQuestions = function(params) {
  *   questions: // questions object here,
  *   answers: // answers object here,
  *   container: document.getElementById('container'),
- *   customValidators: {
- * 		email: function(context) {
+ *   onFieldValidate: {
+ * 		'custom_field_id-12345': function(context) {
  *			var errors = {};
  *			if (context.answer.indexOf('@gmail.com') < 0) {
  *				errors['_summary'] = 'must be a gmail adress';
  *			}
  *			context.setErrors({ errors: errors })
  *		}
- *   }
- *   onValidate: function (result) {
- *     // show error if resul.valid === false
+ *   },
+ *   onFieldChange: function(context) {
+ *      'custom_field_id-56789': function(context) {
+ *			context.setExtraHtml('This is a calculated value of ' + context.answer);
+ *		}
+ *   },
+ *   onValidate: function (result) { 
+ *     // show error if result.valid === false
  *   },
  *   onSubmit: function (result) {
  *     // make API call with result.answers
@@ -70,7 +76,7 @@ DxpQuestions.init = function(params) {
  * form.render();
  */
 DxpQuestions.prototype.render = function() {
-	this.form = ReactDOM.render(<Form questions={this.params.questions} answers={this.params.answers} onValidate={this.params.onValidate} onSubmit={this.params.onSubmit} customValidators={this.params.customValidators} />, this.params.container);
+	this.form = ReactDOM.render(<Form questions={this.params.questions} answers={this.params.answers} onValidate={this.params.onValidate} onSubmit={this.params.onSubmit} onFieldValidate={this.params.onFieldValidate} onFieldChange={this.params.onFieldChange} />, this.params.container);
 };
 
 /**

@@ -12,7 +12,8 @@ var Form = React.createClass({
 		answers: React.PropTypes.object.isRequired,
 		onValidate: React.PropTypes.func.isRequired,
 		onSubmit: React.PropTypes.func.isRequired,
-		customValidators: React.PropTypes.object
+		onFieldValidate: React.PropTypes.object,
+		onFieldChange: React.PropTypes.object
 	},
 
 	getInitialState: function() {
@@ -20,7 +21,8 @@ var Form = React.createClass({
 			tried_to_submit: false,
 			answers: this.props.answers,
 			changed: {},  // if the user has changed an answer, it's key will be in here
-			errors: {}    // if errors exist for a question, its key will be in here
+			errors: {},    // if errors exist for a question, its key will be in here
+			extraHtml: {}   // extra html mapped to a question - this is dynamic calculated html
 		};
 	},
 
@@ -47,11 +49,11 @@ var Form = React.createClass({
 
 	// External interface allows consumers to define custom validation per question type and return errors
 	executeCustomValidator: function(key, question, answer, errors) {
-		if (this.props.customValidators !== null) {
-			var customValidator = this.props.customValidators[question.type];
-			if (customValidator !== undefined) {
+		if (this.props.onFieldValidate !== null && this.props.onFieldValidate !== undefined) {
+			var customValidator = this.props.onFieldValidate[key];
+			if (customValidator !== null && customValidator !== undefined) {
 				if (typeof(customValidator) !== 'function') {
-					throw 'Expected customValidators[' + question.type + '] to be a function';
+					throw 'Expected onFieldValidate[' + question.type + '] to be a function';
 				}
 				var self = this;
 
@@ -129,11 +131,32 @@ var Form = React.createClass({
 		var answers = this.state.answers;
 		var value = input.target ? input.target.value : input;   // could be an event or a complex object provided by field impl
 		answers[key] = value;
-		this.setState({ answers: answers });
+		this.setState({ answers: answers }, function() {
+
+			// Fire off custom field change after setState is complete
+			if (this.props.onFieldChange && this.props.onFieldChange[key]) {
+				var question = this.props.questions[key];
+				var context = {
+					question_id: key,
+					question: question,
+					answer: value,
+					allAnswers: this.state.answers,
+					// A callback is provided to mutate state
+					setExtraHtml: function(html) {
+						var extraHtml = this.state.extraHtml;
+						extraHtml[key] = html
+						this.setState({ extraHtml: extraHtml });
+					}.bind(this)
+				};
+				this.props.onFieldChange[key](context);
+			}
+
+		}.bind(this));
 	},
 
 	onBlur: function(key) {
 		//var changed = Object.assign({}, this.state.changed);
+		console.log('onblur ' + key)
 		var changed = this.state.changed;
 		changed[key] = this.state.answers[key] || true;
 		this.setState({ changed: changed }, function() {
@@ -147,6 +170,7 @@ var Form = React.createClass({
 		var changed = this.state.changed[key] != null;
 		var errors = this.state.errors[key] || {};      // Will have properties on this object if there are any errors
 		var show_validation = (this.state.tried_to_submit || changed) && errors["_summary"];  // show validation if user has tried to submit or the value has changed.  The 'value' property will contain the question level error (see name question)
+		var show_extra_html = this.state.extraHtml[key] !== null;
 
 		return (
 			<div className={classes({ 'dxp-question-container': true, 'dxp-question-error': show_validation, 'dxp-question-readonly': question.read_only, ['dxp-key-' + key]: true })} key={key}>
@@ -164,6 +188,7 @@ var Form = React.createClass({
 						question_id={key} 
 						className={show_validation ? 'dxp-field-error' : ''}
 					/>
+					{ show_extra_html && <span className="dxp-extra-html">{this.state.extraHtml[key]}</span> }
 					{ show_validation && <FieldError errors={errors} /> }
 				</div>
 			</div>
