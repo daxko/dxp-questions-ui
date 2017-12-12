@@ -5115,28 +5115,14 @@ var DxpQuestions =
 		displayName: 'NameField',
 
 
-		getInitialState: function getInitialState() {
-			var answer = this.props.answer || {};
-			return {
-				prefix: answer.prefix || '',
-				first: answer.first || '',
-				middle: answer.middle || '',
-				last: answer.last || '',
-				suffix: answer.suffix || ''
-			};
-		},
-
 		onKeyPress: function onKeyPress(e) {
 			if (e.key == "<" || e.key == ">") e.preventDefault();
 		},
 
 		onChange: function onChange(field, event) {
-			//var new_state = Object.assign({}, this.state);
-			var new_state = this.state;
+			var new_state = this.props.answer || { prefix: '', first: '', middle: '', last: '', suffix: '' };
 			new_state[field] = event.target.value;
-			this.setState(new_state, function () {
-				this.props.onChange(this.state);
-			}.bind(this));
+			this.props.onChange(new_state);
 		},
 
 		render: function render() {
@@ -5147,6 +5133,8 @@ var DxpQuestions =
 			var middle_name_error = getError('middle', this.props.errors, this.props.changed, this.props.triedToSubmit);
 			var last_name_error = getError('last', this.props.errors, this.props.changed, this.props.triedToSubmit);
 			var suffix_error = getError('suffix', this.props.errors, this.props.changed, this.props.triedToSubmit);
+
+			var answer = this.props.answer || {};
 
 			return React.createElement(
 				'div',
@@ -5163,7 +5151,7 @@ var DxpQuestions =
 						'select',
 						{
 							className: classes({ 'dxp-name-prefix-select': true, 'dxp-field-error': prefix_error }),
-							value: this.state.prefix,
+							value: answer.prefix || '',
 							onBlur: this.props.onBlur,
 							onChange: this.onChange.bind(this, 'prefix'),
 							disabled: this.props.question.read_only
@@ -5195,7 +5183,7 @@ var DxpQuestions =
 						maxLength: 50,
 						className: classes({ 'dxp-field-error': first_name_error }),
 						readOnly: this.props.question.read_only,
-						value: this.state.first,
+						value: answer.first || '',
 						onKeyPress: this.onKeyPress,
 						onBlur: this.props.onBlur,
 						onChange: this.onChange.bind(this, 'first') }),
@@ -5217,7 +5205,7 @@ var DxpQuestions =
 						maxLength: 50,
 						className: classes({ 'dxp-field-error': middle_name_error }),
 						readOnly: this.props.question.read_only,
-						value: this.state.middle,
+						value: answer.middle || '',
 						onKeyPress: this.onKeyPress,
 						onBlur: this.props.onBlur,
 						onChange: this.onChange.bind(this, 'middle') }),
@@ -5239,7 +5227,7 @@ var DxpQuestions =
 						maxLength: 50,
 						className: classes({ 'dxp-field-error': last_name_error }),
 						readOnly: this.props.question.read_only,
-						value: this.state.last,
+						value: answer.last || '',
 						onKeyPress: this.onKeyPress,
 						onBlur: this.props.onBlur,
 						onChange: this.onChange.bind(this, 'last') }),
@@ -5261,7 +5249,7 @@ var DxpQuestions =
 						'select',
 						{
 							className: classes({ 'dxp-name-suffix-select': true, 'dxp-field-error': prefix_error }),
-							value: this.state.suffix,
+							value: answer.suffix || '',
 							onChange: this.onChange.bind(this, 'suffix'),
 							onBlur: this.props.onBlur,
 							disabled: this.props.question.read_only
@@ -5303,20 +5291,10 @@ var DxpQuestions =
 		displayName: 'PasswordField',
 
 
-		getInitialState: function getInitialState() {
-			var answer = this.props.answer || {};
-			return {
-				password: answer.password || '',
-				password_confirm: answer.password || ''
-			};
-		},
-
-		onChange: function onChange(field, event_or_value) {
-			var new_state = this.state;
-			new_state[field] = event_or_value.target ? event_or_value.target.value : event_or_value;
-			this.setState(new_state, function () {
-				this.props.onChange(this.state);
-			}.bind(this));
+		onChange: function onChange(field, event) {
+			var new_state = this.props.answer || { password: '', password_confirm: '' };
+			new_state[field] = event.target.value;
+			this.props.onChange(new_state);
 		},
 
 		render: function render() {
@@ -5324,6 +5302,7 @@ var DxpQuestions =
 			var question = this.props.question;
 			var password_error = getError('password', this.props.errors, this.props.changed, this.props.triedToSubmit);
 			var password_confirm_error = getError('password_confirm', this.props.errors, this.props.changed, this.props.triedToSubmit);
+			var answer = this.props.answer || {};
 
 			return React.createElement(
 				'div',
@@ -5340,7 +5319,7 @@ var DxpQuestions =
 						maxLength: 50,
 						className: classes({ 'dxp-field-error': password_error }),
 						readOnly: this.props.question.read_only,
-						value: this.state.password,
+						value: answer.password || '',
 						onKeyPress: this.onKeyPress,
 						onBlur: this.props.onBlur,
 						onChange: this.onChange.bind(this, 'password') }),
@@ -5362,7 +5341,7 @@ var DxpQuestions =
 						maxLength: 50,
 						className: classes({ 'dxp-field-error': password_confirm_error }),
 						readOnly: this.props.question.read_only,
-						value: this.state.password_confirm,
+						value: answer.password_confirm || '',
 						onKeyPress: this.onKeyPress,
 						onBlur: this.props.onBlur,
 						onChange: this.onChange.bind(this, 'password_confirm') }),
@@ -5562,17 +5541,6 @@ var DxpQuestions =
 		displayName: 'PhoneField',
 
 
-		getInitialState: function getInitialState() {
-			var answer = this.props.answer || {};
-			return {
-				phone: answer.phone || '',
-				ext: answer.ext || '',
-				intl: this.props.question.intl || false
-			};
-		},
-
-		componentWillReceiveProps: function componentWillReceiveProps(nextProps) {},
-
 		componentDidMount: function componentDidMount() {
 
 			// No mask for intl phone - just raw input
@@ -5613,12 +5581,11 @@ var DxpQuestions =
 		},
 
 		onChange: function onChange(field, event) {
-			//var new_state = Object.assign({}, this.state);
-			var new_state = this.state;
+			var new_state = this.props.answer || { phone: '', ext: '', intl: false };
 			var value = event.target.value;
 
 			// For intl phone, don't allow pasting of non-allowed characters
-			if (this.state.intl) {
+			if (this.props.question.intl) {
 				if (field == 'phone' && event.target.value) {
 					value = value.replace(/[^0-9+\-\(\)\.]/g, '');
 					this.refs.phone.value = value;
@@ -5632,9 +5599,7 @@ var DxpQuestions =
 			}
 
 			new_state[field] = value;
-			this.setState(new_state, function () {
-				this.props.onChange(this.state);
-			}.bind(this));
+			this.props.onChange(new_state);
 		},
 
 		render: function render() {
@@ -5642,6 +5607,7 @@ var DxpQuestions =
 			var question = this.props.question;
 			var phone_error = getError('phone', this.props.errors, this.props.changed, this.props.triedToSubmit);
 			var ext_error = getError('ext', this.props.errors, this.props.changed, this.props.triedToSubmit);
+			var answer = this.props.answer || { intl: false };
 
 			return React.createElement(
 				'div',
@@ -5654,7 +5620,7 @@ var DxpQuestions =
 						ref: 'phone',
 						className: classes({ 'dxp-field-error': phone_error }),
 						maxLength: question.intl ? 17 : 14,
-						defaultValue: this.state.phone,
+						value: answer.phone || '',
 						readOnly: this.props.question.read_only,
 						onKeyPress: this.onKeyPress.bind(this, 'phone'),
 						onBlur: this.props.onBlur,
@@ -5676,7 +5642,7 @@ var DxpQuestions =
 							ref: 'ext',
 							className: classes({ 'dxp-field-error': ext_error }),
 							readOnly: this.props.question.read_only,
-							value: this.state.ext,
+							value: answer.ext || '',
 							onKeyPress: this.onKeyPress.bind(this, 'ext'),
 							onBlur: this.props.onBlur,
 							onChange: this.onChange.bind(this, 'ext') })
@@ -27696,29 +27662,14 @@ var DxpQuestions =
 		displayName: 'AddressField',
 
 
-		getInitialState: function getInitialState() {
-			var answer = this.props.answer || {};
-			return {
-				line1: answer.line1 || '',
-				line2: answer.line2 || '',
-				city: answer.city || '',
-				state: answer.state || '',
-				zip: answer.zip || '',
-				country: answer.country || 'US'
-			};
-		},
-
 		onKeyPress: function onKeyPress(e) {
 			if (e.key == "<" || e.key == ">") e.preventDefault();
 		},
 
-		onChange: function onChange(field, event_or_value) {
-			//var new_state = Object.assign({}, this.state);
-			var new_state = this.state;
-			new_state[field] = event_or_value.target ? event_or_value.target.value : event_or_value;
-			this.setState(new_state, function () {
-				this.props.onChange(this.state);
-			}.bind(this));
+		onChange: function onChange(field, event) {
+			var new_state = this.props.answer || { line1: '', line2: '', city: '', state: '', zip: '', country: 'US' };
+			new_state[field] = event.target.value;
+			this.props.onChange(new_state);
 		},
 
 		render: function render() {
@@ -27730,6 +27681,7 @@ var DxpQuestions =
 			var state_error = getError('state', this.props.errors, this.props.changed, this.props.triedToSubmit);
 			var zip_error = getError('zip', this.props.errors, this.props.changed, this.props.triedToSubmit);
 			var country_error = getError('country', this.props.errors, this.props.changed, this.props.triedToSubmit);
+			var answer = this.props.answer || { country: 'US' };
 
 			return React.createElement(
 				'div',
@@ -27746,7 +27698,7 @@ var DxpQuestions =
 						maxLength: 50,
 						className: classes({ 'dxp-field-error': line1_error }),
 						readOnly: this.props.question.read_only,
-						value: this.state.line1,
+						value: answer.line1 || '',
 						onKeyPress: this.onKeyPress,
 						onBlur: this.props.onBlur,
 						onChange: this.onChange.bind(this, 'line1') }),
@@ -27768,7 +27720,7 @@ var DxpQuestions =
 						maxLength: 50,
 						className: classes({ 'dxp-field-error': line2_error }),
 						readOnly: this.props.question.read_only,
-						value: this.state.line2,
+						value: answer.line2 || '',
 						onKeyPress: this.onKeyPress,
 						onBlur: this.props.onBlur,
 						onChange: this.onChange.bind(this, 'line2') }),
@@ -27790,7 +27742,7 @@ var DxpQuestions =
 						maxLength: 50,
 						className: classes({ 'dxp-field-error': city_error }),
 						readOnly: this.props.question.read_only,
-						value: this.state.city,
+						value: answer.city || '',
 						onKeyPress: this.onKeyPress,
 						onBlur: this.props.onBlur,
 						onChange: this.onChange.bind(this, 'city') }),
@@ -27806,14 +27758,14 @@ var DxpQuestions =
 					React.createElement(
 						'label',
 						null,
-						this.state.country == 'US' ? 'State' : 'Province/Region'
+						answer.country == 'US' ? 'State' : 'Province/Region'
 					),
-					this.state.country == 'US' && React.createElement(
+					answer.country == 'US' && React.createElement(
 						'select',
 						{
 							className: classes({ 'dxp-field-error': state_error }),
 							disabled: this.props.question.read_only,
-							value: this.state.state,
+							value: answer.state || '',
 							onBlur: this.props.onBlur,
 							onChange: this.onChange.bind(this, 'state') },
 						React.createElement(
@@ -27829,12 +27781,12 @@ var DxpQuestions =
 							);
 						})
 					),
-					this.state.country == 'CA' && React.createElement(
+					answer.country == 'CA' && React.createElement(
 						'select',
 						{
 							className: classes({ 'dxp-field-error': state_error }),
 							disabled: this.props.question.read_only,
-							value: this.state.state,
+							value: answer.state || '',
 							onBlur: this.props.onBlur,
 							onChange: this.onChange.bind(this, 'state') },
 						React.createElement(
@@ -27850,11 +27802,11 @@ var DxpQuestions =
 							);
 						})
 					),
-					this.state.country != 'US' && this.state.country != 'CA' && React.createElement('input', { type: 'text',
+					answer.country != 'US' && answer.country != 'CA' && React.createElement('input', { type: 'text',
 						maxLength: 50,
 						className: classes({ 'dxp-field-error': state_error }),
 						readOnly: this.props.question.read_only,
-						value: this.state.state,
+						value: answer.state || '',
 						onKeyPress: this.onKeyPress,
 						onBlur: this.props.onBlur,
 						onChange: this.onChange.bind(this, 'state') }),
@@ -27870,35 +27822,35 @@ var DxpQuestions =
 					React.createElement(
 						'label',
 						null,
-						this.state.country == 'US' ? 'Zip Code' : 'Postal Code'
+						answer.country == 'US' ? 'Zip Code' : 'Postal Code'
 					),
-					this.state.country == 'US' && React.createElement('input', {
+					answer.country == 'US' && React.createElement('input', {
 						type: 'tel',
 						placeholder: '',
 						maxLength: 10,
 						className: classes({ 'dxp-field-error': zip_error }),
 						readOnly: this.props.question.read_only,
-						value: this.state.zip,
+						value: answer.zip || '',
 						onKeyPress: this.onKeyPress,
 						onBlur: this.props.onBlur,
 						onChange: this.onChange.bind(this, 'zip') }),
-					this.state.country == 'CA' && React.createElement('input', {
+					answer.country == 'CA' && React.createElement('input', {
 						type: 'text',
 						placeholder: 'A1A1A1',
 						maxLength: 6,
 						className: classes({ 'dxp-field-error': zip_error }),
 						readOnly: this.props.question.read_only,
-						value: this.state.zip,
+						value: answer.zip || '',
 						onKeyPress: this.onKeyPress,
 						onBlur: this.props.onBlur,
 						onChange: this.onChange.bind(this, 'zip') }),
-					this.state.country != 'CA' && this.state.country != 'US' && React.createElement('input', {
+					answer.country != 'CA' && answer.country != 'US' && React.createElement('input', {
 						type: 'text',
 						placeholder: '',
 						maxLength: 15,
 						className: classes({ 'dxp-field-error': zip_error }),
 						readOnly: this.props.question.read_only,
-						value: this.state.zip,
+						value: answer.zip || '',
 						onKeyPress: this.onKeyPress,
 						onBlur: this.props.onBlur,
 						onChange: this.onChange.bind(this, 'zip') }),
@@ -27921,7 +27873,7 @@ var DxpQuestions =
 						{
 							className: classes({ 'dxp-field-error': country_error }),
 							disabled: this.props.question.read_only,
-							value: this.state.country,
+							value: answer.country || '',
 							onBlur: this.props.onBlur,
 							onChange: this.onChange.bind(this, 'country') },
 						React.createElement('option', null),

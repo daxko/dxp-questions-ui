@@ -12,18 +12,6 @@ function getError(key, errors, changes, triedToSubmit) {
 
 var PhoneField = React.createClass({
 
-	getInitialState: function() {
-		var answer = this.props.answer || {};
-	    return {
-	    	phone: answer.phone || '',
-	        ext: answer.ext || '',
-	        intl: this.props.question.intl || false
-	    };
-	},
-
-	componentWillReceiveProps: function(nextProps) {
-	},
-
 	componentDidMount: function() {
 
 		// No mask for intl phone - just raw input
@@ -65,12 +53,11 @@ var PhoneField = React.createClass({
 	},
 
 	onChange: function(field, event) {
-		//var new_state = Object.assign({}, this.state);
-		var new_state = this.state;
+		var new_state = this.props.answer || { phone: '', ext: '', intl: false };
 		var value = event.target.value;
 
 		// For intl phone, don't allow pasting of non-allowed characters
-		if (this.state.intl) {
+		if (this.props.question.intl) {
 			if (field == 'phone' && event.target.value) {
 				value = value.replace(/[^0-9+\-\(\)\.]/g, '');
 			 	this.refs.phone.value = value;
@@ -84,9 +71,7 @@ var PhoneField = React.createClass({
 		}
 
 		new_state[field] = value;
-		this.setState(new_state, function() {
-			this.props.onChange(this.state);
-		}.bind(this));
+		this.props.onChange(new_state);
 	},
 
 	render: function() {
@@ -94,6 +79,7 @@ var PhoneField = React.createClass({
 		var question = this.props.question;
 		var phone_error = getError('phone', this.props.errors, this.props.changed, this.props.triedToSubmit);
 		var ext_error = getError('ext', this.props.errors, this.props.changed, this.props.triedToSubmit);
+		var answer = this.props.answer || { intl: false };
 
 		return (
 			<div className="dxp-phone-question">
@@ -104,7 +90,7 @@ var PhoneField = React.createClass({
 						ref="phone"
 						className={ classes({ 'dxp-field-error': phone_error })}
 						maxLength={ question.intl ? 17 : 14 }
-						defaultValue={this.state.phone}
+						value={answer.phone || ''}
 						readOnly={this.props.question.read_only}
 						onKeyPress={this.onKeyPress.bind(this, 'phone')}
 						onBlur={this.props.onBlur}
@@ -121,7 +107,7 @@ var PhoneField = React.createClass({
 								ref="ext"
 								className={ classes({ 'dxp-field-error': ext_error })}
 								readOnly={this.props.question.read_only}
-								value={this.state.ext}
+								value={answer.ext || ''}
 								onKeyPress={this.onKeyPress.bind(this, 'ext')}
 								onBlur={this.props.onBlur}
 								onChange={this.onChange.bind(this, 'ext')} />

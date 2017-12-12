@@ -11,29 +11,15 @@ function getError(key, errors, changes, triedToSubmit) {
 
 var NameField = React.createClass({
 	
-	getInitialState: function() {
-		var answer = this.props.answer || {};
-	    return {
-	    	prefix: answer.prefix || '',
-	        first: answer.first || '',
-	        middle: answer.middle || '',
-	        last: answer.last || '',
-	        suffix: answer.suffix || ''
-	    };
-	},
-
 	onKeyPress: function(e) {
 		if (e.key == "<" || e.key == ">")
 			e.preventDefault();
 	},
 
 	onChange: function(field, event) {
-		//var new_state = Object.assign({}, this.state);
-		var new_state = this.state;
+		var new_state = this.props.answer || { prefix: '', first: '', middle: '', last: '', suffix: '' };
 		new_state[field] = event.target.value;
-		this.setState(new_state, function() {
-			this.props.onChange(this.state);	
-		}.bind(this));
+		this.props.onChange(new_state);
 	},
 
 	render: function() {
@@ -45,6 +31,8 @@ var NameField = React.createClass({
 		var last_name_error = getError('last', this.props.errors, this.props.changed, this.props.triedToSubmit);
 		var suffix_error = getError('suffix', this.props.errors, this.props.changed, this.props.triedToSubmit);
 
+		var answer = this.props.answer || {};
+
 		return (
 			<div className="dxp-name-question">
 
@@ -54,7 +42,7 @@ var NameField = React.createClass({
 						<label className="dxp-name-prefix-label">Prefix</label>
 						<select 
 							className={ classes({ 'dxp-name-prefix-select': true, 'dxp-field-error': prefix_error })} 
-							value={this.state.prefix} 
+							value={answer.prefix || ''} 
 							onBlur={this.props.onBlur}
 							onChange={this.onChange.bind(this, 'prefix')}
 							disabled={this.props.question.read_only}
@@ -79,7 +67,7 @@ var NameField = React.createClass({
 							maxLength={50} 
 							className={ classes({ 'dxp-field-error': first_name_error })}
 							readOnly={this.props.question.read_only}
-							value={this.state.first}
+							value={answer.first || ''}
 							onKeyPress={this.onKeyPress}
 							onBlur={this.props.onBlur}
 							onChange={this.onChange.bind(this, 'first')} />	
@@ -95,7 +83,7 @@ var NameField = React.createClass({
 							maxLength={50} 
 							className={ classes({ 'dxp-field-error': middle_name_error })}
 							readOnly={this.props.question.read_only}
-							value={this.state.middle}
+							value={answer.middle || ''}
 							onKeyPress={this.onKeyPress}
 							onBlur={this.props.onBlur}
 							onChange={this.onChange.bind(this, 'middle')} />	
@@ -111,7 +99,7 @@ var NameField = React.createClass({
 							maxLength={50} 
 							className={ classes({ 'dxp-field-error': last_name_error })}
 							readOnly={this.props.question.read_only}
-							value={this.state.last}
+							value={answer.last || ''}
 							onKeyPress={this.onKeyPress}
 							onBlur={this.props.onBlur}
 							onChange={this.onChange.bind(this, 'last')} />	
@@ -125,7 +113,7 @@ var NameField = React.createClass({
 						<label className="dxp-name-suffix-label">Suffix</label>
 						<select
 							className={ classes({ 'dxp-name-suffix-select': true, 'dxp-field-error': prefix_error })} 
-							value={this.state.suffix} 
+							value={answer.suffix || ''} 
 							onChange={this.onChange.bind(this, 'suffix')}
 							onBlur={this.props.onBlur}
 							disabled={this.props.question.read_only}

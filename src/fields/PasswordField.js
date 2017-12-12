@@ -11,20 +11,10 @@ function getError(key, errors, changes, triedToSubmit) {
 
 var PasswordField = React.createClass({
 
-	getInitialState: function() {
-		var answer = this.props.answer || {};
-	    return {
-	    	password: answer.password || '',
-	    	password_confirm: answer.password || ''
-	    };
-	},
-
-	onChange: function(field, event_or_value) {
-		var new_state = this.state;
-		new_state[field] = event_or_value.target ? event_or_value.target.value : event_or_value;
-		this.setState(new_state, function() {
-			this.props.onChange(this.state);	
-		}.bind(this));
+	onChange: function(field, event) {
+		var new_state = this.props.answer || { password: '', password_confirm: '' };
+		new_state[field] = event.target.value;
+		this.props.onChange(new_state);
 	},
 
 	render: function() {
@@ -32,6 +22,7 @@ var PasswordField = React.createClass({
 		var question = this.props.question;
 		var password_error = getError('password', this.props.errors, this.props.changed, this.props.triedToSubmit);
 		var password_confirm_error = getError('password_confirm', this.props.errors, this.props.changed, this.props.triedToSubmit);
+		var answer = this.props.answer || {};
 
 		return (
 			<div className="dxp-password-question">
@@ -42,7 +33,7 @@ var PasswordField = React.createClass({
 						maxLength={50} 
 						className={ classes({ 'dxp-field-error': password_error })}
 						readOnly={this.props.question.read_only}
-						value={this.state.password}
+						value={answer.password || ''}
 						onKeyPress={this.onKeyPress}
 						onBlur={this.props.onBlur}
 						onChange={this.onChange.bind(this, 'password')} />	
@@ -55,7 +46,7 @@ var PasswordField = React.createClass({
 						maxLength={50} 
 						className={ classes({ 'dxp-field-error': password_confirm_error })}
 						readOnly={this.props.question.read_only}
-						value={this.state.password_confirm}
+						value={answer.password_confirm || ''}
 						onKeyPress={this.onKeyPress}
 						onBlur={this.props.onBlur}
 						onChange={this.onChange.bind(this, 'password_confirm')} />	
