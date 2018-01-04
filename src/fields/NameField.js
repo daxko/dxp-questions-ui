@@ -2,7 +2,7 @@ var React = require('react');
 var classes = require('classnames');
 
 function getError(key, errors, changes, triedToSubmit) {
-	var changed = changes != null;  // Has user changed the field in UI since initial load?
+	var changed = changes != null && changes[key] != null;  // Has user changed the field in UI since initial load?
 	var show_validation = errors && (triedToSubmit || changed) && errors[key];  // show validation if user has tried to submit or the value has changed.  The 'value' property will contain the question level error (see name question)
 	if (!show_validation)
 		return null;
@@ -20,6 +20,15 @@ var NameField = React.createClass({
 		var new_state = this.props.answer || { prefix: '', first: '', middle: '', last: '', suffix: '' };
 		new_state[field] = event.target.value;
 		this.props.onChange(new_state);
+	},
+
+	onBlur: function(field) {
+		// Instead of the default implementation of this.props.onBlur, this will call it with a custom value, which is a mapping
+		// of the individual fields.  Example: { 'first': true } means that only the first name field has lost focus so we don't
+		// show too many errors on fields the user hasn't gotten to yet.
+		var new_changed = this.props.changed || {};
+		new_changed[field] = true;
+		this.props.onBlur(new_changed);
 	},
 
 	render: function() {
@@ -43,7 +52,7 @@ var NameField = React.createClass({
 						<select 
 							className={ classes({ 'dxp-name-prefix-select': true, 'dxp-field-error': prefix_error })} 
 							value={answer.prefix || ''} 
-							onBlur={this.props.onBlur}
+							onBlur={this.onBlur.bind(this, 'prefix')}
 							onChange={this.onChange.bind(this, 'prefix')}
 							disabled={this.props.question.read_only}
 							>
@@ -69,7 +78,7 @@ var NameField = React.createClass({
 							readOnly={this.props.question.read_only}
 							value={answer.first || ''}
 							onKeyPress={this.onKeyPress}
-							onBlur={this.props.onBlur}
+							onBlur={this.onBlur.bind(this, 'first')}
 							onChange={this.onChange.bind(this, 'first')} />	
 							{ first_name_error && <div className="dxp-error-description">{first_name_error}</div> }
 					</div> 
@@ -85,7 +94,7 @@ var NameField = React.createClass({
 							readOnly={this.props.question.read_only}
 							value={answer.middle || ''}
 							onKeyPress={this.onKeyPress}
-							onBlur={this.props.onBlur}
+							onBlur={this.onBlur.bind(this, 'middle')}
 							onChange={this.onChange.bind(this, 'middle')} />	
 							{ middle_name_error && <div className="dxp-error-description">{middle_name_error}</div> }
 					</div>
@@ -101,7 +110,7 @@ var NameField = React.createClass({
 							readOnly={this.props.question.read_only}
 							value={answer.last || ''}
 							onKeyPress={this.onKeyPress}
-							onBlur={this.props.onBlur}
+							onBlur={this.onBlur.bind(this, 'last')}
 							onChange={this.onChange.bind(this, 'last')} />	
 							{ last_name_error && <div className="dxp-error-description">{last_name_error}</div> }
 					</div>
@@ -115,7 +124,7 @@ var NameField = React.createClass({
 							className={ classes({ 'dxp-name-suffix-select': true, 'dxp-field-error': prefix_error })} 
 							value={answer.suffix || ''} 
 							onChange={this.onChange.bind(this, 'suffix')}
-							onBlur={this.props.onBlur}
+							onBlur={this.onBlur.bind(this, 'suffix')}
 							disabled={this.props.question.read_only}
 							>
 							<option></option>
