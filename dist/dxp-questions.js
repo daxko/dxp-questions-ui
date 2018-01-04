@@ -328,11 +328,15 @@ var DxpQuestions =
 			}.bind(this));
 		},
 
-		onBlur: function onBlur(key) {
-			//var changed = Object.assign({}, this.state.changed);
-			var changed = this.state.changed;
-			changed[key] = this.state.answers[key] || true;
-			this.setState({ changed: changed }, function () {
+		onBlur: function onBlur(key, input) {
+			var new_changed = this.state.changed;
+			// Could be an event or a complex object provided by field impl.  Example: AddressField will pass: {'line1': true, 'city': true} which means that only
+			// the line1 and city fields have lost focus by the user.  Since the other fields are not marked as changed, then we won't show an error for fields the
+			// user hasn't gotten to yet.  When it's a simple event, the changed obj will just contain that value of the answer so that there is a key in the changed obj
+			// for that question.
+			var value = input.target ? input.target.value : input;
+			new_changed[key] = value || true;
+			this.setState({ changed: new_changed }, function () {
 				this.validateOne(key, this.props.questions[key], this.state.answers[key]);
 			});
 		},
@@ -389,6 +393,7 @@ var DxpQuestions =
 			return React.createElement(
 				'div',
 				{ className: 'dxp-questions-form' },
+				JSON.stringify(this.state),
 				Object.keys(this.props.questions).map(function (key) {
 					var question = this.props.questions[key];
 					if (question.type == "section") return this.renderSection(key, question);
@@ -5105,7 +5110,7 @@ var DxpQuestions =
 	var classes = __webpack_require__(38);
 
 	function getError(key, errors, changes, triedToSubmit) {
-		var changed = changes != null; // Has user changed the field in UI since initial load?
+		var changed = changes != null && changes[key] != null; // Has user changed the field in UI since initial load?
 		var show_validation = errors && (triedToSubmit || changed) && errors[key]; // show validation if user has tried to submit or the value has changed.  The 'value' property will contain the question level error (see name question)
 		if (!show_validation) return null;
 		return errors[key];
@@ -5123,6 +5128,15 @@ var DxpQuestions =
 			var new_state = this.props.answer || { prefix: '', first: '', middle: '', last: '', suffix: '' };
 			new_state[field] = event.target.value;
 			this.props.onChange(new_state);
+		},
+
+		onBlur: function onBlur(field) {
+			// Instead of the default implementation of this.props.onBlur, this will call it with a custom value, which is a mapping
+			// of the individual fields.  Example: { 'first': true } means that only the first name field has lost focus so we don't
+			// show too many errors on fields the user hasn't gotten to yet.
+			var new_changed = this.props.changed || {};
+			new_changed[field] = true;
+			this.props.onBlur(new_changed);
 		},
 
 		render: function render() {
@@ -5152,7 +5166,7 @@ var DxpQuestions =
 						{
 							className: classes({ 'dxp-name-prefix-select': true, 'dxp-field-error': prefix_error }),
 							value: answer.prefix || '',
-							onBlur: this.props.onBlur,
+							onBlur: this.onBlur.bind(this, 'prefix'),
 							onChange: this.onChange.bind(this, 'prefix'),
 							disabled: this.props.question.read_only
 						},
@@ -5185,7 +5199,7 @@ var DxpQuestions =
 						readOnly: this.props.question.read_only,
 						value: answer.first || '',
 						onKeyPress: this.onKeyPress,
-						onBlur: this.props.onBlur,
+						onBlur: this.onBlur.bind(this, 'first'),
 						onChange: this.onChange.bind(this, 'first') }),
 					first_name_error && React.createElement(
 						'div',
@@ -5207,7 +5221,7 @@ var DxpQuestions =
 						readOnly: this.props.question.read_only,
 						value: answer.middle || '',
 						onKeyPress: this.onKeyPress,
-						onBlur: this.props.onBlur,
+						onBlur: this.onBlur.bind(this, 'middle'),
 						onChange: this.onChange.bind(this, 'middle') }),
 					middle_name_error && React.createElement(
 						'div',
@@ -5229,7 +5243,7 @@ var DxpQuestions =
 						readOnly: this.props.question.read_only,
 						value: answer.last || '',
 						onKeyPress: this.onKeyPress,
-						onBlur: this.props.onBlur,
+						onBlur: this.onBlur.bind(this, 'last'),
 						onChange: this.onChange.bind(this, 'last') }),
 					last_name_error && React.createElement(
 						'div',
@@ -5251,7 +5265,7 @@ var DxpQuestions =
 							className: classes({ 'dxp-name-suffix-select': true, 'dxp-field-error': prefix_error }),
 							value: answer.suffix || '',
 							onChange: this.onChange.bind(this, 'suffix'),
-							onBlur: this.props.onBlur,
+							onBlur: this.onBlur.bind(this, 'suffix'),
 							disabled: this.props.question.read_only
 						},
 						React.createElement('option', null),
@@ -27590,7 +27604,7 @@ var DxpQuestions =
 	var classes = __webpack_require__(38);
 
 	function getError(key, errors, changes, triedToSubmit) {
-		var changed = changes != null; // Has user changed the field in UI since initial load?
+		var changed = changes != null && changes[key] != null; // Has user changed the field in UI since initial load?
 		var show_validation = errors && (triedToSubmit || changed) && errors[key]; // show validation if user has tried to submit or the value has changed.  The 'value' property will contain the question level error (see name question)
 		if (!show_validation) return null;
 		return errors[key];
@@ -27672,6 +27686,15 @@ var DxpQuestions =
 			this.props.onChange(new_state);
 		},
 
+		onBlur: function onBlur(field) {
+			// Instead of the default implementation of this.props.onBlur, this will call it with a custom value, which is a mapping
+			// of the individual fields.  Example: { 'line1': true, 'city': true } means that only the line1 and city fields have been 
+			// had focus so we dont' show too many errors on fields the user hasn't gotten to yet.
+			var new_changed = this.props.changed || {};
+			new_changed[field] = true;
+			this.props.onBlur(new_changed);
+		},
+
 		render: function render() {
 
 			var question = this.props.question;
@@ -27700,7 +27723,7 @@ var DxpQuestions =
 						readOnly: this.props.question.read_only,
 						value: answer.line1 || '',
 						onKeyPress: this.onKeyPress,
-						onBlur: this.props.onBlur,
+						onBlur: this.onBlur.bind(this, 'line1'),
 						onChange: this.onChange.bind(this, 'line1') }),
 					line1_error && React.createElement(
 						'div',
@@ -27722,7 +27745,7 @@ var DxpQuestions =
 						readOnly: this.props.question.read_only,
 						value: answer.line2 || '',
 						onKeyPress: this.onKeyPress,
-						onBlur: this.props.onBlur,
+						onBlur: this.onBlur.bind(this, 'line2'),
 						onChange: this.onChange.bind(this, 'line2') }),
 					line2_error && React.createElement(
 						'div',
@@ -27744,7 +27767,7 @@ var DxpQuestions =
 						readOnly: this.props.question.read_only,
 						value: answer.city || '',
 						onKeyPress: this.onKeyPress,
-						onBlur: this.props.onBlur,
+						onBlur: this.onBlur.bind(this, 'city'),
 						onChange: this.onChange.bind(this, 'city') }),
 					city_error && React.createElement(
 						'div',
@@ -27766,7 +27789,7 @@ var DxpQuestions =
 							className: classes({ 'dxp-field-error': state_error }),
 							disabled: this.props.question.read_only,
 							value: answer.state || '',
-							onBlur: this.props.onBlur,
+							onBlur: this.onBlur.bind(this, 'state'),
 							onChange: this.onChange.bind(this, 'state') },
 						React.createElement(
 							'option',
@@ -27787,7 +27810,7 @@ var DxpQuestions =
 							className: classes({ 'dxp-field-error': state_error }),
 							disabled: this.props.question.read_only,
 							value: answer.state || '',
-							onBlur: this.props.onBlur,
+							onBlur: this.onBlur.bind(this, 'state'),
 							onChange: this.onChange.bind(this, 'state') },
 						React.createElement(
 							'option',
@@ -27808,7 +27831,7 @@ var DxpQuestions =
 						readOnly: this.props.question.read_only,
 						value: answer.state || '',
 						onKeyPress: this.onKeyPress,
-						onBlur: this.props.onBlur,
+						onBlur: this.onBlur.bind(this, 'state'),
 						onChange: this.onChange.bind(this, 'state') }),
 					state_error && React.createElement(
 						'div',
@@ -27832,7 +27855,7 @@ var DxpQuestions =
 						readOnly: this.props.question.read_only,
 						value: answer.zip || '',
 						onKeyPress: this.onKeyPress,
-						onBlur: this.props.onBlur,
+						onBlur: this.onBlur.bind(this, 'zip'),
 						onChange: this.onChange.bind(this, 'zip') }),
 					answer.country == 'CA' && React.createElement('input', {
 						type: 'text',
@@ -27842,7 +27865,7 @@ var DxpQuestions =
 						readOnly: this.props.question.read_only,
 						value: answer.zip || '',
 						onKeyPress: this.onKeyPress,
-						onBlur: this.props.onBlur,
+						onBlur: this.onBlur.bind(this, 'zip'),
 						onChange: this.onChange.bind(this, 'zip') }),
 					answer.country != 'CA' && answer.country != 'US' && React.createElement('input', {
 						type: 'text',
@@ -27852,7 +27875,7 @@ var DxpQuestions =
 						readOnly: this.props.question.read_only,
 						value: answer.zip || '',
 						onKeyPress: this.onKeyPress,
-						onBlur: this.props.onBlur,
+						onBlur: this.onBlur.bind(this, 'zip'),
 						onChange: this.onChange.bind(this, 'zip') }),
 					zip_error && React.createElement(
 						'div',
@@ -27874,7 +27897,7 @@ var DxpQuestions =
 							className: classes({ 'dxp-field-error': country_error }),
 							disabled: this.props.question.read_only,
 							value: answer.country || '',
-							onBlur: this.props.onBlur,
+							onBlur: this.onBlur.bind(this, 'country'),
 							onChange: this.onChange.bind(this, 'country') },
 						React.createElement('option', null),
 						question.countries.map(function (country) {

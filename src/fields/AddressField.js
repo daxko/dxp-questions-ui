@@ -2,7 +2,7 @@ var React = require('react');
 var classes = require('classnames');
 
 function getError(key, errors, changes, triedToSubmit) {
-	var changed = changes != null;  // Has user changed the field in UI since initial load?
+	var changed = changes != null && changes[key] != null;  // Has user changed the field in UI since initial load?
 	var show_validation = errors && (triedToSubmit || changed) && errors[key];  // show validation if user has tried to submit or the value has changed.  The 'value' property will contain the question level error (see name question)
 	if (!show_validation)
 		return null;
@@ -84,6 +84,15 @@ var AddressField = React.createClass({
 		this.props.onChange(new_state);
 	},
 
+	onBlur: function(field) {
+		// Instead of the default implementation of this.props.onBlur, this will call it with a custom value, which is a mapping
+		// of the individual fields.  Example: { 'line1': true, 'city': true } means that only the line1 and city fields have been 
+		// had focus so we dont' show too many errors on fields the user hasn't gotten to yet.
+		var new_changed = this.props.changed || {};
+		new_changed[field] = true;
+		this.props.onBlur(new_changed);
+	},
+
 	render: function() {
 
 		var question = this.props.question;
@@ -106,7 +115,7 @@ var AddressField = React.createClass({
 						readOnly={this.props.question.read_only}
 						value={answer.line1 || ''}
 						onKeyPress={this.onKeyPress}
-						onBlur={this.props.onBlur}
+						onBlur={this.onBlur.bind(this, 'line1')}
 						onChange={this.onChange.bind(this, 'line1')} />	
 						{ line1_error && <div className="dxp-error-description">{line1_error}</div> }
 				</div> 
@@ -119,7 +128,7 @@ var AddressField = React.createClass({
 						readOnly={this.props.question.read_only}
 						value={answer.line2 || ''}
 						onKeyPress={this.onKeyPress}
-						onBlur={this.props.onBlur}
+						onBlur={this.onBlur.bind(this, 'line2')}
 						onChange={this.onChange.bind(this, 'line2')} />	
 						{ line2_error && <div className="dxp-error-description">{line2_error}</div> }
 				</div> 
@@ -132,7 +141,7 @@ var AddressField = React.createClass({
 						readOnly={this.props.question.read_only}
 						value={answer.city || ''}
 						onKeyPress={this.onKeyPress}
-						onBlur={this.props.onBlur}
+						onBlur={this.onBlur.bind(this, 'city')}
 						onChange={this.onChange.bind(this, 'city')} />	
 						{ city_error && <div className="dxp-error-description">{city_error}</div> }
 				</div> 
@@ -146,7 +155,7 @@ var AddressField = React.createClass({
 							className={ classes({ 'dxp-field-error': state_error })}
 							disabled={this.props.question.read_only}
 							value={answer.state || ''}
-							onBlur={this.props.onBlur}
+							onBlur={this.onBlur.bind(this, 'state')}
 							onChange={this.onChange.bind(this, 'state')}>
 							<option key="_default" value="">-Select One-</option>
 							{
@@ -163,7 +172,7 @@ var AddressField = React.createClass({
 							className={ classes({ 'dxp-field-error': state_error })}
 							disabled={this.props.question.read_only}
 							value={answer.state || ''}
-							onBlur={this.props.onBlur}
+							onBlur={this.onBlur.bind(this, 'state')}
 							onChange={this.onChange.bind(this, 'state')}>
 							<option key="_default" value="">-Select One-</option>
 							{
@@ -182,7 +191,7 @@ var AddressField = React.createClass({
 							readOnly={this.props.question.read_only}
 							value={answer.state || ''}
 							onKeyPress={this.onKeyPress}
-							onBlur={this.props.onBlur}
+							onBlur={this.onBlur.bind(this, 'state')}
 							onChange={this.onChange.bind(this, 'state')} />	
 					}
 
@@ -203,7 +212,7 @@ var AddressField = React.createClass({
 							readOnly={this.props.question.read_only}
 							value={answer.zip || ''}
 							onKeyPress={this.onKeyPress}
-							onBlur={this.props.onBlur}
+							onBlur={this.onBlur.bind(this, 'zip')}
 							onChange={this.onChange.bind(this, 'zip')} />	
 					}
 
@@ -217,7 +226,7 @@ var AddressField = React.createClass({
 							readOnly={this.props.question.read_only}
 							value={answer.zip || ''}
 							onKeyPress={this.onKeyPress}
-							onBlur={this.props.onBlur}
+							onBlur={this.onBlur.bind(this, 'zip')}
 							onChange={this.onChange.bind(this, 'zip')} />	
 					}
 
@@ -231,7 +240,7 @@ var AddressField = React.createClass({
 							readOnly={this.props.question.read_only}
 							value={answer.zip || ''}
 							onKeyPress={this.onKeyPress}
-							onBlur={this.props.onBlur}
+							onBlur={this.onBlur.bind(this, 'zip')}
 							onChange={this.onChange.bind(this, 'zip')} />	
 					}
 
@@ -247,7 +256,7 @@ var AddressField = React.createClass({
 							className={ classes({ 'dxp-field-error': country_error })}
 							disabled={this.props.question.read_only}
 							value={answer.country || ''}
-							onBlur={this.props.onBlur}
+							onBlur={this.onBlur.bind(this, 'country')}
 							onChange={this.onChange.bind(this, 'country')}>
 							<option></option>
 							{

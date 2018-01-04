@@ -154,11 +154,15 @@ var Form = React.createClass({
 		}.bind(this));
 	},
 
-	onBlur: function(key) {
-		//var changed = Object.assign({}, this.state.changed);
-		var changed = this.state.changed;
-		changed[key] = this.state.answers[key] || true;
-		this.setState({ changed: changed }, function() {
+	onBlur: function(key, input) {
+		var new_changed = this.state.changed;
+		// Could be an event or a complex object provided by field impl.  Example: AddressField will pass: {'line1': true, 'city': true} which means that only
+		// the line1 and city fields have lost focus by the user.  Since the other fields are not marked as changed, then we won't show an error for fields the
+		// user hasn't gotten to yet.  When it's a simple event, the changed obj will just contain that value of the answer so that there is a key in the changed obj
+		// for that question.
+		var value = input.target ? input.target.value : input;  
+		new_changed[key] = value || true;
+		this.setState({ changed: new_changed }, function() {
 			this.validateOne(key, this.props.questions[key], this.state.answers[key]);	
 		});
 	},
@@ -198,6 +202,7 @@ var Form = React.createClass({
 
 		return (
 			<div className="dxp-questions-form">
+				{ JSON.stringify(this.state) }
 				{ 
 					Object.keys(this.props.questions).map(function(key) {
 						var question = this.props.questions[key];
