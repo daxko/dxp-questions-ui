@@ -41,7 +41,7 @@ Feel free to use and submit issues and pull requests!
 
 * `npm install dxp-questions-ui`
 * Download latest release from [Github](https://github.com/daxko/dxp-questions-ui/releases/latest)
-* `<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.1/dxp-questions-min.js"></script>`
+* `<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.9/dxp-questions-min.js"></script>`
 
 ## Development
 
@@ -56,7 +56,7 @@ To test the changes:
 
 * `npm install -g httpster` if you don't have httpster installed
 * `npm run example` in new console in this dir
-* Go to <http://localhost:3333/docs>
+* Go to <http://localhost:3333/example>
 
 ## Usage
 
@@ -77,7 +77,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.min.js"></script>
 
 <!-- dxp-questions ui library -->
-<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.0/dxp-questions-min.js"></script>
+<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.7/dxp-questions-min.js"></script>
 ```
 <!-- /include -->
 
@@ -1114,7 +1114,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 <!-- include (snippets/html/address_question.html lang=html) -->
 ```html
-<div class="dxp-question-container">
+<div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
         Home Address
         <span class="dxp-required-indicator">*</span>
@@ -1439,7 +1439,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 <!-- include (snippets/html/checkbox_question.html lang=html) -->
 ```html
-<div class="dxp-question-container">
+<div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
         What other sports have you participated in?
     </label>
@@ -1488,7 +1488,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 <!-- include (snippets/html/date_question.html lang=html) -->
 ```html
-<div class="dxp-question-container">
+<div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
         Birthdate
         <span class="dxp-required-indicator">*</span>
@@ -1549,7 +1549,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 <!-- include (snippets/html/dropdown_question.html lang=html) -->
 ```html
-<div class="dxp-question-container">
+<div class="dxp-question-container dxp-key-some_id-123456">
   <label class="dxp-question-title">
     Gender
     <span class="dxp-required-indicator">*</span>
@@ -1590,7 +1590,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 <!-- include (snippets/html/email_question.html lang=html) -->
 ```html
-<div class="dxp-question-container">
+<div class="dxp-question-container dxp-key-some_id-123456">
   <label class="dxp-question-title">
     E-mail address
     <span class="dxp-required-indicator">*</span>
@@ -1697,7 +1697,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 <!-- include (snippets/html/name_question.html lang=html) -->
 ```html
-<div class="dxp-question-container">
+<div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
         Participant Name
         <span class="dxp-required-indicator">*</span>
@@ -1773,7 +1773,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 <!-- include (snippets/html/phone_question.html lang=html) -->
 ```html
-<div class="dxp-question-container">
+<div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
         Home Phone
         <span class="dxp-required-indicator">*</span>
@@ -1830,7 +1830,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 <!-- include (snippets/html/radio_question.html lang=html) -->
 ```html
-<div class="dxp-question-container">
+<div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
         Have you participated in this program before?
     </label>
@@ -1872,7 +1872,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 
 <!-- include (snippets/html/text_question.html lang=html) -->
 ```html
-<div class="dxp-question-container">
+<div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
         Please specify any food allergies?
     </label>
@@ -1977,7 +1977,8 @@ Initialize a new form that will render questions and answers
 | params.questions | <code>Array</code> | A list of questions to render |
 | params.answers | <code>Array</code> | A list of answers to render |
 | params.container | <code>Object</code> | The HTML element that will contain the rendered form |
-| params.customValidators | <code>Object</code> | Mapping of question type to custom validation function |
+| params.onFieldValidate | <code>Object</code> | Mapping of question id to custom validation function |
+| params.onFieldChange | <code>Object</code> | Mapping of question id to custom on change function |
 | params.onValidate | [<code>onValidate</code>](#onValidate) | A callback function that is called everytime an answer is validated |
 | params.onSubmit | [<code>onSubmit</code>](#onSubmit) | A callback function that is called when the `submitRequest()` method is called on the form |
 
@@ -1987,17 +1988,22 @@ var form = DxpQuestions.init({
   questions: // questions object here,
   answers: // answers object here,
   container: document.getElementById('container'),
-  customValidators: {
-        email: function(context) {
+  onFieldValidate: {
+        'custom_field_id-12345': function(context) {
             var errors = {};
             if (context.answer.indexOf('@gmail.com') < 0) {
                 errors['_summary'] = 'must be a gmail adress';
             }
             context.setErrors({ errors: errors })
         }
-  }
-  onValidate: function (result) {
-    // show error if resul.valid === false
+  },
+  onFieldChange: function(context) {
+     'custom_field_id-56789': function(context) {
+            context.setExtraHtml('This is a calculated value of ' + context.answer);
+        }
+  },
+  onValidate: function (result) { 
+    // show error if result.valid === false
   },
   onSubmit: function (result) {
     // make API call with result.answers

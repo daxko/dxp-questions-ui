@@ -83,13 +83,14 @@ Initialize a new form that will render questions and answers
 | params.questions | <code>Array</code> | A list of questions to render |
 | params.answers | <code>Array</code> | A list of answers to render |
 | params.container | <code>Object</code> | The HTML element that will contain the rendered form |
-| params.customValidators | <code>Object</code> | Mapping of question type to custom validation function |
+| params.onFieldValidate | <code>Object</code> | Mapping of question id to custom validation function |
+| params.onFieldChange | <code>Object</code> | Mapping of question id to custom on change function |
 | params.onValidate | [<code>onValidate</code>](#onValidate) | A callback function that is called everytime an answer is validated |
 | params.onSubmit | [<code>onSubmit</code>](#onSubmit) | A callback function that is called when the `submitRequest()` method is called on the form |
 
 **Example**  
 ```js
-var form = DxpQuestions.init({  questions: // questions object here,  answers: // answers object here,  container: document.getElementById('container'),  customValidators: {		email: function(context) {			var errors = {};			if (context.answer.indexOf('@gmail.com') < 0) {				errors['_summary'] = 'must be a gmail adress';			}			context.setErrors({ errors: errors })		}  }  onValidate: function (result) {    // show error if resul.valid === false  },  onSubmit: function (result) {    // make API call with result.answers  }})
+var form = DxpQuestions.init({  questions: // questions object here,  answers: // answers object here,  container: document.getElementById('container'),  onFieldValidate: {		'custom_field_id-12345': function(context) {			var errors = {};			if (context.answer.indexOf('@gmail.com') < 0) {				errors['_summary'] = 'must be a gmail adress';			}			context.setErrors({ errors: errors })		}  },  onFieldChange: function(context) {     'custom_field_id-56789': function(context) {			context.setExtraHtml('This is a calculated value of ' + context.answer);		}  },  onValidate: function (result) {     // show error if result.valid === false  },  onSubmit: function (result) {    // make API call with result.answers  }})
 ```
 <a name="onValidate"></a>
 
