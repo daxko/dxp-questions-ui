@@ -330,7 +330,7 @@ var DxpQuestions =
 
 		onBlur: function onBlur(key, input) {
 			var new_changed = this.state.changed;
-			// Could be an event or a complex object provided by field impl.  Example: AddressField will pass: {'line1': true, 'city': true} which means that only
+			// Could be an event or a complex object provided by question implementation.  Example: AddressField will pass: {'line1': true, 'city': true} which means that only
 			// the line1 and city fields have lost focus by the user.  Since the other fields are not marked as changed, then we won't show an error for fields the
 			// user hasn't gotten to yet.  When it's a simple event, the changed obj will just contain that value of the answer so that there is a key in the changed obj
 			// for that question.
@@ -393,7 +393,6 @@ var DxpQuestions =
 			return React.createElement(
 				'div',
 				{ className: 'dxp-questions-form' },
-				JSON.stringify(this.state),
 				Object.keys(this.props.questions).map(function (key) {
 					var question = this.props.questions[key];
 					if (question.type == "section") return this.renderSection(key, question);
