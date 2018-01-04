@@ -77,7 +77,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.min.js"></script>
 
 <!-- dxp-questions ui library -->
-<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.7/dxp-questions-min.js"></script>
+<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.9/dxp-questions-min.js"></script>
 ```
 <!-- /include -->
 
