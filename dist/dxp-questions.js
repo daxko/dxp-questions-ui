@@ -332,10 +332,10 @@ var DxpQuestions =
 			var new_changed = this.state.changed;
 			// Could be an event or a complex object provided by question implementation.  Example: AddressField will pass: {'line1': true, 'city': true} which means that only
 			// the line1 and city fields have lost focus by the user.  Since the other fields are not marked as changed, then we won't show an error for fields the
-			// user hasn't gotten to yet.  When it's a simple event, the changed obj will just contain that value of the answer so that there is a key in the changed obj
+			// user hasn't gotten to yet.  When it's a simple event, the changed obj will just contain that value of the answer (or true) so that there is a key in the changed obj
 			// for that question.
-			var value = input.target ? input.target.value : input;
-			new_changed[key] = value || true;
+			var value = input ? input.target ? input.target.value : input : true;
+			new_changed[key] = value;
 			this.setState({ changed: new_changed }, function () {
 				this.validateOne(key, this.props.questions[key], this.state.answers[key]);
 			});
