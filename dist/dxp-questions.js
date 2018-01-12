@@ -5580,7 +5580,11 @@ var DxpQuestions =
 			if (typeof jQuery.fn.mask == 'undefined') {
 				throw "The following jQuery plugin must be loaded in order to render phone fields: https://igorescobar.github.io/jQuery-Mask-Plugin/";
 			}
+
 			$(comp.refs.phone).mask('(000) 000-0000', options);
+
+			// initial format of the value
+			this.onChange('phone', { target: { value: comp.refs.phone.value } });
 		},
 
 		onKeyPress: function onKeyPress(field, e) {
