@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.16"></a>
+## [0.1.16](https://github.com/daxko/dxp-questions-ui/compare/v0.1.16-prerelease.0...v0.1.16) (2018-03-02)
+
+
+
 <a name="0.1.16-prerelease.0"></a>
 ## [0.1.16-prerelease.0](https://github.com/daxko/dxp-questions-ui/compare/v0.1.15...v0.1.16-prerelease.0) (2018-03-02)
 
