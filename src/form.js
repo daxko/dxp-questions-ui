@@ -170,7 +170,10 @@ var Form = React.createClass({
   onChange: function(key, input) {
     //var answers = Object.assign({}, this.state.answers);
     var answers = this.state.answers;
-    var value = input.target ? input.target.value : input; // could be an event or a complex object provided by field impl
+    var value =
+      key.indexOf('datetime') > -1 && input === ''
+        ? null
+        : input.target ? input.target.value : input; // could be an event or a complex object provided by field impl
     answers[key] = value;
     this.setState(
       { answers: answers },
@@ -215,7 +218,8 @@ var Form = React.createClass({
     var errors = this.state.errors[key] || {}; // Will have properties on this object if there are any errors
     var show_validation =
       (this.state.tried_to_submit || changed) && errors['_summary'];
-    var show_extra_html = this.state.extraHtml[key] !== null;
+    var show_extra_html =
+      this.state.extraHtml[key] !== null && this.state.answers[key] !== null;
 
     return (
       <div
