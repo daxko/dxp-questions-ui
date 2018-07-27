@@ -1,4 +1,5 @@
 # Daxko Questions UI Library
+
 [![Build Status](https://travis-ci.org/daxko/dxp-questions-ui.svg?branch=master)](https://travis-ci.org/daxko/dxp-questions-ui) [![npm](https://img.shields.io/npm/v/dxp-questions-ui.svg)](https://www.npmjs.com/package/dxp-questions-ui)
 
 > The `dxp-questions-ui` library renders questions and answers that are provided by the [Daxko Operations API](https://api.daxko.com/v3/docs/).
@@ -9,60 +10,61 @@ Feel free to use and submit issues and pull requests!
 
 <!-- !toc -->
 
-* [Daxko Questions UI Library](#daxko-questions-ui-library)
-  * [Installation](#installation)
-  * [Development](#development)
-  * [Usage](#usage)
-  * [Question rendering examples](#question-rendering-examples)
-    * [Address](#address)
-    * [Checkbox Question](#checkbox-question)
-    * [Date Question](#date-question)
-    * [Dropdown Question](#dropdown-question)
-    * [Email Question](#email-question)
-    * [Name Question](#name-question)
-    * [Phone Question](#phone-question)
-    * [Radio Question](#radio-question)
-    * [Text Question](#text-question)
-* [Javascript API](#javascript-api)
-  * [Classes](#classes)
-  * [Typedefs](#typedefs)
-  * [DxpQuestions](#dxpquestions)
-    * [new DxpQuestions()](#new-dxpquestions-)
-    * [dxpQuestions.render()](#dxpquestions-render-)
-    * [dxpQuestions.requestSubmit()](#dxpquestions-requestsubmit-)
-    * [dxpQuestions.setAnswers()](#dxpquestions-setanswers-)
-    * [DxpQuestions.init(params) ⇒ <code>Object</code>](#dxpquestions-init-params-code-object-code-)
-  * [onValidate : <code>function</code>](#onvalidate-code-function-code-)
-  * [onSubmit : <code>function</code>](#onsubmit-code-function-code-)
+- [Daxko Questions UI Library](#daxko-questions-ui-library)
+  - [Installation](#installation)
+  - [Development](#development)
+  - [Usage](#usage)
+  - [Question rendering examples](#question-rendering-examples)
+    - [Address](#address)
+    - [Checkbox Question](#checkbox-question)
+    - [Date Question](#date-question)
+    - [Dropdown Question](#dropdown-question)
+    - [Email Question](#email-question)
+    - [Name Question](#name-question)
+    - [Phone Question](#phone-question)
+    - [Radio Question](#radio-question)
+    - [Text Question](#text-question)
+- [Javascript API](#javascript-api)
+  - [Classes](#classes)
+  - [Typedefs](#typedefs)
+  - [DxpQuestions](#dxpquestions)
+    - [new DxpQuestions()](#new-dxpquestions-)
+    - [dxpQuestions.render()](#dxpquestions-render-)
+    - [dxpQuestions.requestSubmit()](#dxpquestions-requestsubmit-)
+    - [dxpQuestions.setAnswers()](#dxpquestions-setanswers-)
+    - [DxpQuestions.init(params) ⇒ <code>Object</code>](#dxpquestions-init-params-code-object-code-)
+  - [onValidate : <code>function</code>](#onvalidate-code-function-code-)
+  - [onSubmit : <code>function</code>](#onsubmit-code-function-code-)
 
 <!-- toc! -->
 
 ## Installation
 
-* `npm install dxp-questions-ui`
-* Download latest release from [Github](https://github.com/daxko/dxp-questions-ui/releases/latest)
-* `<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.13/dxp-questions-min.js"></script>`
+- `npm install dxp-questions-ui`
+- Download latest release from [Github](https://github.com/daxko/dxp-questions-ui/releases/latest)
+- `<script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.13/dxp-questions-min.js"></script>`
 
 ## Development
 
-* Install `node`
-* `npm install -g webpack` if you don't have webpack installed already
-* `npm install`
-* `npm start`
+- Install `node`
+- `npm install -g webpack` if you don't have webpack installed already
+- `npm install`
+- `npm start`
 
 This will rebuild the dist/dxp-questions.js file whenever changes are made.
 
 To test the changes:
 
-* `npm install -g httpster` if you don't have httpster installed
-* `npm run example` in new console in this dir
-* Go to <http://localhost:3333/example>
+- `npm install -g httpster` if you don't have httpster installed
+- `npm run example` in new console in this dir
+- Go to <http://localhost:3333/example>
 
 ## Usage
 
 Required libraries that need to be included before including dxp-questions-min.js. See `example/index.html` for example of how to use.
 
 <!-- include (snippets/html/usage.html lang=html) -->
+
 ```html
 <!-- css for pickadate -->
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/themes/default.date.css">
@@ -79,6 +81,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 <!-- dxp-questions ui library -->
 <script src="https://assets.daxko.com/dxp-questions-ui/lib/v0.1.13/dxp-questions-min.js"></script>
 ```
+
 <!-- /include -->
 
 ## Question rendering examples
@@ -88,6 +91,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 #### JSON
 
 <!-- include (snippets/json/address_question.json lang=json) -->
+
 ```json
 {
   "type": "address",
@@ -95,7 +99,8 @@ Required libraries that need to be included before including dxp-questions-min.j
   "description": "This is where your t-shirt will be shipped to.",
   "required": true,
   "read_only": false,
-  "ca_provinces": [{
+  "ca_provinces": [
+    {
       "id": "AB",
       "name": "Alberta"
     },
@@ -148,7 +153,8 @@ Required libraries that need to be included before including dxp-questions-min.j
       "name": "Yukon"
     }
   ],
-  "countries": [{
+  "countries": [
+    {
       "id": "AF",
       "name": "Afghanistan"
     },
@@ -1108,11 +1114,13 @@ Required libraries that need to be included before including dxp-questions-min.j
   "intl": true
 }
 ```
+
 <!-- /include -->
 
 #### HTML
 
 <!-- include (snippets/html/address_question.html lang=html) -->
+
 ```html
 <div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
@@ -1394,6 +1402,7 @@ Required libraries that need to be included before including dxp-questions-min.j
     </div>
 </div>
 ```
+
 <!-- /include -->
 
 ### Checkbox Question
@@ -1401,43 +1410,47 @@ Required libraries that need to be included before including dxp-questions-min.j
 #### JSON
 
 <!-- include (snippets/json/checkbox_question.json lang=json) -->
+
 ```json
 {
-    "type": "checkboxes",
-    "title": "What other sports have you participated in?",
-    "description": "",
-    "required": false,
-    "read_only": false,
-    "possible_answers": [{
-            "id": "childcare_possible_answer-103475",
-            "value": "Soccer",
-            "display_value": "Soccer"
-        },
-        {
-            "id": "childcare_possible_answer-103476",
-            "value": "Basketball",
-            "display_value": "Basketball"
-        },
-        {
-            "id": "childcare_possible_answer-103477",
-            "value": "Swimming",
-            "display_value": "Swimming"
-        },
-        {
-            "id": "childcare_possible_answer-103478",
-            "value": "Football",
-            "display_value": "Football"
-        }
-    ],
-    "hide_empty_option": false,
-    "empty_value": ""
+  "type": "checkboxes",
+  "title": "What other sports have you participated in?",
+  "description": "",
+  "required": false,
+  "read_only": false,
+  "possible_answers": [
+    {
+      "id": "childcare_possible_answer-103475",
+      "value": "Soccer",
+      "display_value": "Soccer"
+    },
+    {
+      "id": "childcare_possible_answer-103476",
+      "value": "Basketball",
+      "display_value": "Basketball"
+    },
+    {
+      "id": "childcare_possible_answer-103477",
+      "value": "Swimming",
+      "display_value": "Swimming"
+    },
+    {
+      "id": "childcare_possible_answer-103478",
+      "value": "Football",
+      "display_value": "Football"
+    }
+  ],
+  "hide_empty_option": false,
+  "empty_value": ""
 }
 ```
+
 <!-- /include -->
 
 #### HTML
 
 <!-- include (snippets/html/checkbox_question.html lang=html) -->
+
 ```html
 <div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
@@ -1466,6 +1479,7 @@ Required libraries that need to be included before including dxp-questions-min.j
     </div>
 </div>
 ```
+
 <!-- /include -->
 
 ### Date Question
@@ -1473,6 +1487,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 #### JSON
 
 <!-- include (snippets/json/date_question.json lang=json) -->
+
 ```json
 {
   "type": "date",
@@ -1482,11 +1497,13 @@ Required libraries that need to be included before including dxp-questions-min.j
   "read_only": false
 }
 ```
+
 <!-- /include -->
 
 #### HTML
 
 <!-- include (snippets/html/date_question.html lang=html) -->
+
 ```html
 <div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
@@ -1508,6 +1525,7 @@ Required libraries that need to be included before including dxp-questions-min.j
     </div>
 </div>
 ```
+
 <!-- /include -->
 
 ### Dropdown Question
@@ -1515,6 +1533,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 #### JSON
 
 <!-- include (snippets/json/dropdown_question.json lang=json) -->
+
 ```json
 {
   "type": "dropdown",
@@ -1523,7 +1542,8 @@ Required libraries that need to be included before including dxp-questions-min.j
   "required": true,
   "read_only": false,
   "default_value": "U",
-  "possible_answers": [{
+  "possible_answers": [
+    {
       "id": "U",
       "value": "Unspecified",
       "display_value": "Unspecified"
@@ -1543,11 +1563,13 @@ Required libraries that need to be included before including dxp-questions-min.j
   "empty_value": "U"
 }
 ```
+
 <!-- /include -->
 
 #### HTML
 
 <!-- include (snippets/html/dropdown_question.html lang=html) -->
+
 ```html
 <div class="dxp-question-container dxp-key-some_id-123456">
   <label class="dxp-question-title">
@@ -1566,6 +1588,7 @@ Required libraries that need to be included before including dxp-questions-min.j
   </div>
 </div>
 ```
+
 <!-- /include -->
 
 ### Email Question
@@ -1573,6 +1596,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 #### JSON
 
 <!-- include (snippets/json/email_question.json lang=json) -->
+
 ```json
 {
   "type": "email",
@@ -1584,11 +1608,13 @@ Required libraries that need to be included before including dxp-questions-min.j
   "pattern": "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"
 }
 ```
+
 <!-- /include -->
 
 #### HTML
 
 <!-- include (snippets/html/email_question.html lang=html) -->
+
 ```html
 <div class="dxp-question-container dxp-key-some_id-123456">
   <label class="dxp-question-title">
@@ -1601,6 +1627,7 @@ Required libraries that need to be included before including dxp-questions-min.j
   </div>
 </div>
 ```
+
 <!-- /include -->
 
 ### Name Question
@@ -1608,94 +1635,99 @@ Required libraries that need to be included before including dxp-questions-min.j
 #### JSON
 
 <!-- include (snippets/json/name_question.json lang=json) -->
+
 ```json
 {
-    "type": "name",
-    "title": "Participant Name",
-    "description": "Please provide the name given on your birth certificate",
-    "required": true,
-    "read_only": false,
-    "show_first": true,
-    "show_middle": true,
-    "show_last": true,
-    "show_prefix": true,
-    "show_suffix": true,
-    "required_first": true,
-    "required_middle": false,
-    "required_last": true,
-    "prefixes": [{
-            "id": "Mr.",
-            "value": "Mr."
-        },
-        {
-            "id": "Ms.",
-            "value": "Ms."
-        },
-        {
-            "id": "Mrs.",
-            "value": "Mrs."
-        },
-        {
-            "id": "Miss",
-            "value": "Miss"
-        },
-        {
-            "id": "Dr.",
-            "value": "Dr."
-        },
-        {
-            "id": "Rev.",
-            "value": "Rev."
-        },
-        {
-            "id": "Rab.",
-            "value": "Rab."
-        },
-        {
-            "id": "Can.",
-            "value": "Can."
-        },
-        {
-            "id": "Hon.",
-            "value": "Hon."
-        }
-    ],
-    "suffixes": [{
-            "id": "Jr.",
-            "value": "Jr."
-        },
-        {
-            "id": "Sr.",
-            "value": "Sr."
-        },
-        {
-            "id": "I",
-            "value": "I"
-        },
-        {
-            "id": "II",
-            "value": "II"
-        },
-        {
-            "id": "III",
-            "value": "III"
-        },
-        {
-            "id": "IV",
-            "value": "IV"
-        },
-        {
-            "id": "V",
-            "value": "V"
-        }
-    ]
+  "type": "name",
+  "title": "Participant Name",
+  "description": "Please provide the name given on your birth certificate",
+  "required": true,
+  "read_only": false,
+  "show_first": true,
+  "show_middle": true,
+  "show_last": true,
+  "show_prefix": true,
+  "show_suffix": true,
+  "required_first": true,
+  "required_middle": false,
+  "required_last": true,
+  "prefixes": [
+    {
+      "id": "Mr.",
+      "value": "Mr."
+    },
+    {
+      "id": "Ms.",
+      "value": "Ms."
+    },
+    {
+      "id": "Mrs.",
+      "value": "Mrs."
+    },
+    {
+      "id": "Miss",
+      "value": "Miss"
+    },
+    {
+      "id": "Dr.",
+      "value": "Dr."
+    },
+    {
+      "id": "Rev.",
+      "value": "Rev."
+    },
+    {
+      "id": "Rab.",
+      "value": "Rab."
+    },
+    {
+      "id": "Can.",
+      "value": "Can."
+    },
+    {
+      "id": "Hon.",
+      "value": "Hon."
+    }
+  ],
+  "suffixes": [
+    {
+      "id": "Jr.",
+      "value": "Jr."
+    },
+    {
+      "id": "Sr.",
+      "value": "Sr."
+    },
+    {
+      "id": "I",
+      "value": "I"
+    },
+    {
+      "id": "II",
+      "value": "II"
+    },
+    {
+      "id": "III",
+      "value": "III"
+    },
+    {
+      "id": "IV",
+      "value": "IV"
+    },
+    {
+      "id": "V",
+      "value": "V"
+    }
+  ]
 }
 ```
+
 <!-- /include -->
 
 #### HTML
 
 <!-- include (snippets/html/name_question.html lang=html) -->
+
 ```html
 <div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
@@ -1749,6 +1781,7 @@ Required libraries that need to be included before including dxp-questions-min.j
     </div>
 </div>
 ```
+
 <!-- /include -->
 
 ### Phone Question
@@ -1756,6 +1789,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 #### JSON
 
 <!-- include (snippets/json/phone_question.json lang=json) -->
+
 ```json
 {
   "type": "phone",
@@ -1767,11 +1801,13 @@ Required libraries that need to be included before including dxp-questions-min.j
   "intl": false
 }
 ```
+
 <!-- /include -->
 
 #### HTML
 
 <!-- include (snippets/html/phone_question.html lang=html) -->
+
 ```html
 <div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
@@ -1794,6 +1830,7 @@ Required libraries that need to be included before including dxp-questions-min.j
     </div>
 </div>
 ```
+
 <!-- /include -->
 
 ### Radio Question
@@ -1801,34 +1838,38 @@ Required libraries that need to be included before including dxp-questions-min.j
 #### JSON
 
 <!-- include (snippets/json/radio_question.json lang=json) -->
+
 ```json
 {
-    "type": "radio",
-    "title": "Have you participated in this program before?",
-    "description": "",
-    "required": false,
-    "read_only": false,
-    "default_value": null,
-    "possible_answers": [{
-            "id": "childcare_possible_answer-103473",
-            "value": "Yes",
-            "display_value": "Yes"
-        },
-        {
-            "id": "childcare_possible_answer-103474",
-            "value": "No",
-            "display_value": "No"
-        }
-    ],
-    "hide_empty_option": false,
-    "empty_value": ""
+  "type": "radio",
+  "title": "Have you participated in this program before?",
+  "description": "",
+  "required": false,
+  "read_only": false,
+  "default_value": null,
+  "possible_answers": [
+    {
+      "id": "childcare_possible_answer-103473",
+      "value": "Yes",
+      "display_value": "Yes"
+    },
+    {
+      "id": "childcare_possible_answer-103474",
+      "value": "No",
+      "display_value": "No"
+    }
+  ],
+  "hide_empty_option": false,
+  "empty_value": ""
 }
 ```
+
 <!-- /include -->
 
 #### HTML
 
 <!-- include (snippets/html/radio_question.html lang=html) -->
+
 ```html
 <div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
@@ -1849,6 +1890,7 @@ Required libraries that need to be included before including dxp-questions-min.j
     </div>
 </div>
 ```
+
 <!-- /include -->
 
 ### Text Question
@@ -1856,6 +1898,7 @@ Required libraries that need to be included before including dxp-questions-min.j
 #### JSON
 
 <!-- include (snippets/json/text_question.json lang=json) -->
+
 ```json
 {
   "type": "text",
@@ -1866,11 +1909,13 @@ Required libraries that need to be included before including dxp-questions-min.j
   "max_length": 50
 }
 ```
+
 <!-- /include -->
 
 #### HTML
 
 <!-- include (snippets/html/text_question.html lang=html) -->
+
 ```html
 <div class="dxp-question-container dxp-key-some_id-123456">
     <label class="dxp-question-title">
@@ -1882,11 +1927,13 @@ Required libraries that need to be included before including dxp-questions-min.j
     </div>
 </div>
 ```
+
 <!-- /include -->
 
 # Javascript API
 
 <!-- include (snippets/md/javascript_api.md) -->
+
 ## Classes
 
 <dl>
@@ -1906,83 +1953,96 @@ Required libraries that need to be included before including dxp-questions-min.j
 <a name="DxpQuestions"></a>
 
 ## DxpQuestions
-**Kind**: global class  
 
-* [DxpQuestions](#dxpquestions)
-  * [new DxpQuestions()](#new_DxpQuestions_new)
-  * _instance_
-    * [.render()](#DxpQuestions+render)
-    * [.requestSubmit()](#DxpQuestions+requestSubmit)
-    * [.setAnswers()](#DxpQuestions+setAnswers)
-  * _static_
-    * [.init(params)](#DxpQuestions.init) ⇒ <code>Object</code>
+**Kind**: global class
+
+- [DxpQuestions](#dxpquestions)
+  - [new DxpQuestions()](#new_DxpQuestions_new)
+  - _instance_
+    - [.render()](#DxpQuestions+render)
+    - [.requestSubmit()](#DxpQuestions+requestSubmit)
+    - [.setAnswers()](#DxpQuestions+setAnswers)
+  - _static_
+    - [.init(params)](#DxpQuestions.init) ⇒ <code>Object</code>
 
 <a name="new_DxpQuestions_new"></a>
 
 ### new DxpQuestions()
+
 DxpQuestions class
 
 <a name="DxpQuestions+render"></a>
 
 ### dxpQuestions.render()
+
 Renders the form
 
 **Kind**: instance method of [<code>DxpQuestions</code>](#dxpquestions)  
-**Example**  
+**Example**
+
 ```js
 var form = DxpQuestions.init(// params);
 form.render();
 ```
+
 <a name="DxpQuestions+requestSubmit"></a>
 
 ### dxpQuestions.requestSubmit()
+
 When called, calls the function that submits the form
 
 **Kind**: instance method of [<code>DxpQuestions</code>](#dxpquestions)  
-**Example**  
+**Example**
+
 ```js
 var form = DxpQuestions.init(// params);
 form.requestSubmit();
 ```
+
 <a name="DxpQuestions+setAnswers"></a>
 
 ### dxpQuestions.setAnswers()
+
 Sets answers in the form.
 
-**Kind**: instance method of [<code>DxpQuestions</code>](#dxpquestions)  
+**Kind**: instance method of [<code>DxpQuestions</code>](#dxpquestions)
 
-| Param | Type | Description |
-| --- | --- | --- |
-| params.answers | <code>Object</code> | The answer key/value pairs to set |
-| param.replaceAll | <code>bool</code> | Set to true to replace all answer values, false to only replace values that have a key in params.answers.  Defaults to false. |
+| Param            | Type                | Description                                                                                                                  |
+| ---------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| params.answers   | <code>Object</code> | The answer key/value pairs to set                                                                                            |
+| param.replaceAll | <code>bool</code>   | Set to true to replace all answer values, false to only replace values that have a key in params.answers. Defaults to false. |
 
-**Example**  
+**Example**
+
 ```js
 var form = DxpQuestions.init(// params);
 var values = {};
 values['my_field_1234'] = 'Some value';
 form.setAnswers({ answers: values, replaceAll: false });
 ```
+
 <a name="DxpQuestions.init"></a>
 
 ### DxpQuestions.init(params) ⇒ <code>Object</code>
+
 Initialize a new form that will render questions and answers
 
 **Kind**: static method of [<code>DxpQuestions</code>](#dxpquestions)  
-**Returns**: <code>Object</code> - An instance of the form  
+**Returns**: <code>Object</code> - An instance of the form
 
-| Param | Type | Description |
-| --- | --- | --- |
-| params | <code>Object</code> | The parameters used to initialize the form |
-| params.questions | <code>Array</code> | A list of questions to render |
-| params.answers | <code>Array</code> | A list of answers to render |
-| params.container | <code>Object</code> | The HTML element that will contain the rendered form |
-| params.onFieldValidate | <code>Object</code> | Mapping of question id to custom validation function |
-| params.onFieldChange | <code>Object</code> | Mapping of question id to custom on change function |
-| params.onValidate | [<code>onValidate</code>](#onValidate) | A callback function that is called everytime an answer is validated |
-| params.onSubmit | [<code>onSubmit</code>](#onSubmit) | A callback function that is called when the `submitRequest()` method is called on the form |
+| Param                  | Type                                   | Description                                                                                |
+| ---------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------ |
+| params                 | <code>Object</code>                    | The parameters used to initialize the form                                                 |
+| params.questions       | <code>Array</code>                     | A list of questions to render                                                              |
+| params.answers         | <code>Array</code>                     | A list of answers to render                                                                |
+| params.container       | <code>Object</code>                    | The HTML element that will contain the rendered form                                       |
+| params.onFieldValidate | <code>Object</code>                    | Mapping of question id to custom validation function                                       |
+| params.onFieldChange   | <code>Object</code>                    | Mapping of question id to custom on change function                                        |
+| params.onValidate      | [<code>onValidate</code>](#onValidate) | A callback function that is called everytime an answer is validated                        |
+| params.onSubmit        | [<code>onSubmit</code>](#onSubmit)     | A callback function that is called when the `submitRequest()` method is called on the form |
 
-**Example**  
+**Example**
+
 ```js
 var form = DxpQuestions.init({
   questions: // questions object here,
@@ -2002,7 +2062,7 @@ var form = DxpQuestions.init({
             context.setExtraHtml('This is a calculated value of ' + context.answer);
         }
   },
-  onValidate: function (result) { 
+  onValidate: function (result) {
     // show error if result.valid === false
   },
   onSubmit: function (result) {
@@ -2010,27 +2070,34 @@ var form = DxpQuestions.init({
   }
 })
 ```
+
 <a name="onValidate"></a>
 
 ## onValidate : <code>function</code>
-**Kind**: global typedef  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| result | <code>Object</code> | A callback when a validation event has occurred |
-| result.valid | <code>bool</code> | Indicates if the all questions in the form are valid |
+**Kind**: global typedef
+
+| Param        | Type                | Description                                          |
+| ------------ | ------------------- | ---------------------------------------------------- |
+| result       | <code>Object</code> | A callback when a validation event has occurred      |
+| result.valid | <code>bool</code>   | Indicates if the all questions in the form are valid |
 
 <a name="onSubmit"></a>
 
 ## onSubmit : <code>function</code>
-**Kind**: global typedef  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| result | <code>Object</code> | A callback that is executed when `requestSubmit()` is called |
-| result.valid | <code>bool</code> | Indicates if the all questions in the form are valid |
-| result.answers | <code>Object</code> | The list of all the answers |
-| result.errors | <code>Object</code> | The lsit of all the errors |
+**Kind**: global typedef
+
+| Param          | Type                | Description                                                  |
+| -------------- | ------------------- | ------------------------------------------------------------ |
+| result         | <code>Object</code> | A callback that is executed when `requestSubmit()` is called |
+| result.valid   | <code>bool</code>   | Indicates if the all questions in the form are valid         |
+| result.answers | <code>Object</code> | The list of all the answers                                  |
+| result.errors  | <code>Object</code> | The lsit of all the errors                                   |
 
 <!-- /include -->
 
+## Updating on npm
+
+Make sure you have have an account on npmjs.com.  
+Contact a team member or tech ops to get added to Daxko org to publish.
