@@ -27773,7 +27773,6 @@ var DxpQuestions =
 	var STATES = {
 		"AL": "Alabama",
 		"AK": "Alaska",
-		"AS": "American Samoa",
 		"AZ": "Arizona",
 		"AR": "Arkansas",
 		"CA": "California",
@@ -27781,10 +27780,8 @@ var DxpQuestions =
 		"CT": "Connecticut",
 		"DE": "Delaware",
 		"DC": "District Of Columbia",
-		"FM": "Federated States Of Micronesia",
 		"FL": "Florida",
 		"GA": "Georgia",
-		"GU": "Guam",
 		"HI": "Hawaii",
 		"ID": "Idaho",
 		"IL": "Illinois",
@@ -27794,7 +27791,6 @@ var DxpQuestions =
 		"KY": "Kentucky",
 		"LA": "Louisiana",
 		"ME": "Maine",
-		"MH": "Marshall Islands",
 		"MD": "Maryland",
 		"MA": "Massachusetts",
 		"MI": "Michigan",
@@ -27810,11 +27806,9 @@ var DxpQuestions =
 		"NY": "New York",
 		"NC": "North Carolina",
 		"ND": "North Dakota",
-		"MP": "Northern Mariana Islands",
 		"OH": "Ohio",
 		"OK": "Oklahoma",
 		"OR": "Oregon",
-		"PW": "Palau",
 		"PA": "Pennsylvania",
 		"PR": "Puerto Rico",
 		"RI": "Rhode Island",
@@ -27824,12 +27818,14 @@ var DxpQuestions =
 		"TX": "Texas",
 		"UT": "Utah",
 		"VT": "Vermont",
-		"VI": "Virgin Islands",
 		"VA": "Virginia",
 		"WA": "Washington",
 		"WV": "West Virginia",
 		"WI": "Wisconsin",
-		"WY": "Wyoming"
+		"WY": "Wyoming",
+		"AA": "Armed Forces Americas",
+		"AE": "Armed Forces Europe",
+		"AP": "Armed Forces Pacific"
 	};
 
 	var AddressField = React.createClass({
