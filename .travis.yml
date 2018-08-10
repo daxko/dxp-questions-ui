@@ -1,13 +1,10 @@
 sudo: false
 language: node_js
 node_js:
-  - 'node'
+  - '9.8.0'
 script:
   - npm run test
   - npm run prod
-before_script:
-  - npm install -g webpack
-  - npm install -g httpster
 branches:
   only:
     - master
