@@ -1,14 +1,14 @@
 sudo: false
 language: node_js
 node_js:
-- 'node'
+  - '9.8.0'
 script:
-- npm run test
-- npm run prod
+  - npm run test
+  - npm run prod
 branches:
   only:
-  - master
-  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+    - master
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 cache:
   directories:
     - node_modules
