@@ -1,14 +1,17 @@
 sudo: false
 language: node_js
 node_js:
-- 'node'
+  - 'node'
 script:
-- npm run test
-- npm run prod
+  - npm run test
+  - npm run prod
+before_script:
+  - npm install -g webpack
+  - npm install -g httpster
 branches:
   only:
-  - master
-  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+    - master
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 cache:
   directories:
     - node_modules
