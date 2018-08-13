@@ -1125,11 +1125,6 @@ ShallowWrapper {
               Alaska
             </option>
             <option
-              value="AS"
-            >
-              American Samoa
-            </option>
-            <option
               value="AZ"
             >
               Arizona
@@ -1165,11 +1160,6 @@ ShallowWrapper {
               District Of Columbia
             </option>
             <option
-              value="FM"
-            >
-              Federated States Of Micronesia
-            </option>
-            <option
               value="FL"
             >
               Florida
@@ -1178,11 +1168,6 @@ ShallowWrapper {
               value="GA"
             >
               Georgia
-            </option>
-            <option
-              value="GU"
-            >
-              Guam
             </option>
             <option
               value="HI"
@@ -1228,11 +1213,6 @@ ShallowWrapper {
               value="ME"
             >
               Maine
-            </option>
-            <option
-              value="MH"
-            >
-              Marshall Islands
             </option>
             <option
               value="MD"
@@ -1310,11 +1290,6 @@ ShallowWrapper {
               North Dakota
             </option>
             <option
-              value="MP"
-            >
-              Northern Mariana Islands
-            </option>
-            <option
               value="OH"
             >
               Ohio
@@ -1328,11 +1303,6 @@ ShallowWrapper {
               value="OR"
             >
               Oregon
-            </option>
-            <option
-              value="PW"
-            >
-              Palau
             </option>
             <option
               value="PA"
@@ -1380,11 +1350,6 @@ ShallowWrapper {
               Vermont
             </option>
             <option
-              value="VI"
-            >
-              Virgin Islands
-            </option>
-            <option
               value="VA"
             >
               Virginia
@@ -1408,6 +1373,21 @@ ShallowWrapper {
               value="WY"
             >
               Wyoming
+            </option>
+            <option
+              value="AA"
+            >
+              Armed Forces Americas
+            </option>
+            <option
+              value="AE"
+            >
+              Armed Forces Europe
+            </option>
+            <option
+              value="AP"
+            >
+              Armed Forces Pacific
             </option>
           </select>
         </div>,
