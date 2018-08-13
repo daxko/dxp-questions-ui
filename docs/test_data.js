@@ -1,1260 +1,1244 @@
 var API_RESPONSE = {
-  "answers": {},
-  "questions": {
-    "sect_childcare_58736": {
-      "type": "section",
-      "title": "Section 1",
-      "description": "Complete section 1 questions"
+  answers: {},
+  questions: {
+    sect_childcare_58736: {
+      type: 'section',
+      title: 'Section 1',
+      description: 'Complete section 1 questions'
     },
-    "childcare_password-211425": {
-      "type": "password",
-      "title": "Choose Password",
-      "description": "",
-      "required": true,
-      "read_only": false,
-      "max_length": 50
+    'childcare_password-211425': {
+      type: 'password',
+      title: 'Choose Password',
+      description: '',
+      required: true,
+      read_only: false,
+      max_length: 50
     },
-    "childcare_name-211422": {
-      "type": "name",
-      "title": "Participant Name",
-      "description": "Please provide the name given on your birth certificate.",
-      "required": true,
-      "read_only": false,
-      "show_first": true,
-      "show_middle": true,
-      "show_last": true,
-      "show_prefix": true,
-      "show_suffix": true,
-      "required_first": true,
-      "required_middle": false,
-      "required_last": true,
-      "prefixes": [{
-          "id": "Mr.",
-          "value": "Mr."
+    'childcare_name-211422': {
+      type: 'name',
+      title: 'Participant Name',
+      description: 'Please provide the name given on your birth certificate.',
+      required: true,
+      read_only: false,
+      show_first: true,
+      show_middle: true,
+      show_last: true,
+      show_prefix: true,
+      show_suffix: true,
+      required_first: true,
+      required_middle: false,
+      required_last: true,
+      prefixes: [
+        {
+          id: 'Mr.',
+          value: 'Mr.'
         },
         {
-          "id": "Ms.",
-          "value": "Ms."
+          id: 'Ms.',
+          value: 'Ms.'
         },
         {
-          "id": "Mrs.",
-          "value": "Mrs."
+          id: 'Mrs.',
+          value: 'Mrs.'
         },
         {
-          "id": "Miss",
-          "value": "Miss"
+          id: 'Miss',
+          value: 'Miss'
         },
         {
-          "id": "Dr.",
-          "value": "Dr."
+          id: 'Dr.',
+          value: 'Dr.'
         },
         {
-          "id": "Rev.",
-          "value": "Rev."
+          id: 'Rev.',
+          value: 'Rev.'
         },
         {
-          "id": "Rab.",
-          "value": "Rab."
+          id: 'Rab.',
+          value: 'Rab.'
         },
         {
-          "id": "Can.",
-          "value": "Can."
+          id: 'Can.',
+          value: 'Can.'
         },
         {
-          "id": "Hon.",
-          "value": "Hon."
+          id: 'Hon.',
+          value: 'Hon.'
         }
       ],
-      "suffixes": [{
-          "id": "Jr.",
-          "value": "Jr."
+      suffixes: [
+        {
+          id: 'Jr.',
+          value: 'Jr.'
         },
         {
-          "id": "Sr.",
-          "value": "Sr."
+          id: 'Sr.',
+          value: 'Sr.'
         },
         {
-          "id": "I",
-          "value": "I"
+          id: 'I',
+          value: 'I'
         },
         {
-          "id": "II",
-          "value": "II"
+          id: 'II',
+          value: 'II'
         },
         {
-          "id": "III",
-          "value": "III"
+          id: 'III',
+          value: 'III'
         },
         {
-          "id": "IV",
-          "value": "IV"
+          id: 'IV',
+          value: 'IV'
         },
         {
-          "id": "V",
-          "value": "V"
+          id: 'V',
+          value: 'V'
         }
       ]
     },
-    "childcare_phone-211423": {
-      "type": "phone",
-      "title": "Home Phone",
-      "description": "This will be used in case of any emergencies.",
-      "required": true,
-      "read_only": false,
-      "show_extension": true,
-      "intl": false
+    'childcare_phone-211423': {
+      type: 'phone',
+      title: 'Home Phone',
+      description: 'This will be used in case of any emergencies.',
+      required: true,
+      read_only: false,
+      show_extension: true,
+      intl: false
     },
-    "childcare_address-211430": {
-      "type": "address",
-      "title": "Home Address",
-      "description": "This is where your t-shirt will be shipped to.",
-      "required": true,
-      "read_only": false,
-      "ca_provinces": [{
-          "id": "AB",
-          "name": "Alberta"
+    'childcare_address-211430': {
+      type: 'address',
+      title: 'Home Address',
+      description: 'This is where your t-shirt will be shipped to.',
+      required: true,
+      read_only: false,
+      ca_provinces: [
+        {
+          id: 'AB',
+          name: 'Alberta'
         },
         {
-          "id": "BC",
-          "name": "British Columbia"
+          id: 'BC',
+          name: 'British Columbia'
         },
         {
-          "id": "MB",
-          "name": "Manitoba"
+          id: 'MB',
+          name: 'Manitoba'
         },
         {
-          "id": "NB",
-          "name": "New Brunswick"
+          id: 'NB',
+          name: 'New Brunswick'
         },
         {
-          "id": "NL",
-          "name": "Newfoundland and Labrador"
+          id: 'NL',
+          name: 'Newfoundland and Labrador'
         },
         {
-          "id": "NT",
-          "name": "Northwest Territories"
+          id: 'NT',
+          name: 'Northwest Territories'
         },
         {
-          "id": "NS",
-          "name": "Nova Scotia"
+          id: 'NS',
+          name: 'Nova Scotia'
         },
         {
-          "id": "NU",
-          "name": "Nunavut"
+          id: 'NU',
+          name: 'Nunavut'
         },
         {
-          "id": "ON",
-          "name": "Ontario"
+          id: 'ON',
+          name: 'Ontario'
         },
         {
-          "id": "PE",
-          "name": "Prince Edward Island"
+          id: 'PE',
+          name: 'Prince Edward Island'
         },
         {
-          "id": "QC",
-          "name": "Quebec"
+          id: 'QC',
+          name: 'Quebec'
         },
         {
-          "id": "SK",
-          "name": "Saskatchewan"
+          id: 'SK',
+          name: 'Saskatchewan'
         },
         {
-          "id": "YT",
-          "name": "Yukon"
+          id: 'YT',
+          name: 'Yukon'
         }
       ],
-      "countries": [{
-          "id": "AF",
-          "name": "Afghanistan"
-        },
-        {
-          "id": "AL",
-          "name": "Albania"
-        },
-        {
-          "id": "DZ",
-          "name": "Algeria"
-        },
-        {
-          "id": "AS",
-          "name": "American Samoa"
-        },
-        {
-          "id": "AD",
-          "name": "Andorra"
-        },
-        {
-          "id": "AO",
-          "name": "Angola"
-        },
+      countries: [
         {
-          "id": "AI",
-          "name": "Anguilla"
+          id: 'AF',
+          name: 'Afghanistan'
         },
         {
-          "id": "AQ",
-          "name": "Antarctica"
+          id: 'AL',
+          name: 'Albania'
         },
         {
-          "id": "AG",
-          "name": "Antigua And Barbuda"
+          id: 'DZ',
+          name: 'Algeria'
         },
         {
-          "id": "AR",
-          "name": "Argentina"
+          id: 'AD',
+          name: 'Andorra'
         },
         {
-          "id": "AM",
-          "name": "Armenia"
+          id: 'AO',
+          name: 'Angola'
         },
         {
-          "id": "AW",
-          "name": "Aruba"
+          id: 'AI',
+          name: 'Anguilla'
         },
         {
-          "id": "AU",
-          "name": "Australia"
+          id: 'AQ',
+          name: 'Antarctica'
         },
         {
-          "id": "AT",
-          "name": "Austria"
+          id: 'AG',
+          name: 'Antigua And Barbuda'
         },
         {
-          "id": "AZ",
-          "name": "Azerbaijan"
+          id: 'AR',
+          name: 'Argentina'
         },
         {
-          "id": "BS",
-          "name": "Bahamas"
+          id: 'AM',
+          name: 'Armenia'
         },
         {
-          "id": "BH",
-          "name": "Bahrain"
+          id: 'AW',
+          name: 'Aruba'
         },
         {
-          "id": "BD",
-          "name": "Bangladesh"
+          id: 'AU',
+          name: 'Australia'
         },
         {
-          "id": "BB",
-          "name": "Barbados"
+          id: 'AT',
+          name: 'Austria'
         },
         {
-          "id": "BY",
-          "name": "Belarus"
+          id: 'AZ',
+          name: 'Azerbaijan'
         },
         {
-          "id": "BE",
-          "name": "Belgium"
+          id: 'BS',
+          name: 'Bahamas'
         },
         {
-          "id": "BZ",
-          "name": "Belize"
+          id: 'BH',
+          name: 'Bahrain'
         },
         {
-          "id": "BJ",
-          "name": "Benin"
+          id: 'BD',
+          name: 'Bangladesh'
         },
         {
-          "id": "BM",
-          "name": "Bermuda"
+          id: 'BB',
+          name: 'Barbados'
         },
         {
-          "id": "BT",
-          "name": "Bhutan"
+          id: 'BY',
+          name: 'Belarus'
         },
         {
-          "id": "BO",
-          "name": "Bolivia"
+          id: 'BE',
+          name: 'Belgium'
         },
         {
-          "id": "BA",
-          "name": "Bosnia And Herzegowina"
+          id: 'BZ',
+          name: 'Belize'
         },
         {
-          "id": "BW",
-          "name": "Botswana"
+          id: 'BJ',
+          name: 'Benin'
         },
         {
-          "id": "BV",
-          "name": "Bouvet Island"
+          id: 'BM',
+          name: 'Bermuda'
         },
         {
-          "id": "BR",
-          "name": "Brazil"
+          id: 'BT',
+          name: 'Bhutan'
         },
         {
-          "id": "IO",
-          "name": "British Indian Ocean Territory"
+          id: 'BO',
+          name: 'Bolivia'
         },
         {
-          "id": "BN",
-          "name": "Brunei Darussalam"
+          id: 'BA',
+          name: 'Bosnia And Herzegowina'
         },
         {
-          "id": "BG",
-          "name": "Bulgaria"
+          id: 'BW',
+          name: 'Botswana'
         },
         {
-          "id": "BF",
-          "name": "Burkina Faso"
+          id: 'BV',
+          name: 'Bouvet Island'
         },
         {
-          "id": "BI",
-          "name": "Burundi"
+          id: 'BR',
+          name: 'Brazil'
         },
         {
-          "id": "KH",
-          "name": "Cambodia"
+          id: 'IO',
+          name: 'British Indian Ocean Territory'
         },
         {
-          "id": "CM",
-          "name": "Cameroon"
+          id: 'BN',
+          name: 'Brunei Darussalam'
         },
         {
-          "id": "CA",
-          "name": "Canada"
+          id: 'BG',
+          name: 'Bulgaria'
         },
         {
-          "id": "CV",
-          "name": "Cape Verde"
+          id: 'BF',
+          name: 'Burkina Faso'
         },
         {
-          "id": "KY",
-          "name": "Cayman Islands"
+          id: 'BI',
+          name: 'Burundi'
         },
         {
-          "id": "CF",
-          "name": "Central African Republic"
+          id: 'KH',
+          name: 'Cambodia'
         },
         {
-          "id": "TD",
-          "name": "Chad"
+          id: 'CM',
+          name: 'Cameroon'
         },
         {
-          "id": "CL",
-          "name": "Chile"
+          id: 'CA',
+          name: 'Canada'
         },
         {
-          "id": "CN",
-          "name": "China"
+          id: 'CV',
+          name: 'Cape Verde'
         },
         {
-          "id": "CX",
-          "name": "Christmas Island"
+          id: 'KY',
+          name: 'Cayman Islands'
         },
         {
-          "id": "CC",
-          "name": "Cocos (Keeling) Islands"
+          id: 'CF',
+          name: 'Central African Republic'
         },
         {
-          "id": "CO",
-          "name": "Colombia"
+          id: 'TD',
+          name: 'Chad'
         },
         {
-          "id": "KM",
-          "name": "Comoros"
+          id: 'CL',
+          name: 'Chile'
         },
         {
-          "id": "CG",
-          "name": "Congo"
+          id: 'CN',
+          name: 'China'
         },
         {
-          "id": "CD",
-          "name": "Congo, The Democratic Republic Of The"
+          id: 'CX',
+          name: 'Christmas Island'
         },
         {
-          "id": "CK",
-          "name": "Cook Islands"
+          id: 'CC',
+          name: 'Cocos (Keeling) Islands'
         },
         {
-          "id": "CR",
-          "name": "Costa Rica"
+          id: 'CO',
+          name: 'Colombia'
         },
         {
-          "id": "CI",
-          "name": "Cote D'ivoire"
+          id: 'KM',
+          name: 'Comoros'
         },
         {
-          "id": "HR",
-          "name": "Croatia (Local Name: Hrvatska)"
+          id: 'CG',
+          name: 'Congo'
         },
         {
-          "id": "CU",
-          "name": "Cuba"
+          id: 'CD',
+          name: 'Congo, The Democratic Republic Of The'
         },
         {
-          "id": "CY",
-          "name": "Cyprus"
+          id: 'CK',
+          name: 'Cook Islands'
         },
         {
-          "id": "CZ",
-          "name": "Czech Republic"
+          id: 'CR',
+          name: 'Costa Rica'
         },
         {
-          "id": "DK",
-          "name": "Denmark"
+          id: 'CI',
+          name: "Cote D'ivoire"
         },
         {
-          "id": "DJ",
-          "name": "Djibouti"
+          id: 'HR',
+          name: 'Croatia (Local Name: Hrvatska)'
         },
         {
-          "id": "DM",
-          "name": "Dominica"
+          id: 'CU',
+          name: 'Cuba'
         },
         {
-          "id": "DO",
-          "name": "Dominican Republic"
+          id: 'CY',
+          name: 'Cyprus'
         },
         {
-          "id": "TP",
-          "name": "East Timor"
+          id: 'CZ',
+          name: 'Czech Republic'
         },
         {
-          "id": "EC",
-          "name": "Ecuador"
+          id: 'DK',
+          name: 'Denmark'
         },
         {
-          "id": "EG",
-          "name": "Egypt"
+          id: 'DJ',
+          name: 'Djibouti'
         },
         {
-          "id": "SV",
-          "name": "El Salvador"
+          id: 'DM',
+          name: 'Dominica'
         },
         {
-          "id": "GQ",
-          "name": "Equatorial Guinea"
+          id: 'DO',
+          name: 'Dominican Republic'
         },
         {
-          "id": "ER",
-          "name": "Eritrea"
+          id: 'TP',
+          name: 'East Timor'
         },
         {
-          "id": "EE",
-          "name": "Estonia"
+          id: 'EC',
+          name: 'Ecuador'
         },
         {
-          "id": "ET",
-          "name": "Ethiopia"
+          id: 'EG',
+          name: 'Egypt'
         },
         {
-          "id": "FK",
-          "name": "Falkland Islands (Malvinas)"
+          id: 'SV',
+          name: 'El Salvador'
         },
         {
-          "id": "FO",
-          "name": "Faroe Islands"
+          id: 'GQ',
+          name: 'Equatorial Guinea'
         },
         {
-          "id": "FJ",
-          "name": "Fiji"
+          id: 'ER',
+          name: 'Eritrea'
         },
         {
-          "id": "FI",
-          "name": "Finland"
+          id: 'EE',
+          name: 'Estonia'
         },
         {
-          "id": "FR",
-          "name": "France"
+          id: 'ET',
+          name: 'Ethiopia'
         },
         {
-          "id": "FX",
-          "name": "France, Metropolitan"
+          id: 'FK',
+          name: 'Falkland Islands (Malvinas)'
         },
         {
-          "id": "GF",
-          "name": "French Guiana"
+          id: 'FO',
+          name: 'Faroe Islands'
         },
         {
-          "id": "PF",
-          "name": "French Polynesia"
+          id: 'FJ',
+          name: 'Fiji'
         },
         {
-          "id": "TF",
-          "name": "French Southern Territories"
+          id: 'FI',
+          name: 'Finland'
         },
         {
-          "id": "GA",
-          "name": "Gabon"
+          id: 'FR',
+          name: 'France'
         },
         {
-          "id": "GM",
-          "name": "Gambia"
+          id: 'FX',
+          name: 'France, Metropolitan'
         },
         {
-          "id": "GE",
-          "name": "Georgia"
+          id: 'GF',
+          name: 'French Guiana'
         },
         {
-          "id": "DE",
-          "name": "Germany"
+          id: 'PF',
+          name: 'French Polynesia'
         },
         {
-          "id": "GH",
-          "name": "Ghana"
+          id: 'TF',
+          name: 'French Southern Territories'
         },
         {
-          "id": "GI",
-          "name": "Gibraltar"
+          id: 'GA',
+          name: 'Gabon'
         },
         {
-          "id": "GR",
-          "name": "Greece"
+          id: 'GM',
+          name: 'Gambia'
         },
         {
-          "id": "GL",
-          "name": "Greenland"
+          id: 'GE',
+          name: 'Georgia'
         },
         {
-          "id": "GD",
-          "name": "Grenada"
+          id: 'DE',
+          name: 'Germany'
         },
         {
-          "id": "GP",
-          "name": "Guadeloupe"
+          id: 'GH',
+          name: 'Ghana'
         },
         {
-          "id": "GU",
-          "name": "Guam"
+          id: 'GI',
+          name: 'Gibraltar'
         },
         {
-          "id": "GT",
-          "name": "Guatemala"
+          id: 'GR',
+          name: 'Greece'
         },
         {
-          "id": "GN",
-          "name": "Guinea"
+          id: 'GL',
+          name: 'Greenland'
         },
         {
-          "id": "GW",
-          "name": "Guinea-bissau"
+          id: 'GD',
+          name: 'Grenada'
         },
         {
-          "id": "GY",
-          "name": "Guyana"
+          id: 'GP',
+          name: 'Guadeloupe'
         },
         {
-          "id": "HT",
-          "name": "Haiti"
+          id: 'GT',
+          name: 'Guatemala'
         },
         {
-          "id": "HM",
-          "name": "Heard And McDonald Islands"
+          id: 'GN',
+          name: 'Guinea'
         },
         {
-          "id": "VA",
-          "name": "Holy See (Vatican City State)"
+          id: 'GW',
+          name: 'Guinea-bissau'
         },
         {
-          "id": "HN",
-          "name": "Honduras"
+          id: 'GY',
+          name: 'Guyana'
         },
         {
-          "id": "HK",
-          "name": "Hong Kong"
+          id: 'HT',
+          name: 'Haiti'
         },
         {
-          "id": "HU",
-          "name": "Hungary"
+          id: 'HM',
+          name: 'Heard And McDonald Islands'
         },
         {
-          "id": "IS",
-          "name": "Iceland"
+          id: 'VA',
+          name: 'Holy See (Vatican City State)'
         },
         {
-          "id": "IN",
-          "name": "India"
+          id: 'HN',
+          name: 'Honduras'
         },
         {
-          "id": "ID",
-          "name": "Indonesia"
+          id: 'HK',
+          name: 'Hong Kong'
         },
         {
-          "id": "IR",
-          "name": "Iran (Islamic Republic Of)"
+          id: 'HU',
+          name: 'Hungary'
         },
         {
-          "id": "IQ",
-          "name": "Iraq"
+          id: 'IS',
+          name: 'Iceland'
         },
         {
-          "id": "IE",
-          "name": "Ireland"
+          id: 'IN',
+          name: 'India'
         },
         {
-          "id": "IL",
-          "name": "Israel"
+          id: 'ID',
+          name: 'Indonesia'
         },
         {
-          "id": "IT",
-          "name": "Italy"
+          id: 'IR',
+          name: 'Iran (Islamic Republic Of)'
         },
         {
-          "id": "JM",
-          "name": "Jamaica"
+          id: 'IQ',
+          name: 'Iraq'
         },
         {
-          "id": "JP",
-          "name": "Japan"
+          id: 'IE',
+          name: 'Ireland'
         },
         {
-          "id": "JO",
-          "name": "Jordan"
+          id: 'IL',
+          name: 'Israel'
         },
         {
-          "id": "KZ",
-          "name": "Kazakhstan"
+          id: 'IT',
+          name: 'Italy'
         },
         {
-          "id": "KE",
-          "name": "Kenya"
+          id: 'JM',
+          name: 'Jamaica'
         },
         {
-          "id": "KI",
-          "name": "Kiribati"
+          id: 'JP',
+          name: 'Japan'
         },
         {
-          "id": "KP",
-          "name": "Korea, Democratic People's Republic Of"
+          id: 'JO',
+          name: 'Jordan'
         },
         {
-          "id": "KR",
-          "name": "Korea, Republic Of"
+          id: 'KZ',
+          name: 'Kazakhstan'
         },
         {
-          "id": "KW",
-          "name": "Kuwait"
+          id: 'KE',
+          name: 'Kenya'
         },
         {
-          "id": "KG",
-          "name": "Kyrgyzstan"
+          id: 'KI',
+          name: 'Kiribati'
         },
         {
-          "id": "LA",
-          "name": "Lao People's Democratic Republic"
+          id: 'KP',
+          name: "Korea, Democratic People's Republic Of"
         },
         {
-          "id": "LV",
-          "name": "Latvia"
+          id: 'KR',
+          name: 'Korea, Republic Of'
         },
         {
-          "id": "LB",
-          "name": "Lebanon"
+          id: 'KW',
+          name: 'Kuwait'
         },
         {
-          "id": "LS",
-          "name": "Lesotho"
+          id: 'KG',
+          name: 'Kyrgyzstan'
         },
         {
-          "id": "LR",
-          "name": "Liberia"
+          id: 'LA',
+          name: "Lao People's Democratic Republic"
         },
         {
-          "id": "LY",
-          "name": "Libyan Arab Jamahiriya"
+          id: 'LV',
+          name: 'Latvia'
         },
         {
-          "id": "LI",
-          "name": "Liechtenstein"
+          id: 'LB',
+          name: 'Lebanon'
         },
         {
-          "id": "LT",
-          "name": "Lithuania"
+          id: 'LS',
+          name: 'Lesotho'
         },
         {
-          "id": "LU",
-          "name": "Luxembourg"
+          id: 'LR',
+          name: 'Liberia'
         },
         {
-          "id": "MO",
-          "name": "Macau"
+          id: 'LY',
+          name: 'Libyan Arab Jamahiriya'
         },
         {
-          "id": "MK",
-          "name": "Macedonia, Former Yugoslav Republic Of"
+          id: 'LI',
+          name: 'Liechtenstein'
         },
         {
-          "id": "MG",
-          "name": "Madagascar"
+          id: 'LT',
+          name: 'Lithuania'
         },
         {
-          "id": "MW",
-          "name": "Malawi"
+          id: 'LU',
+          name: 'Luxembourg'
         },
         {
-          "id": "MY",
-          "name": "Malaysia"
+          id: 'MO',
+          name: 'Macau'
         },
         {
-          "id": "MV",
-          "name": "Maldives"
+          id: 'MK',
+          name: 'Macedonia, Former Yugoslav Republic Of'
         },
         {
-          "id": "ML",
-          "name": "Mali"
+          id: 'MG',
+          name: 'Madagascar'
         },
         {
-          "id": "MT",
-          "name": "Malta"
+          id: 'MW',
+          name: 'Malawi'
         },
         {
-          "id": "MH",
-          "name": "Marshall Islands"
+          id: 'MY',
+          name: 'Malaysia'
         },
         {
-          "id": "MQ",
-          "name": "Martinique"
+          id: 'MV',
+          name: 'Maldives'
         },
         {
-          "id": "MR",
-          "name": "Mauritania"
+          id: 'ML',
+          name: 'Mali'
         },
         {
-          "id": "MU",
-          "name": "Mauritius"
+          id: 'MT',
+          name: 'Malta'
         },
         {
-          "id": "YT",
-          "name": "Mayotte"
+          id: 'MQ',
+          name: 'Martinique'
         },
         {
-          "id": "MX",
-          "name": "Mexico"
+          id: 'MR',
+          name: 'Mauritania'
         },
         {
-          "id": "FM",
-          "name": "Micronesia, Federated States Of"
+          id: 'MU',
+          name: 'Mauritius'
         },
         {
-          "id": "MD",
-          "name": "Moldova, Republic Of"
+          id: 'YT',
+          name: 'Mayotte'
         },
         {
-          "id": "MC",
-          "name": "Monaco"
+          id: 'MX',
+          name: 'Mexico'
         },
         {
-          "id": "MN",
-          "name": "Mongolia"
+          id: 'MD',
+          name: 'Moldova, Republic Of'
         },
         {
-          "id": "MS",
-          "name": "Montserrat"
+          id: 'MC',
+          name: 'Monaco'
         },
         {
-          "id": "MA",
-          "name": "Morocco"
+          id: 'MN',
+          name: 'Mongolia'
         },
         {
-          "id": "MZ",
-          "name": "Mozambique"
+          id: 'MS',
+          name: 'Montserrat'
         },
         {
-          "id": "MM",
-          "name": "Myanmar"
+          id: 'MA',
+          name: 'Morocco'
         },
         {
-          "id": "NA",
-          "name": "Namibia"
+          id: 'MZ',
+          name: 'Mozambique'
         },
         {
-          "id": "NR",
-          "name": "Nauru"
+          id: 'MM',
+          name: 'Myanmar'
         },
         {
-          "id": "NP",
-          "name": "Nepal"
+          id: 'NA',
+          name: 'Namibia'
         },
         {
-          "id": "NL",
-          "name": "Netherlands"
+          id: 'NR',
+          name: 'Nauru'
         },
         {
-          "id": "AN",
-          "name": "Netherlands Antilles"
+          id: 'NP',
+          name: 'Nepal'
         },
         {
-          "id": "NC",
-          "name": "New Caledonia"
+          id: 'NL',
+          name: 'Netherlands'
         },
         {
-          "id": "NZ",
-          "name": "New Zealand"
+          id: 'AN',
+          name: 'Netherlands Antilles'
         },
         {
-          "id": "NI",
-          "name": "Nicaragua"
+          id: 'NC',
+          name: 'New Caledonia'
         },
         {
-          "id": "NE",
-          "name": "Niger"
+          id: 'NZ',
+          name: 'New Zealand'
         },
         {
-          "id": "NG",
-          "name": "Nigeria"
+          id: 'NI',
+          name: 'Nicaragua'
         },
         {
-          "id": "NU",
-          "name": "Niue"
+          id: 'NE',
+          name: 'Niger'
         },
         {
-          "id": "NF",
-          "name": "Norfolk Island"
+          id: 'NG',
+          name: 'Nigeria'
         },
         {
-          "id": "MP",
-          "name": "Northern Mariana Islands"
+          id: 'NU',
+          name: 'Niue'
         },
         {
-          "id": "NO",
-          "name": "Norway"
+          id: 'NF',
+          name: 'Norfolk Island'
         },
         {
-          "id": "OM",
-          "name": "Oman"
+          id: 'NO',
+          name: 'Norway'
         },
         {
-          "id": "PK",
-          "name": "Pakistan"
+          id: 'OM',
+          name: 'Oman'
         },
         {
-          "id": "PW",
-          "name": "Palau"
+          id: 'PK',
+          name: 'Pakistan'
         },
         {
-          "id": "PA",
-          "name": "Panama"
+          id: 'PW',
+          name: 'Palau'
         },
         {
-          "id": "PG",
-          "name": "Papua New Guinea"
+          id: 'PA',
+          name: 'Panama'
         },
         {
-          "id": "PY",
-          "name": "Paraguay"
+          id: 'PG',
+          name: 'Papua New Guinea'
         },
         {
-          "id": "PE",
-          "name": "Peru"
+          id: 'PY',
+          name: 'Paraguay'
         },
         {
-          "id": "PH",
-          "name": "Philippines"
+          id: 'PE',
+          name: 'Peru'
         },
         {
-          "id": "PN",
-          "name": "Pitcairn"
+          id: 'PH',
+          name: 'Philippines'
         },
         {
-          "id": "PL",
-          "name": "Poland"
+          id: 'PN',
+          name: 'Pitcairn'
         },
         {
-          "id": "PT",
-          "name": "Portugal"
+          id: 'PL',
+          name: 'Poland'
         },
         {
-          "id": "PR",
-          "name": "Puerto Rico"
+          id: 'PT',
+          name: 'Portugal'
         },
         {
-          "id": "QA",
-          "name": "Qatar"
+          id: 'PR',
+          name: 'Puerto Rico'
         },
         {
-          "id": "RE",
-          "name": "Reunion"
+          id: 'QA',
+          name: 'Qatar'
         },
         {
-          "id": "RO",
-          "name": "Romania"
+          id: 'RE',
+          name: 'Reunion'
         },
         {
-          "id": "RU",
-          "name": "Russian Federation"
+          id: 'RO',
+          name: 'Romania'
         },
         {
-          "id": "RW",
-          "name": "Rwanda"
+          id: 'RU',
+          name: 'Russian Federation'
         },
         {
-          "id": "KN",
-          "name": "Saint Kitts And Nevis"
+          id: 'RW',
+          name: 'Rwanda'
         },
         {
-          "id": "LC",
-          "name": "Saint Lucia"
+          id: 'KN',
+          name: 'Saint Kitts And Nevis'
         },
         {
-          "id": "VC",
-          "name": "Saint Vincent And The Grenadines"
+          id: 'LC',
+          name: 'Saint Lucia'
         },
         {
-          "id": "WS",
-          "name": "Samoa"
+          id: 'VC',
+          name: 'Saint Vincent And The Grenadines'
         },
         {
-          "id": "SM",
-          "name": "San Marino"
+          id: 'WS',
+          name: 'Samoa'
         },
         {
-          "id": "ST",
-          "name": "Sao Tome And Principe"
+          id: 'SM',
+          name: 'San Marino'
         },
         {
-          "id": "SA",
-          "name": "Saudi Arabia"
+          id: 'ST',
+          name: 'Sao Tome And Principe'
         },
         {
-          "id": "SN",
-          "name": "Senegal"
+          id: 'SA',
+          name: 'Saudi Arabia'
         },
         {
-          "id": "SC",
-          "name": "Seychelles"
+          id: 'SN',
+          name: 'Senegal'
         },
         {
-          "id": "SL",
-          "name": "Sierra Leone"
+          id: 'SC',
+          name: 'Seychelles'
         },
         {
-          "id": "SG",
-          "name": "Singapore"
+          id: 'SL',
+          name: 'Sierra Leone'
         },
         {
-          "id": "SK",
-          "name": "Slovakia (Slovak Republic)"
+          id: 'SG',
+          name: 'Singapore'
         },
         {
-          "id": "SI",
-          "name": "Slovenia"
+          id: 'SK',
+          name: 'Slovakia (Slovak Republic)'
         },
         {
-          "id": "SB",
-          "name": "Solomon Islands"
+          id: 'SI',
+          name: 'Slovenia'
         },
         {
-          "id": "SO",
-          "name": "Somalia"
+          id: 'SB',
+          name: 'Solomon Islands'
         },
         {
-          "id": "ZA",
-          "name": "South Africa"
+          id: 'SO',
+          name: 'Somalia'
         },
         {
-          "id": "GS",
-          "name": "South Georgia/South Sandwich Islands"
+          id: 'ZA',
+          name: 'South Africa'
         },
         {
-          "id": "ES",
-          "name": "Spain"
+          id: 'GS',
+          name: 'South Georgia/South Sandwich Islands'
         },
         {
-          "id": "LK",
-          "name": "Sri Lanka"
+          id: 'ES',
+          name: 'Spain'
         },
         {
-          "id": "SH",
-          "name": "St. Helena"
+          id: 'LK',
+          name: 'Sri Lanka'
         },
         {
-          "id": "PM",
-          "name": "St. Pierre And Miquelon"
+          id: 'SH',
+          name: 'St. Helena'
         },
         {
-          "id": "SD",
-          "name": "Sudan"
+          id: 'PM',
+          name: 'St. Pierre And Miquelon'
         },
         {
-          "id": "SR",
-          "name": "Suriname"
+          id: 'SD',
+          name: 'Sudan'
         },
         {
-          "id": "SJ",
-          "name": "Svalbard And Jan Mayen Islands"
+          id: 'SR',
+          name: 'Suriname'
         },
         {
-          "id": "SZ",
-          "name": "Swaziland"
+          id: 'SJ',
+          name: 'Svalbard And Jan Mayen Islands'
         },
         {
-          "id": "SE",
-          "name": "Sweden"
+          id: 'SZ',
+          name: 'Swaziland'
         },
         {
-          "id": "CH",
-          "name": "Switzerland"
+          id: 'SE',
+          name: 'Sweden'
         },
         {
-          "id": "SY",
-          "name": "Syrian Arab Republic"
+          id: 'CH',
+          name: 'Switzerland'
         },
         {
-          "id": "TW",
-          "name": "Taiwan, Province Of China"
+          id: 'SY',
+          name: 'Syrian Arab Republic'
         },
         {
-          "id": "TJ",
-          "name": "Tajikistan"
+          id: 'TW',
+          name: 'Taiwan, Province Of China'
         },
         {
-          "id": "TZ",
-          "name": "Tanzania, United Republic Of"
+          id: 'TJ',
+          name: 'Tajikistan'
         },
         {
-          "id": "TH",
-          "name": "Thailand"
+          id: 'TZ',
+          name: 'Tanzania, United Republic Of'
         },
         {
-          "id": "TG",
-          "name": "Togo"
+          id: 'TH',
+          name: 'Thailand'
         },
         {
-          "id": "TK",
-          "name": "Tokelau"
+          id: 'TG',
+          name: 'Togo'
         },
         {
-          "id": "TO",
-          "name": "Tonga"
+          id: 'TK',
+          name: 'Tokelau'
         },
         {
-          "id": "TT",
-          "name": "Trinidad And Tobago"
+          id: 'TO',
+          name: 'Tonga'
         },
         {
-          "id": "TN",
-          "name": "Tunisia"
+          id: 'TT',
+          name: 'Trinidad And Tobago'
         },
         {
-          "id": "TR",
-          "name": "Turkey"
+          id: 'TN',
+          name: 'Tunisia'
         },
         {
-          "id": "TM",
-          "name": "Turkmenistan"
+          id: 'TR',
+          name: 'Turkey'
         },
         {
-          "id": "TC",
-          "name": "Turks And Caicos Islands"
+          id: 'TM',
+          name: 'Turkmenistan'
         },
         {
-          "id": "TV",
-          "name": "Tuvalu"
+          id: 'TC',
+          name: 'Turks And Caicos Islands'
         },
         {
-          "id": "UG",
-          "name": "Uganda"
+          id: 'TV',
+          name: 'Tuvalu'
         },
         {
-          "id": "UA",
-          "name": "Ukraine"
+          id: 'UG',
+          name: 'Uganda'
         },
         {
-          "id": "AE",
-          "name": "United Arab Emirates"
+          id: 'UA',
+          name: 'Ukraine'
         },
         {
-          "id": "GB",
-          "name": "United Kingdom"
+          id: 'AE',
+          name: 'United Arab Emirates'
         },
         {
-          "id": "UM",
-          "name": "United States Minor Outlying Islands"
+          id: 'GB',
+          name: 'United Kingdom'
         },
         {
-          "id": "US",
-          "name": "United States"
+          id: 'UM',
+          name: 'United States Minor Outlying Islands'
         },
         {
-          "id": "UY",
-          "name": "Uruguay"
+          id: 'US',
+          name: 'United States'
         },
         {
-          "id": "UZ",
-          "name": "Uzbekistan"
+          id: 'UY',
+          name: 'Uruguay'
         },
         {
-          "id": "VU",
-          "name": "Vanuatu"
+          id: 'UZ',
+          name: 'Uzbekistan'
         },
         {
-          "id": "VE",
-          "name": "Venezuela"
+          id: 'VU',
+          name: 'Vanuatu'
         },
         {
-          "id": "VN",
-          "name": "Vietnam"
+          id: 'VE',
+          name: 'Venezuela'
         },
         {
-          "id": "VG",
-          "name": "Virgin Islands (British)"
+          id: 'VN',
+          name: 'Vietnam'
         },
         {
-          "id": "VI",
-          "name": "Virgin Islands (U.S.)"
+          id: 'VG',
+          name: 'Virgin Islands (British)'
         },
         {
-          "id": "WF",
-          "name": "Wallis And Futuna Islands"
+          id: 'WF',
+          name: 'Wallis And Futuna Islands'
         },
         {
-          "id": "EH",
-          "name": "Western Sahara"
+          id: 'EH',
+          name: 'Western Sahara'
         },
         {
-          "id": "YE",
-          "name": "Yemen"
+          id: 'YE',
+          name: 'Yemen'
         },
         {
-          "id": "YU",
-          "name": "Yugoslavia"
+          id: 'YU',
+          name: 'Yugoslavia'
         },
         {
-          "id": "ZM",
-          "name": "Zambia"
+          id: 'ZM',
+          name: 'Zambia'
         },
         {
-          "id": "ZW",
-          "name": "Zimbabwe"
+          id: 'ZW',
+          name: 'Zimbabwe'
         }
       ],
-      "intl": true
+      intl: true
     },
-    "childcare_email-211428": {
-      "type": "email",
-      "title": "E-mail address",
-      "description": "We will not send you any unsolicited email.",
-      "required": true,
-      "read_only": false,
-      "max_length": 100,
-      "pattern": "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"
+    'childcare_email-211428': {
+      type: 'email',
+      title: 'E-mail address',
+      description: 'We will not send you any unsolicited email.',
+      required: true,
+      read_only: false,
+      max_length: 100,
+      pattern: "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"
     },
-    "childcare_datetime-211429": {
-      "type": "date",
-      "title": "Birthdate",
-      "description": "",
-      "required": true,
-      "read_only": false
+    'childcare_datetime-211429': {
+      type: 'date',
+      title: 'Birthdate',
+      description: '',
+      required: true,
+      read_only: false
     },
-    "childcare_gender-211424": {
-      "type": "dropdown",
-      "title": "Gender",
-      "description": "",
-      "required": true,
-      "read_only": false,
-      "default_value": "U",
-      "possible_answers": [{
-          "id": "U",
-          "value": "Unspecified",
-          "display_value": "Unspecified"
+    'childcare_gender-211424': {
+      type: 'dropdown',
+      title: 'Gender',
+      description: '',
+      required: true,
+      read_only: false,
+      default_value: 'U',
+      possible_answers: [
+        {
+          id: 'U',
+          value: 'Unspecified',
+          display_value: 'Unspecified'
         },
         {
-          "id": "M",
-          "value": "Male",
-          "display_value": "Male"
+          id: 'M',
+          value: 'Male',
+          display_value: 'Male'
         },
         {
-          "id": "F",
-          "value": "Female",
-          "display_value": "Female"
+          id: 'F',
+          value: 'Female',
+          display_value: 'Female'
         }
       ],
-      "hide_empty_option": true,
-      "empty_value": "U"
+      hide_empty_option: true,
+      empty_value: 'U'
     },
-    "childcare_answerlist-211426": {
-      "type": "checkboxes",
-      "title": "What is your t-shirt size?",
-      "description": null,
-      "required": true,
-      "read_only": false,
-      "possible_answers": [{
-          "id": "childcare_possible_answer-103469",
-          "value": "Small",
-          "amount": 15.0000,
-          "display_value": "Small - $15.00"
+    'childcare_answerlist-211426': {
+      type: 'checkboxes',
+      title: 'What is your t-shirt size?',
+      description: null,
+      required: true,
+      read_only: false,
+      possible_answers: [
+        {
+          id: 'childcare_possible_answer-103469',
+          value: 'Small',
+          amount: 15.0,
+          display_value: 'Small - $15.00'
         },
         {
-          "id": "childcare_possible_answer-103470",
-          "value": "Medium",
-          "amount": 15.0000,
-          "display_value": "Medium - $15.00"
+          id: 'childcare_possible_answer-103470',
+          value: 'Medium',
+          amount: 15.0,
+          display_value: 'Medium - $15.00'
         },
         {
-          "id": "childcare_possible_answer-103471",
-          "value": "Large",
-          "amount": 15.0000,
-          "display_value": "Large - $15.00"
+          id: 'childcare_possible_answer-103471',
+          value: 'Large',
+          amount: 15.0,
+          display_value: 'Large - $15.00'
         },
         {
-          "id": "childcare_possible_answer-103472",
-          "value": "X-Large",
-          "amount": 15.0000,
-          "display_value": "X-Large - $15.00"
+          id: 'childcare_possible_answer-103472',
+          value: 'X-Large',
+          amount: 15.0,
+          display_value: 'X-Large - $15.00'
         }
       ],
-      "hide_empty_option": false,
-      "empty_value": ""
+      hide_empty_option: false,
+      empty_value: ''
     },
-    "childcare_mediumtext-211425": {
-      "type": "text",
-      "title": "Please specify any food allergies",
-      "description": "For example, peanuts, dairy, eggs, gluten, wheat, etc.",
-      "required": false,
-      "read_only": false,
-      "max_length": 50
+    'childcare_mediumtext-211425': {
+      type: 'text',
+      title: 'Please specify any food allergies',
+      description: 'For example, peanuts, dairy, eggs, gluten, wheat, etc.',
+      required: false,
+      read_only: false,
+      max_length: 50
     },
-    "childcare_answerlist-211427": {
-      "type": "radio",
-      "title": "Have you participated in this program before?",
-      "description": "",
-      "required": false,
-      "read_only": false,
-      "possible_answers": [{
-          "id": "childcare_possible_answer-103473",
-          "value": "Yes",
-          "display_value": "Yes"
+    'childcare_answerlist-211427': {
+      type: 'radio',
+      title: 'Have you participated in this program before?',
+      description: '',
+      required: false,
+      read_only: false,
+      possible_answers: [
+        {
+          id: 'childcare_possible_answer-103473',
+          value: 'Yes',
+          display_value: 'Yes'
         },
         {
-          "id": "childcare_possible_answer-103474",
-          "value": "No",
-          "display_value": "No"
+          id: 'childcare_possible_answer-103474',
+          value: 'No',
+          display_value: 'No'
         }
       ],
-      "hide_empty_option": false,
-      "empty_value": ""
+      hide_empty_option: false,
+      empty_value: ''
     },
-    "childcare_answerlist-211432": {
-      "type": "checkboxes",
-      "title": "What other sports have you participated in?",
-      "description": "",
-      "required": false,
-      "read_only": false,
-      "possible_answers": [{
-          "id": "childcare_possible_answer-103475",
-          "value": "Soccer",
-          "display_value": "Soccer"
+    'childcare_answerlist-211432': {
+      type: 'checkboxes',
+      title: 'What other sports have you participated in?',
+      description: '',
+      required: false,
+      read_only: false,
+      possible_answers: [
+        {
+          id: 'childcare_possible_answer-103475',
+          value: 'Soccer',
+          display_value: 'Soccer'
         },
         {
-          "id": "childcare_possible_answer-103476",
-          "value": "Basketball",
-          "display_value": "Basketball"
+          id: 'childcare_possible_answer-103476',
+          value: 'Basketball',
+          display_value: 'Basketball'
         },
         {
-          "id": "childcare_possible_answer-103477",
-          "value": "Swimming",
-          "display_value": "Swimming"
+          id: 'childcare_possible_answer-103477',
+          value: 'Swimming',
+          display_value: 'Swimming'
         },
         {
-          "id": "childcare_possible_answer-103478",
-          "value": "Football",
-          "display_value": "Football"
+          id: 'childcare_possible_answer-103478',
+          value: 'Football',
+          display_value: 'Football'
         }
       ],
-      "hide_empty_option": false,
-      "empty_value": ""
+      hide_empty_option: false,
+      empty_value: ''
     }
   }
 };
