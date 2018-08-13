@@ -15,7 +15,7 @@
     "start": "webpack --progress --colors --watch",
     "prod": "NODE_ENV=production webpack -p && cp ./dist/dxp-questions.js ./dist/dxp-questions-min.js",
     "example": "httpster",
-    "test": "jest",
+    "test": "jest --updateSnapshot",
     "docs": "jsdoc2md src/index.js > snippets/md/javascript_api.md && markedpp readme.mdpp > README.md",
     "release": "standard-version",
     "prerelease": "standard-version --prerelease prerelease"

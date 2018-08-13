@@ -180,6 +180,10 @@ var API_RESPONSE = {
           name: 'Algeria'
         },
         {
+          id: 'AS',
+          name: 'American Samoa'
+        },
+        {
           id: 'AD',
           name: 'Andorra'
         },
@@ -516,6 +520,10 @@ var API_RESPONSE = {
           name: 'Guadeloupe'
         },
         {
+          id: 'GU',
+          name: 'Guam'
+        },
+        {
           id: 'GT',
           name: 'Guatemala'
         },
@@ -696,6 +704,10 @@ var API_RESPONSE = {
           name: 'Malta'
         },
         {
+          id: 'MH',
+          name: 'Marshall Islands'
+        },
+        {
           id: 'MQ',
           name: 'Martinique'
         },
@@ -714,6 +726,10 @@ var API_RESPONSE = {
         {
           id: 'MX',
           name: 'Mexico'
+        },
+        {
+          id: 'FM',
+          name: 'Micronesia, Federated States Of'
         },
         {
           id: 'MD',
@@ -790,6 +806,10 @@ var API_RESPONSE = {
         {
           id: 'NF',
           name: 'Norfolk Island'
+        },
+        {
+          id: 'MP',
+          name: 'Northern Mariana Islands'
         },
         {
           id: 'NO',
@@ -1074,6 +1094,10 @@ var API_RESPONSE = {
         {
           id: 'VG',
           name: 'Virgin Islands (British)'
+        },
+        {
+          id: 'VI',
+          name: 'Virgin Islands (U.S.)'
         },
         {
           id: 'WF',
