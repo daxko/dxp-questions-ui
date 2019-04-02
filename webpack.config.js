@@ -1,19 +1,19 @@
-var webpack = require ('webpack');
-var UglifyJsPlugin = require ('uglifyjs-webpack-plugin');
+var webpack = require("webpack");
+var UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 var config = {
-  mode: 'production',
+  mode: "none",
   cache: true,
-  entry: './src/index',
+  entry: "./src/index",
   output: {
-    path: __dirname + '/dist',
-    filename: 'dxp-questions.js',
-    publicPath: 'http://localhost:3333/dist/',
-    libraryTarget: 'var',
-    library: 'DxpQuestions',
+    path: __dirname + "/dist",
+    filename: "dxp-questions.js",
+    publicPath: "http://localhost:3333/dist/",
+    libraryTarget: "var",
+    library: "DxpQuestions"
   },
   externals: {
-    jquery: 'jQuery',
+    jquery: "jQuery"
   },
   module: {
     rules: [
@@ -21,34 +21,32 @@ var config = {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-react'],
-          },
-        },
-      },
-    ],
+            presets: ["@babel/preset-react"]
+          }
+        }
+      }
+    ]
   },
   plugins: [
-    new webpack.DefinePlugin ({
-      'process.env': {
-        NODE_ENV: JSON.stringify (process.env.NODE_ENV),
-      },
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+      }
     }),
-    new webpack.ContextReplacementPlugin (/moment[\/\\]locale$/, /en-us/), // don't pull in all of the locales and make the file HUGE
-  ],
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en-us/) // don't pull in all of the locales and make the file HUGE
+  ]
 };
 
-if (process.env.NODE_ENV === 'production') {
-  config.optimization = {
-    minimizer: [
-      new UglifyJsPlugin ({
-        uglifyOptions: {
-          warnings: true,
-        },
-      }),
-    ],
-  };
+if (process.env.NODE_ENV === "production") {
+  config.plugins.push(
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        warnings: true
+      }
+    })
+  );
 }
 
 module.exports = config;
