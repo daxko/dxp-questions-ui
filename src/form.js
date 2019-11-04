@@ -4,7 +4,6 @@ var classes = require('classnames');
 var field_factory = require('./fields/field_factory');
 var validator_factory = require('./validators/validator_factory');
 var FieldError = require('./fields/FieldError');
-var CheckBoxListField = require('./fields/CheckBoxListField');
 
 var Form = React.createClass({
   propTypes: {
@@ -254,7 +253,6 @@ var Form = React.createClass({
             />
           )}
           {show_validation && <FieldError errors={errors} />}
-          {question.show_allow_sms && <CheckBoxListField question={question} answer={this.state.answers[key]} onChange={this.onChange.bind(this, key)} />}
         </div>
       </div>
     );

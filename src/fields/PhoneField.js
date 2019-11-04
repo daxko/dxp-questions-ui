@@ -74,6 +74,13 @@ var PhoneField = React.createClass({
 			this.refs.ext.value = value;
 		}
 
+		if(field == 'allow_sms'){
+			if (event.target.checked)
+				value = 'True';
+			else
+				value = 'False';
+		}	
+
 		new_state[field] = value;
 		this.props.onChange(new_state);
 	},
@@ -87,7 +94,6 @@ var PhoneField = React.createClass({
 
 		return (
 			<div className="dxp-phone-question">
-
 				<div className={ classes({ 'dxp-phone-number': true })} title={phone_error}>
 					<input
 						type="tel"
@@ -99,6 +105,7 @@ var PhoneField = React.createClass({
 						onKeyPress={this.onKeyPress.bind(this, 'phone')}
 						onBlur={this.props.onBlur}
 						onChange={this.onChange.bind(this, 'phone')} />
+						{ phone_error && <div className="dxp-error-description">{phone_error}</div> }
 				</div>
 
 				{
@@ -114,11 +121,28 @@ var PhoneField = React.createClass({
 								value={answer.ext || ''}
 								onKeyPress={this.onKeyPress.bind(this, 'ext')}
 								onBlur={this.props.onBlur}
-								onChange={this.onChange.bind(this, 'ext')} />
+								onChange={this.onChange.bind(this, 'ext')} /> 
+								{ ext_error && <div className="dxp-error-description">{ext_error}</div> }
 						</div>
 					</div>
 				}
 
+				{
+					question.show_allow_sms &&
+					<div>
+						<br />
+						<label className="dxp-phone-allow-sms-label"> 
+							<input
+							type="checkbox"
+							className="dxp-phone-allow-sms-checkbox"
+							checked={answer.allow_sms == 'True'}
+							onChange={this.onChange.bind(this, 'allow_sms')} />
+							{question.allow_sms_text}
+							<br/>
+							<a href={question.allow_sms_link_url} target="_blank">Learn more about SMS terms.</a>
+						</label>
+					</div>
+				}
 			</div>
 		);
 	}

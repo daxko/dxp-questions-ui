@@ -230,8 +230,6 @@ var validator_factory = __webpack_require__(205);
 
 var FieldError = __webpack_require__(216);
 
-var CheckBoxListField = __webpack_require__(48);
-
 var Form = React.createClass({
   displayName: "Form",
   propTypes: {
@@ -465,10 +463,6 @@ var Form = React.createClass({
       }
     }), show_validation && React.createElement(FieldError, {
       errors: errors
-    }), question.show_allow_sms && React.createElement(CheckBoxListField, {
-      question: question,
-      answer: this.state.answers[key],
-      onChange: this.onChange.bind(this, key)
     })));
   },
   render: function render() {
@@ -5960,17 +5954,6 @@ var CheckBoxListField = React.createClass({
     this.props.onChange(new_values);
     this.props.onBlur();
   },
-  onChange_allow_sms: function onChange_allow_sms(field, event) {
-    var new_values = this.props.answer;
-
-    if (event.target.checked) {
-      new_values[field] = 'True';
-    } else {
-      new_values[field] = 'False';
-    }
-
-    this.props.onChange(new_values);
-  },
   render: function render() {
     var question = this.props.question;
     var answer = this.props.answer || [];
@@ -5980,35 +5963,21 @@ var CheckBoxListField = React.createClass({
       checked[answer[i]] = true;
     }
 
-    if (question.show_allow_sms) {
-      return React.createElement("div", null, React.createElement("br", null), React.createElement("label", {
-        className: "dxp-phone-allow-sms-label"
+    return React.createElement("div", {
+      className: "dxp-checkbox"
+    }, question.possible_answers.map(function (pa) {
+      return React.createElement("label", {
+        key: pa.id
       }, React.createElement("input", {
         type: "checkbox",
-        className: "dxp-phone-allow-sms-checkbox",
-        checked: answer.allow_sms == 'True',
-        onChange: this.onChange_allow_sms.bind(this, 'allow_sms')
-      }), question.allow_sms_text, React.createElement("br", null), React.createElement("a", {
-        href: question.allow_sms_link_url,
-        target: "_blank"
-      }, "Learn more about SMS terms.")));
-    } else {
-      return React.createElement("div", {
-        className: "dxp-checkbox"
-      }, question.possible_answers.map(function (pa) {
-        return React.createElement("label", {
-          key: pa.id
-        }, React.createElement("input", {
-          type: "checkbox",
-          name: this.props.question_id,
-          value: pa.id,
-          disabled: this.props.question.read_only,
-          onChange: this.onChange,
-          onBlur: this.props.onBlur,
-          checked: checked[pa.id] || false
-        }), pa.display_value);
-      }.bind(this)));
-    }
+        name: this.props.question_id,
+        value: pa.id,
+        disabled: this.props.question.read_only,
+        onChange: this.onChange,
+        onBlur: this.props.onBlur,
+        checked: checked[pa.id] || false
+      }), pa.display_value);
+    }.bind(this)));
   }
 });
 module.exports = CheckBoxListField;
@@ -6095,6 +6064,10 @@ var PhoneField = React.createClass({
       this.refs.ext.value = value;
     }
 
+    if (field == 'allow_sms') {
+      if (event.target.checked) value = 'True';else value = 'False';
+    }
+
     new_state[field] = value;
     this.props.onChange(new_state);
   },
@@ -6124,7 +6097,9 @@ var PhoneField = React.createClass({
       onKeyPress: this.onKeyPress.bind(this, 'phone'),
       onBlur: this.props.onBlur,
       onChange: this.onChange.bind(this, 'phone')
-    })), question.show_extension && React.createElement("div", {
+    }), phone_error && React.createElement("div", {
+      className: "dxp-error-description"
+    }, phone_error)), question.show_extension && React.createElement("div", {
       className: "dxp-phone-ext-container"
     }, React.createElement("label", {
       className: "dxp-phone-ext-label"
@@ -6146,7 +6121,19 @@ var PhoneField = React.createClass({
       onKeyPress: this.onKeyPress.bind(this, 'ext'),
       onBlur: this.props.onBlur,
       onChange: this.onChange.bind(this, 'ext')
-    }))));
+    }), ext_error && React.createElement("div", {
+      className: "dxp-error-description"
+    }, ext_error))), question.show_allow_sms && React.createElement("div", null, React.createElement("br", null), React.createElement("label", {
+      className: "dxp-phone-allow-sms-label"
+    }, React.createElement("input", {
+      type: "checkbox",
+      className: "dxp-phone-allow-sms-checkbox",
+      checked: answer.allow_sms == 'True',
+      onChange: this.onChange.bind(this, 'allow_sms')
+    }), question.allow_sms_text, React.createElement("br", null), React.createElement("a", {
+      href: question.allow_sms_link_url,
+      target: "_blank"
+    }, "Learn more about SMS terms."))));
   }
 });
 module.exports = PhoneField;
@@ -28977,15 +28964,12 @@ module.exports = function (question, answer) {
 
   if (question.required && isEmpty(answer, 'phone')) {
     errors["phone"] = "is required.";
-    errors["_summary"] = "is required.";
   }
 
   if (!question.intl && !isEmpty(answer, 'phone') && answer["phone"].replace(/\D/g, '').length != 10) {
     errors["phone"] = "is invalid.";
-    errors["_summary"] = "is invalid.";
   } else if (question.intl && !isEmpty(answer, 'phone') && !/^[0-9+\-\(\)\.]*$/.test(answer["phone"])) {
     errors["phone"] = "has invalid characters.";
-    errors["_summary"] = "has invalid characters.";
   }
 
   if (answer == null || answer == undefined) {
