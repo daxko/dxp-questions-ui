@@ -74,12 +74,8 @@ var PhoneField = React.createClass({
 			this.refs.ext.value = value;
 		}
 
-		if(field == 'allow_sms'){
-			if (event.target.checked)
-				value = true;
-			else
-				value = false;
-		}	
+		if(field == 'allow_sms')
+			value = event.target.checked;	
 
 		new_state[field] = value;
 		this.props.onChange(new_state);
@@ -91,12 +87,6 @@ var PhoneField = React.createClass({
 		var phone_error = getError('phone', this.props.errors, this.props.changed, this.props.triedToSubmit);
 		var ext_error = getError('ext', this.props.errors, this.props.changed, this.props.triedToSubmit);
 		var answer = this.props.answer || { intl: false };
-		
-		//Coming back from edit new member. Need to convert .NET uppercase string boolean back to javascript boolean datatype.
-		if(answer.allow_sms === 'True')
-			answer.allow_sms = true;
-		else if(answer.allow_sms === 'False')
-			answer.allow_sms = false;
 
 		return (
 			<div className="dxp-phone-question">
