@@ -75,7 +75,7 @@ var PhoneField = React.createClass({
 		}
 
 		if(field == 'allow_sms')
-			value = event.target.checked;	
+			value = event.target.value === 'optin' ? true : false;	
 
 		new_state[field] = value;
 		this.props.onChange(new_state);
@@ -127,16 +127,31 @@ var PhoneField = React.createClass({
 					question.show_allow_sms &&
 					<div>
 						<br />
-						<label className="dxp-phone-allow-sms-label"> 
-							<input
-							type="checkbox"
-							className="dxp-phone-allow-sms-checkbox"
-							checked={answer.allow_sms}
-							onChange={this.onChange.bind(this, 'allow_sms')} />
-							{question.allow_sms_text}
-							<br/>
-							<a href={question.allow_sms_link_url} target="_blank">Learn more about SMS terms.</a>
-						</label>
+						<div>
+							<label className="dxp-phone-allow-sms-label"> 
+								<input
+								type="radio"
+								className="dxp-phone-allow-sms-radio"
+								checked={answer.allow_sms}
+								value="optin"
+								onChange={this.onChange.bind(this, 'allow_sms')} />
+								{question.allow_sms_text_optin}
+								<br />
+								<label className="dxp-phone-text-smaller">{question.allow_sms_text_message_rates} Learn more about <a href={question.allow_sms_terms_url} target="_blank">SMS terms and conditions</a> and <a href={question.allow_sms_privacy_url} target="_blank">privacy policy</a>.</label>
+							</label>
+						</div>
+						<div>
+							<label className="dxp-phone-allow-sms-label"> 
+								<br />
+								<input
+								type="radio"
+								className="dxp-phone-allow-sms-radio"
+								checked={!answer.allow_sms}
+								value="optout"
+								onChange={this.onChange.bind(this, 'allow_sms')} />
+								{question.allow_sms_text_optout}
+							</label>
+						</div>
 					</div>
 				}
 			</div>

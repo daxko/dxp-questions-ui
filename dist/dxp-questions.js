@@ -6064,7 +6064,7 @@ var PhoneField = React.createClass({
       this.refs.ext.value = value;
     }
 
-    if (field == 'allow_sms') value = event.target.checked;
+    if (field == 'allow_sms') value = event.target.value === 'optin' ? true : false;
     new_state[field] = value;
     this.props.onChange(new_state);
   },
@@ -6120,17 +6120,31 @@ var PhoneField = React.createClass({
       onChange: this.onChange.bind(this, 'ext')
     }), ext_error && React.createElement("div", {
       className: "dxp-error-description"
-    }, ext_error))), question.show_allow_sms && React.createElement("div", null, React.createElement("br", null), React.createElement("label", {
+    }, ext_error))), question.show_allow_sms && React.createElement("div", null, React.createElement("br", null), React.createElement("div", null, React.createElement("label", {
       className: "dxp-phone-allow-sms-label"
     }, React.createElement("input", {
-      type: "checkbox",
-      className: "dxp-phone-allow-sms-checkbox",
+      type: "radio",
+      className: "dxp-phone-allow-sms-radio",
       checked: answer.allow_sms,
+      value: "optin",
       onChange: this.onChange.bind(this, 'allow_sms')
-    }), question.allow_sms_text, React.createElement("br", null), React.createElement("a", {
-      href: question.allow_sms_link_url,
+    }), question.allow_sms_text_optin, React.createElement("br", null), React.createElement("label", {
+      className: "dxp-phone-text-smaller"
+    }, question.allow_sms_text_message_rates, " Learn more about ", React.createElement("a", {
+      href: question.allow_sms_terms_url,
       target: "_blank"
-    }, "Learn more about SMS terms."))));
+    }, "SMS terms and conditions"), " and ", React.createElement("a", {
+      href: question.allow_sms_privacy_url,
+      target: "_blank"
+    }, "privacy policy"), "."))), React.createElement("div", null, React.createElement("label", {
+      className: "dxp-phone-allow-sms-label"
+    }, React.createElement("br", null), React.createElement("input", {
+      type: "radio",
+      className: "dxp-phone-allow-sms-radio",
+      checked: !answer.allow_sms,
+      value: "optout",
+      onChange: this.onChange.bind(this, 'allow_sms')
+    }), question.allow_sms_text_optout))));
   }
 });
 module.exports = PhoneField;
