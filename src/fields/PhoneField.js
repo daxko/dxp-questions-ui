@@ -124,7 +124,7 @@ var PhoneField = React.createClass({
 				}
 
 				{
-					question.show_allow_sms &&
+					question.show_allow_sms && 
 					<div>
 						<br />
 						<div>
