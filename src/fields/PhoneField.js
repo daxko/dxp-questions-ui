@@ -135,9 +135,9 @@ var PhoneField = React.createClass({
 								checked={answer.allow_sms}
 								value="optin"
 								onChange={this.onChange.bind(this, 'allow_sms')} />
-								{question.allow_sms_text_optin}
+								{answer.allow_sms_text_optin}
 								<br />
-								<label className="dxp-phone-text-smaller">{question.allow_sms_text_message_rates} Learn more about <a href={question.allow_sms_terms_url} target="_blank">SMS terms and conditions</a> and <a href={question.allow_sms_privacy_url} target="_blank">privacy policy</a>.</label>
+								<label className="dxp-phone-text-smaller">{answer.allow_sms_text_message_rates} Learn more about <a href={answer.allow_sms_terms_url} target="_blank">SMS terms and conditions</a> and <a href={answer.allow_sms_privacy_url} target="_blank">privacy policy</a>.</label>
 							</label>
 						</div>
 						<div>
@@ -149,7 +149,7 @@ var PhoneField = React.createClass({
 								checked={!answer.allow_sms}
 								value="optout"
 								onChange={this.onChange.bind(this, 'allow_sms')} />
-								{question.allow_sms_text_optout}
+								{answer.allow_sms_text_optout}
 							</label>
 						</div>
 					</div>

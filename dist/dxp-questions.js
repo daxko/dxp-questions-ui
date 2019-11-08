@@ -6128,13 +6128,13 @@ var PhoneField = React.createClass({
       checked: answer.allow_sms,
       value: "optin",
       onChange: this.onChange.bind(this, 'allow_sms')
-    }), question.allow_sms_text_optin, React.createElement("br", null), React.createElement("label", {
+    }), answer.allow_sms_text_optin, React.createElement("br", null), React.createElement("label", {
       className: "dxp-phone-text-smaller"
-    }, question.allow_sms_text_message_rates, " Learn more about ", React.createElement("a", {
-      href: question.allow_sms_terms_url,
+    }, answer.allow_sms_text_message_rates, " Learn more about ", React.createElement("a", {
+      href: answer.allow_sms_terms_url,
       target: "_blank"
     }, "SMS terms and conditions"), " and ", React.createElement("a", {
-      href: question.allow_sms_privacy_url,
+      href: answer.allow_sms_privacy_url,
       target: "_blank"
     }, "privacy policy"), "."))), React.createElement("div", null, React.createElement("label", {
       className: "dxp-phone-allow-sms-label"
@@ -6144,7 +6144,7 @@ var PhoneField = React.createClass({
       checked: !answer.allow_sms,
       value: "optout",
       onChange: this.onChange.bind(this, 'allow_sms')
-    }), question.allow_sms_text_optout))));
+    }), answer.allow_sms_text_optout))));
   }
 });
 module.exports = PhoneField;
