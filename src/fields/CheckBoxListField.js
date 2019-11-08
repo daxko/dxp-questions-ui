@@ -49,7 +49,7 @@ var CheckBoxListField = React.createClass({
 					}.bind(this))
 				}
 			</div>
-		);
+		);	
 	}
 
 });
