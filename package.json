@@ -45,7 +45,7 @@
     "react-addons-test-utils": "^15.5.4",
     "react-test-renderer": "^15.6.2",
     "sass-loader": "^7.1.0",
-    "standard-version": "^5.0.2",
+    "standard-version": "^8.0.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
