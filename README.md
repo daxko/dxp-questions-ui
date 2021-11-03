@@ -1,3 +1,5 @@
+Note: this repository has been archived. This code can still be used as an example on how to build a form to answer custom questions via the Daxko Keystone API.
+
 # Daxko Questions UI Library
 [![Build Status](https://travis-ci.org/daxko/dxp-questions-ui.svg?branch=master)](https://travis-ci.org/daxko/dxp-questions-ui) [![npm](https://img.shields.io/npm/v/dxp-questions-ui.svg)](https://www.npmjs.com/package/dxp-questions-ui)
 
